@@ -1,0 +1,437 @@
+@use "sass:math";
+@import './mixins.scss';
+
+/******************* colors *******************/
+
+$primary-color: #136dfb;
+$secondry-color: #ffffff;
+
+$primary-text-color: #202323;
+$secondry-text-color: #707070;
+$tertiary-text-color: #262626;
+
+$primary-bg-color: #f9f9f9;
+$secondry-bg-color: #f3f4f6;
+$header-bg-color: rgba(255, 255, 255, 0.7);
+
+$banner-left-circle-bg-color: #c0bedd;
+$banner-right-circle-bg-color: #e5eaf9;
+
+$header-border-color: #dedede;
+$footer-border-color: #999a9c;
+$footer-btn-border-color: #999a9c;
+
+$services-heading-text-color: #efefef;
+$services-logo-bg-color: #f4f4f4;
+
+$tech-bg-color-1: #ff6f00;
+$tech-bg-color-2: #47c5fb;
+$tech-bg-color-3: #ff2d20;
+$tech-bg-color-4: #327ebd;
+$tech-bg-color-5: #d10030;
+$tech-bg-color-6: #3174b9;
+$tech-bg-color-7: #00d8ff;
+$tech-bg-color-8: #74b857;
+$tech-bg-color-9: #ee4c2c;
+$tech-bg-color-10: #0d2c40;
+
+$tech-border-color-1: #ff9a4c;
+$tech-border-color-2: #7ed6fc;
+$tech-border-color-3: #ff6c62;
+$tech-border-color-4: #6fa4d1;
+$tech-border-color-5: #da4c6d;
+$tech-border-color-6: #6e9dce;
+$tech-border-color-7: #4ce4ff;
+$tech-border-color-8: #9dcd89;
+$tech-border-color-9: #f3816b;
+$tech-border-color-10: #556b79;
+
+$tech-logo-border-color-1: #ffaa69;
+$tech-logo-border-color-2: #93ddfc;
+$tech-logo-border-color-3: #ff847b;
+$tech-logo-border-color-4: #86b3d8;
+$tech-logo-border-color-5: #de6984;
+$tech-logo-border-color-6: #85add6;
+$tech-logo-border-color-7: #69e8ff;
+$tech-logo-border-color-8: #add59c;
+$tech-logo-border-color-9: #f59583;
+$tech-logo-border-color-10: #70838f;
+
+$learn-more-hover-color: #0a51c9;
+$primary-hover-color: #0041ae;
+$footer-btn-instagram-bg-color: #ef583b;
+
+$primary-box-shadow: 0px 15px 60px 0px #0a51c999;
+$hover-box-shadow: 0px 30px 60px 0px #00000033;
+$gradient-border-logo-img-box-shadow: 0px 8px 25px 0px #136dfb66;
+$our-expertise-tech-logo: 0px 8px 10px 0px #00000026;
+$services-box-shadow: 0px 20px 150px 0px #0000004d;
+
+$banner-left-circle-radial-gradient: radial-gradient(
+  circle,
+  #c0bedd 60%,
+  rgba(192, 190, 221, 0) 100%
+);
+$our-strategy-circle-radial-gradient: radial-gradient(
+  circle,
+  #c0bedd 100%,
+  #c0bedd 100%
+);
+
+$title-text-gradient: linear-gradient(270.13deg, #ff623f 19.37%, #bc1ae4 91.6%);
+$banner-heading-gradient: linear-gradient(
+  90.25deg,
+  #0096ff 0.14%,
+  #bb64ff 28.32%,
+  #f2416b 71.8%,
+  #eb7500 95.68%
+);
+$border-our-strategy-cards-gradient: linear-gradient(
+  109.92deg,
+  #0096ff 12.78%,
+  #bb64ff 37.63%,
+  #f2416b 62.12%,
+  #eb7500 87.3%
+);
+$gradient-border-before-color: linear-gradient(
+  109.92deg,
+  #0096ff 12.78%,
+  #bb64ff 37.63%,
+  #f2416b 62.12%,
+  #eb7500 87.3%
+);
+$our-expertise-tech-name-hover-after-gradient: linear-gradient(
+  90.06deg,
+  #136dfb 0.04%,
+  #bc1ae4 29.45%,
+  #f2416b 70.52%,
+  #eb7500 101.45%
+);
+
+$hover-gradient: linear-gradient(
+  136.29deg,
+  #0096ff -4.39%,
+  #bb64ff 32.56%,
+  #f2416b 83.66%,
+  #eb7500 106.92%
+);
+$tech-box-hover-bg-color: #f0f0ff;
+$tech-inner-box-hover-bg-color: rgba(255, 255, 255, 0.3);
+
+/******************** font-sizes *******************/
+
+.fs-0 {
+  font-size: 0px;
+}
+
+.fs-1 {
+  font-size: 1px;
+}
+
+.fs-4 {
+  font-size: 4px;
+}
+
+.fs-8 {
+  font-size: 8px;
+}
+
+@for $i from 12 through 30 {
+  @if $i!=23 and $i!=26 {
+    .fs-#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+}
+
+$i: 32;
+
+@while $i <= 42 {
+  @if $i == 42 or $i == 50 {
+    .fs-#{$i} {
+      font-size: #{$i}px;
+    }
+    $i: $i + 8;
+  } @else {
+    .fs-#{$i} {
+      font-size: #{$i}px;
+    }
+    $i: $i + 2;
+  }
+}
+
+.fs-50 {
+  font-size: 50px;
+}
+
+.fs-62 {
+  font-size: 62px;
+}
+
+/************************** spacing-classes ******************************/
+
+.my-auto{
+  margin: 0 auto;
+}
+
+$property: margin, padding, mr, mb, ml, mt;
+
+@each $activeproperty in $property {
+  @for $i from 0 through 10 {
+    @if $i==0 {
+      @if $activeproperty == margin or $activeproperty == padding {
+        .#{$activeproperty}-1 {
+          #{$activeproperty}: 1px;
+        }
+        .#{$activeproperty}-60 {
+          #{$activeproperty}: 60px;
+        }
+      } @else if $activeproperty == mr {
+        .#{$activeproperty}-1 {
+          margin-right: 1px;
+        }
+        .#{$activeproperty}-60 {
+          margin-right: 60px;
+        }
+      } @else if $activeproperty == mb {
+        .#{$activeproperty}-1 {
+          margin-bottom: 1px;
+        }
+        .#{$activeproperty}-60 {
+          margin-bottom: 60px;
+        }
+      } @else if $activeproperty == ml {
+        .#{$activeproperty}-1 {
+          margin-bottom: 1px;
+        }
+        .#{$activeproperty}-60 {
+          margin-bottom: 60px;
+        }
+      } @else if $activeproperty == mt {
+        .#{$activeproperty}-1 {
+          margin-top: 1px;
+        }
+        .#{$activeproperty}-60 {
+          margin-top: 60px;
+        }
+        .#{$activeproperty}-68 {
+          margin-top: 68px;
+        }
+        .#{$activeproperty}-75 {
+          margin-top: 75px;
+        }
+        .#{$activeproperty}-90 {
+          margin-top: 90px;
+        }
+      }
+    }
+
+    @if $i * 4!=36 and $activeproperty==margin or $activeproperty==padding {
+      .#{$activeproperty}-#{$i*4} {
+        #{$activeproperty}: #{$i * 4};
+      }
+    } @else if $i * 4!=36 and $activeproperty==mr {
+      .#{$activeproperty}-#{$i*4} {
+        margin-right: #{$i * 4};
+      }
+    } @else if $i * 4!=36 and $activeproperty==mb {
+      .#{$activeproperty}-#{$i*4} {
+        margin-bottom: #{$i * 4};
+      }
+    } @else if $i * 4!=36 and $activeproperty==ml {
+      .#{$activeproperty}-#{$i*4} {
+        margin-left: #{$i * 4};
+      }
+    } @else if $i * 4!=36 and $activeproperty==mt {
+      .#{$activeproperty}-#{$i*4} {
+        margin-top: #{$i * 4};
+      }
+    }
+  }
+}
+
+.m-auto{
+  margin: auto;
+}
+
+/*********************** position-classes *********************/
+
+.p-rel {
+  position: relative;
+}
+
+.p-abs {
+  position: absolute;
+}
+
+.p-st {
+  position: static;
+}
+
+.p-fx {
+  position: fixed;
+}
+
+.p-sty {
+  position: sticky;
+}
+
+/*********************** z-index-classes ***********************/
+
+@for $z-index from 0 through 9 {
+  .z-#{$z-index} {
+    z-index: #{$z-index};
+  }
+}
+
+/************************ transitions ***********************/
+
+@for $transition-time from 1 through 9 {
+  .t-#{$transition-time} {
+    transition: all (0.1) * $transition-time ease;
+  }
+}
+
+/************************ overflows ****************************/
+
+$overflow-dimensions: overflow,overflow-x,overflow-y;
+$overflow-dimensions-shortcuts: o, ox, oy;
+$overflow-property: auto,hidden,scroll,visible;
+$overflow-property-shortcuts: a, h ,s, v;
+
+@each $dimension,$dimension-shortcut in zip($overflow-dimensions,$overflow-dimensions-shortcuts){
+  @each $property,$property-shortcut in zip($overflow-property,$overflow-property-shortcuts){
+    .#{$dimension-shortcut}-#{$property-shortcut}{
+      #{$dimension}:#{$property};
+    }
+  }
+}
+
+/************************** displays ***************************/
+
+.d-n{
+  display: none;
+}
+
+.d-i{
+  display: inline;
+}
+
+.d-b{
+  display: block;
+}
+
+.d-ib{
+  display: inline-block;
+}
+
+/************************* border-radius *************************/
+
+.br-100{
+  border-radius: 100%;
+}
+
+.br-50{
+  border-radius: 50%;
+}
+
+.tx-center{
+  text-align: center;
+}
+
+.tx-end{
+  text-align: end;
+}
+
+.tx-start{
+  text-align: start;
+}
+
+.full-vh{
+  height: 100vh;
+}
+
+.bx-border-box{
+  box-sizing: border-box;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.cp{
+  cursor: pointer;
+}
+
+.tx-dec-none{
+  text-decoration: none;
+}
+
+/************************** breakpoints **************************/
+
+$breakpoints: 1720px, 1440px, 1200px, 992px, 768px , 576px;
+
+.w-n{
+  @include min-width(1720){
+    width: 1650px;
+  }
+}
+
+.w-xxl{
+  @include max-width(1720){
+    width: 1350px;
+  }
+}
+
+.w-xl{
+  @include max-width(1440){
+    width: 1050px;
+  }
+}
+
+.w-lg{
+  @include max-width(1200){
+    width: 940px;
+  }
+}
+
+.w-md{
+  @include max-width(992){
+    width: 700px;
+  }
+}
+
+.w-sm{
+  @include max-width(768){
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+
+
+/************************** triangles **************************/
+
+.w-xxl-tgl{
+  @include max-width(1720){
+    width: 1730px;
+    border-right-width: 865px;
+    border-left-width: 865px;
+  }
+}
+
+.w-xl-tgl{
+  @include max-width(1440){
+    width: 1450px;
+    border-right-width: 725px;
+    border-left-width: 725px;
+  }
+}
+
+.w-lg-tgl{
+  @include max-width(1200){
+    width: 1210px;
+    border-right-width: 605px;
+    border-left-width: 605px;
+  }  
+}
