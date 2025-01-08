@@ -113,7 +113,7 @@
             }
         }
         .header{
-            @include dimensions(80, 1650);
+            @include dimensions(80, na);
             @include flex-box(row, space-between, center, "na", "na");
             .burger-btn{
                 @include max-width(992){
@@ -247,7 +247,6 @@
         padding: 30px;
         background-color: $primary-bg-color;
         border-radius: 30px;
-        @include dimensions(na, 1650);
         margin: 0 auto 120px auto;
         z-index: 1;
         @include max-width(768){
@@ -537,8 +536,9 @@
         }
         .lower-part{
             @include flex-box(row,na,center,na,na);
-            background-color: $primary-bg-color;
+            background-color: transparent;
             margin: 70px 0 216px 0;
+            padding: ;
         }
         .tech-boxes{
             width: 1470px;

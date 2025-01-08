@@ -228,30 +228,30 @@ $property: margin, padding, mr, mb, ml, mt;
 
     @if $i * 4!=36 and $activeproperty==margin or $activeproperty==padding {
       .#{$activeproperty}-#{$i*4} {
-        #{$activeproperty}: #{$i * 4};
+        #{$activeproperty}: #{$i * 4}px;
       }
     } @else if $i * 4!=36 and $activeproperty==mr {
       .#{$activeproperty}-#{$i*4} {
-        margin-right: #{$i * 4};
+        margin-right: #{$i * 4}px;
       }
     } @else if $i * 4!=36 and $activeproperty==mb {
       .#{$activeproperty}-#{$i*4} {
-        margin-bottom: #{$i * 4};
+        margin-bottom: #{$i * 4}px;
       }
     } @else if $i * 4!=36 and $activeproperty==ml {
       .#{$activeproperty}-#{$i*4} {
-        margin-left: #{$i * 4};
+        margin-left: #{$i * 4}px;
       }
     } @else if $i * 4!=36 and $activeproperty==mt {
       .#{$activeproperty}-#{$i*4} {
-        margin-top: #{$i * 4};
+        margin-top: #{$i * 4}px;
       }
     }
   }
 }
 
 .m-auto{
-  margin: auto;
+  margin: 0 auto;
 }
 
 /*********************** position-classes *********************/
@@ -288,7 +288,7 @@ $property: margin, padding, mr, mb, ml, mt;
 
 @for $transition-time from 1 through 9 {
   .t-#{$transition-time} {
-    transition: all (0.1) * $transition-time ease;
+    transition: all #{(0.1) * $transition-time}s ease;
   }
 }
 
@@ -359,6 +359,10 @@ $overflow-property-shortcuts: a, h ,s, v;
   box-sizing: border-box;
 }
 
+.h-full{
+  height: 100%;
+}
+
 .w-full{
   width: 100%;
 }
@@ -375,37 +379,22 @@ $overflow-property-shortcuts: a, h ,s, v;
 
 $breakpoints: 1720px, 1440px, 1200px, 992px, 768px , 576px;
 
-.w-n{
-  @include min-width(1720){
+.wds{
+  @include min-width(1721){
     width: 1650px;
   }
-}
-
-.w-xxl{
-  @include max-width(1720){
+  @include screen-size(1440,1720){
     width: 1350px;
   }
-}
-
-.w-xl{
-  @include max-width(1440){
+  @include screen-size(1200,1440){
     width: 1050px;
   }
-}
-
-.w-lg{
-  @include max-width(1200){
+  @include screen-size(992,1200){
     width: 940px;
   }
-}
-
-.w-md{
-  @include max-width(992){
+  @include screen-size(700,992){
     width: 700px;
   }
-}
-
-.w-sm{
   @include max-width(768){
     width: 100%;
     padding: 0 15px;
@@ -416,23 +405,17 @@ $breakpoints: 1720px, 1440px, 1200px, 992px, 768px , 576px;
 
 /************************** triangles **************************/
 
-.w-xxl-tgl{
+.tgl-wds{
   @include max-width(1720){
     width: 1730px;
     border-right-width: 865px;
     border-left-width: 865px;
   }
-}
-
-.w-xl-tgl{
   @include max-width(1440){
     width: 1450px;
     border-right-width: 725px;
     border-left-width: 725px;
   }
-}
-
-.w-lg-tgl{
   @include max-width(1200){
     width: 1210px;
     border-right-width: 605px;
