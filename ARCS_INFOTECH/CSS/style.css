@@ -1008,6 +1008,9 @@
     text-align: start;
     position: relative;
     z-index: 1;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
   }
 }
 .outer-box .banner .banner-items-wrapper .banner-heading .ai-gif {
@@ -1055,6 +1058,9 @@
     text-align: start;
     position: relative;
     z-index: 1;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
   }
 }
 .outer-box .banner .banner-items-wrapper button {
@@ -1853,6 +1859,17 @@
   border-bottom: 1px solid #999A9C;
   padding-bottom: 35px;
 }
+@media screen and (max-width: 992px) {
+  .outer-box .footers-wrapper .footer {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 24px;
+  }
+}
 @media screen and (max-width: 768px) {
   .outer-box .footers-wrapper .footer {
     padding-bottom: 35px;
@@ -1903,23 +1920,23 @@
   border-radius: 24px;
   border: 1px solid #999A9C;
 }
-@media screen and (max-width: 1440pxpx) {
-  .outer-box .footers-wrapper .footer .enquiry .email-input input {
+@media screen and (max-width: 1440px) {
+  .outer-box .footers-wrapper .footer .enquiry .email-input .input-wds {
     width: 180px;
   }
 }
-@media screen and (max-width: 1200pxpx) {
-  .outer-box .footers-wrapper .footer .enquiry .email-input input {
+@media screen and (max-width: 1200px) {
+  .outer-box .footers-wrapper .footer .enquiry .email-input .input-wds {
     width: 110px;
   }
 }
 @media screen and (max-width: 992px) {
-  .outer-box .footers-wrapper .footer .enquiry .email-input input {
+  .outer-box .footers-wrapper .footer .enquiry .email-input .input-wds {
     width: 533px;
   }
 }
 @media screen and (max-width: 768px) {
-  .outer-box .footers-wrapper .footer .enquiry .email-input input {
+  .outer-box .footers-wrapper .footer .enquiry .email-input .input-wds {
     width: calc(100% - 167px);
   }
 }

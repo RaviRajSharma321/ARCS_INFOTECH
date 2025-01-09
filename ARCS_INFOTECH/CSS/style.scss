@@ -198,6 +198,9 @@
                     text-align: start;
                     position: relative;
                     z-index: 1;
+                    margin: 0;
+                    padding: 0 20px;
+                    width: 100%;
                 }
                 .ai-gif{
                     @include absolute(-25, na, na, 660);
@@ -226,6 +229,9 @@
                     text-align: start;
                     position: relative;
                     z-index: 1;
+                    margin: 0;
+                    padding: 0 20px;
+                    width: 100%;
                 }
             }
             button{
@@ -538,7 +544,7 @@
             @include flex-box(row,na,center,na,na);
             background-color: transparent;
             margin: 70px 0 216px 0;
-            padding: ;
+            padding: 0 15px;
         }
         .tech-boxes{
             width: 1470px;
@@ -843,6 +849,12 @@
             @include flex-box(row,space-between,center,na,na);
             border-bottom: 1px solid #999A9C;
             padding-bottom: 35px;
+            @include max-width(992){
+                flex-direction: column;
+                align-items: baseline;
+                gap: 24px;
+                @include flex-box(column,na,baseline,na,24);
+            }
             @include max-width(768){
                 padding-bottom: 35px;
             }
@@ -876,10 +888,12 @@
                         padding: 0 120px 0 45px;
                         border-radius: 24px;
                         border: 1px solid #999A9C;
-                        @include max-width(1440px){
+                    }
+                    .input-wds{
+                        @include max-width(1440){
                             width: 180px;
                         }
-                        @include max-width(1200px){
+                        @include max-width(1200){
                             width: 110px;
                         }
                         @include max-width(992){
