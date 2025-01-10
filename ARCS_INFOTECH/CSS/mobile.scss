@@ -1,0 +1,268 @@
+@import "./foundation.scss";
+@import "./mixins.scss";
+
+.outer-box{
+    .ios-app-outer{
+        background-color: #F9F9F9;
+        height: 738px;
+        @include flex-box(row, center,center,na,na);
+        .ios-app{
+            width: 94%;
+            height: 480px;
+            display: flex;
+            overflow: hidden;
+            .text-section{
+                background-color: white;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+                @include flex-box(na, center,center,na,na);
+                overflow: hidden;
+                .ios-app-circle1{
+                    background-color: #136dfb;
+                    filter: blur(195px);
+                    width: 200px;
+                    height: 200px;
+                    @include absolute(0,0,na,na);
+
+                }
+                .ios-app-circle2{
+                    background-color: #136dfb;
+                    filter: blur(105px);
+                    width: 100px;    
+                    height: 100px;
+                    border-radius: 50%;
+                    @include absolute(na,na,0,0);
+                }
+                .section{
+                    width: 57%;
+                    @include flex-box(column, start,start,na,na);
+                    .large-heading{
+                        @include typography(48,72,600,#202323);
+                    }
+                    .normal-text{
+                        @include typography(14,25,400,#707070);
+                    }
+                }
+                .z-img1{
+                    @include absolute(0,0,na,na);
+                }
+                
+            }
+        }
+    }
+
+    .start-your-project{
+        height: 558px;
+        overflow: hidden;
+        @include flex-box(column,center,center,na,na);
+        .large-text{
+            @include typography(38,60,600,#202323);
+        }
+        .normal-text{
+            width: 40%;
+            text-align: center;
+            @include typography(14,25,400,#707070);
+        }
+        .ios-app-circle1{
+            background-color: #136dfb;
+            filter: blur(235px);
+            width: 250px;
+            height: 250px;
+            @include absolute(na,0,0,na);
+
+        }
+        .ios-app-circle2{
+            background-color: #136dfb;
+            filter: blur(235px);
+            width: 250px;    
+            height: 250px;
+            border-radius: 50%;
+            @include absolute(0,na,na,0);
+        }
+        .z-img2{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .z-img3{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        ::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: .5px solid transparent; 
+            background: linear-gradient(109.92deg, #0096FF 12.78%, #BB64FF 37.63%, #F2416B 62.12%, #EB7500 87.3%);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0); 
+            -webkit-mask-composite: destination-out; 
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+    }
+
+    .android-app,.hybrid-app{
+        background-color: #F9F9F9;
+        height: 632px;
+        padding: 40px;
+        padding-right: 205px;
+        padding-left: 135px;
+        @include flex-box(na, center,center,na,na);
+        .text-section{
+            @include flex-box(na,center,center,na,120);
+            .section{
+                @include flex-box(column, start,start,na,na);
+                .large-heading{
+                    @include typography(48,72,600,#202323);
+                }
+                .normal-text{
+                    @include typography(14,25,400,#707070);
+                }
+            }
+            .img-section{
+                background-color: #FFFFFF;
+                border-radius: 15px;
+                padding: 20px;
+            }
+        }
+        
+    }
+
+    .outer-featured-aspect{
+        background-color: #FFFFFF;
+        @include flex-box(na, center,center,na,na);
+        padding: 120px 107px;
+        .features{
+            border: 1px solid #E8E8E8;
+            border-radius: 30px;
+            padding: 40px;
+            position: relative;
+            .large-heading{
+                @include typography(48,72,600,#202323);
+            }
+            .invisible{
+                @include typography(120,180,600,#FAFAFA);
+                position: absolute;
+                top: -27px;
+                right: 21px;
+            }
+            .inner-featured-aspect{
+                display: flex;
+                gap: 43px;
+                .aspect{
+                    background-color: #F9F9F9;
+                    border-radius: 12px;
+                    padding: 20px;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .img1{
+                        display: block;
+                    }
+                    .img2{
+                        display: none;
+                    }
+                    .card-heading{
+                        @include typography(24,36,600,#202323);
+                    }
+                    .card-text{
+                        @include typography(14,25,400,#707070);
+                    }
+
+                    &:hover{
+                        .img1{
+                            display: none;
+                        }
+                        .img2{
+                            display: block;
+                        }
+                        .card-heading{
+                            @include typography(24,36,600,#FFFFFF);
+                        }
+                        .card-text{
+                            @include typography(14,25,400,#FFFFFF);
+                        }
+                    }
+                }
+                .aspect-card1{
+                    &:hover{
+                        background: linear-gradient(109.92deg, #0096FF , white ,#0096FF);
+                    }
+                }.aspect-card2{
+                    &:hover{
+                        background: linear-gradient(109.92deg,  #BB64FF ,white, #BB64FF);
+                    }
+                }.aspect-card3{
+                    &:hover{
+                        background: linear-gradient(109.92deg,  #F2416B ,white ,#F2416B);
+                    }
+                }.aspect-card4{
+                    &:hover{
+                        background: linear-gradient(109.92deg,  #EB7500 , white,#EB7500);
+                    }
+                }
+            }
+        }
+       
+        
+    }
+
+    .full-spectrum-outer{
+        padding-top: 120px;
+        padding-bottom: 100px;
+        @include flex-box(column, center,center,na,na);
+        .large-heading{
+            text-align: center;
+            @include typography(48,72,600,#202323);
+        }
+        .normal-text{
+            text-align: center;
+            width: 40%;
+            @include typography(14,25,400,#707070);
+        }
+        .full-spectrum-cards{
+            width: 80%;
+            @include flex-box(na, na,na,na,20);
+            .full-spectrum-inner{
+                padding: 25px;
+                border-radius: 15px;
+                background-color: #F9F9F9;
+                .spectrum{
+                    @include flex-box(na, na,center,na,10);
+                    .div{
+                        border-radius: 12px;
+                        background-color: #0096FF;
+                        padding: 12px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .img-div2{
+                        background-color: #BB64FF;
+                    }
+                    .img-div3{
+                        background-color: #F2416B;
+                    }
+                    .img-div4{
+                        background-color: #EB7500;
+                    }
+                    .mobile{
+                        @include typography(18,30,600,#202323);
+                    }
+                }
+                .text{
+                    @include typography(14,25,400,#707070);
+                }
+            }
+        }
+    }
+}
