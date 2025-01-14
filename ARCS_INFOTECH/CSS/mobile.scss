@@ -5,42 +5,114 @@
     .ios-app-outer{
         background-color: #F9F9F9;
         height: 738px;
+        z-index: 1;
+        position: relative;
         @include flex-box(row, center,center,na,na);
+        @media screen and (max-width:1400px) {
+            margin-bottom: 100px;
+            height: auto;
+            padding: 50px 0;
+        }
         .ios-app{
             width: 94%;
-            height: 480px;
             display: flex;
             overflow: hidden;
+            @media screen and (max-width:1400px) {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            @media screen and (max-width:580px) {
+                gap: 0;
+            }
+            .img-section{
+                @media screen and (max-width:1400px) {
+                    width: 100%;
+                }
+                img{
+                    border-top-left-radius: 30px;
+                    border-bottom-left-radius: 30px;
+                    @media screen and (max-width:1400px) {
+                        width: 100%;
+                        border-radius: 30px;
+                    }
+                    @media screen and (max-width:580px) {
+                    width: 100%;
+                    border-radius: 20px;
+                    }
+                }
+            }
             .text-section{
                 background-color: white;
                 border-top-right-radius: 30px;
                 border-bottom-right-radius: 30px;
                 @include flex-box(na, center,center,na,na);
                 overflow: hidden;
+
+                @media screen and (max-width:1400px) {
+                    border-radius: 30px;
+                }
+
+                @media screen and (max-width:580px) {
+                    border-radius: 10px;
+                }
+
                 .ios-app-circle1{
                     background-color: #136dfb;
                     filter: blur(195px);
-                    width: 200px;
-                    height: 200px;
+                    width: 250px;
+                    height: 250px;
                     @include absolute(0,0,na,na);
 
                 }
                 .ios-app-circle2{
                     background-color: #136dfb;
                     filter: blur(105px);
-                    width: 100px;    
-                    height: 100px;
+                    width: 150px;    
+                    height: 150px;
                     border-radius: 50%;
                     @include absolute(na,na,0,0);
                 }
                 .section{
                     width: 57%;
                     @include flex-box(column, start,start,na,na);
+                    @media screen and (max-width:1700px) {
+                        width: 75%;
+                    }
+                    @media screen and (max-width:1400px) {
+                        width: 85%;
+                        padding: 40px;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    @media screen and (max-width:480px) {
+                        justify-content: start;
+                        align-items: start;
+                        padding: 30px;
+                    }
                     .large-heading{
+                        margin: 0;
                         @include typography(48,72,600,#202323);
+                        @media screen and (max-width:1480px) {
+                            @include typography(42,52,600,#202323);
+                        }
+                        @media screen and (max-width:1094px) {
+                            @include typography(32,42,600,#202323);
+                        }
+                        @media screen and (max-width:480px) {
+                            @include typography(22,32,600,#202323);
+                        }
                     }
                     .normal-text{
                         @include typography(14,25,400,#707070);
+                        @media screen and (max-width:480px) {
+                            @include typography(12,20,400,#707070);
+                        }
+                    }
+                    .primary-button{
+                        @media screen and (max-width:480px) {
+                            @include typography(12,20,400,#ffffff);
+                        }
                     }
                 }
                 .z-img1{
@@ -55,25 +127,60 @@
         height: 558px;
         overflow: hidden;
         @include flex-box(column,center,center,na,na);
+        @media screen and (max-width:1094px) {
+            height: auto;
+            padding: 100px 0;
+        }
+        @media screen and (max-width:480px) {
+            padding: 20px;
+        }
         .large-text{
             @include typography(38,60,600,#202323);
+            @media screen and (max-width:1094px) {
+                @include typography(28,60,600,#202323);
+            }
+            @media screen and (max-width:480px) {
+                @include typography(18,60,600,#202323);
+            }
         }
         .normal-text{
             width: 40%;
             text-align: center;
             @include typography(14,25,400,#707070);
+            @media screen and (max-width:580px) {
+                width: 60%;
+            }
+            @media screen and (max-width:480px) {
+                width: 90%;
+                @include typography(12,20,400,#707070);
+            }
+        }
+        .primary-button{
+            @media screen and (max-width:480px) {
+                @include typography(12,20,400,#ffffff);
+            }
+        }
+        .right-side{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .left-side{
+            position: absolute;
+            bottom: 0;
+            left: -11px;
         }
         .ios-app-circle1{
             background-color: #136dfb;
-            filter: blur(235px);
-            width: 250px;
-            height: 250px;
+            filter: blur(270px);
+            width: 350px;
+            height: 350px;
             @include absolute(na,0,0,na);
 
         }
         .ios-app-circle2{
             background-color: #136dfb;
-            filter: blur(235px);
+            filter: blur(185px);
             width: 250px;    
             height: 250px;
             border-radius: 50%;
@@ -81,12 +188,15 @@
         }
         .z-img2{
             position: absolute;
-            top: 0;
+            top: 50px;
             left: 0;
+            @media screen and (max-width:1094px) {
+                display: none;
+            }
         }
         .z-img3{
             position: absolute;
-            top: 0;
+            top: 50px;
             right: 0;
         }
         ::before {
@@ -116,21 +226,69 @@
         padding-right: 205px;
         padding-left: 135px;
         @include flex-box(na, center,center,na,na);
+        @media screen and (max-width:1810px) {
+            padding: 40px;
+            height: auto;
+        }
+       
         .text-section{
             @include flex-box(na,center,center,na,120);
+            @media screen and (max-width:1620px) {
+                gap: 40px;
+            }
+             @media screen and (max-width:1520px) {
+                flex-direction: column;
+            }
             .section{
                 @include flex-box(column, start,start,na,na);
+                @media screen and (max-width:1520px) {
+                    align-items: center;
+                    justify-content: center;
+                }
+                @media screen and (max-width:480px) {
+                    justify-content: start;
+                    align-items: start;
+                }
                 .large-heading{
                     @include typography(48,72,600,#202323);
+                    @media screen and (max-width:1480px) {
+                        @include typography(42,52,600,#202323);
+                    }
+                    @media screen and (max-width:1094px) {
+                        @include typography(32,42,600,#202323);
+                    }
+                    @media screen and (max-width:480px) {
+                        @include typography(22,32,600,#202323);
+                    }
                 }
                 .normal-text{
                     @include typography(14,25,400,#707070);
+                    @media screen and (max-width:480px) {
+                        @include typography(12,20,400,#707070);
+                    }
+                }
+                
+                .primary-button{
+                    @media screen and (max-width:480px) {
+                        @include typography(12,20,400,#ffffff);
+                    }
                 }
             }
             .img-section{
                 background-color: #FFFFFF;
                 border-radius: 15px;
                 padding: 20px;
+                
+                @media screen and (max-width:1520px) {
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+                @media screen and (max-width:480px){
+                    padding: 5px;
+                }
+                
             }
         }
         
@@ -140,13 +298,35 @@
         background-color: #FFFFFF;
         @include flex-box(na, center,center,na,na);
         padding: 120px 107px;
+        @media screen and (max-width:1440px) {
+            padding: 90px;
+        }
+        @media screen and (max-width:1094px) {
+            padding: 50px;
+        }
+        @media screen and (max-width:580px) {
+            padding: 20px;
+        }
         .features{
             border: 1px solid #E8E8E8;
             border-radius: 30px;
             padding: 40px;
             position: relative;
+            @media screen and (max-width:580px) {
+                padding: 20px;
+                border-radius: 15px;
+            }
             .large-heading{
                 @include typography(48,72,600,#202323);
+                @media screen and (max-width:1480px) {
+                    @include typography(42,52,600,#202323);
+                }
+                @media screen and (max-width:1094px) {
+                    @include typography(32,42,600,#202323);
+                }
+                @media screen and (max-width:480px) {
+                    @include typography(22,32,600,#202323);
+                }
             }
             .invisible{
                 @include typography(120,180,600,#FAFAFA);
@@ -157,10 +337,21 @@
             .inner-featured-aspect{
                 display: flex;
                 gap: 43px;
+                flex-wrap: wrap;
                 .aspect{
                     background-color: #F9F9F9;
                     border-radius: 12px;
                     padding: 20px;
+                    width: 20%;
+                    @media screen and (max-width:1750px) {
+                        width: 25%;
+                    }
+                    @media screen and (max-width:1480px) {
+                        width: 41%;
+                    }
+                    @media screen and (max-width:980px) {
+                        width: 93%;
+                    }
                     img{
                         width: 40px;
                         height: 40px;
@@ -173,6 +364,9 @@
                     }
                     .card-heading{
                         @include typography(24,36,600,#202323);
+                        @media screen and (max-width:480px) {
+                            @include typography(18,24,600,#202323);
+                        }
                     }
                     .card-text{
                         @include typography(14,25,400,#707070);
@@ -223,19 +417,52 @@
         .large-heading{
             text-align: center;
             @include typography(48,72,600,#202323);
+            @media screen and (max-width:1480px) {
+                @include typography(42,52,600,#202323);
+            }
+            @media screen and (max-width:1094px) {
+                @include typography(32,42,600,#202323);
+            }
+            @media screen and (max-width:480px) {
+                @include typography(22,32,600,#202323);
+            }
         }
         .normal-text{
             text-align: center;
             width: 40%;
             @include typography(14,25,400,#707070);
+            @media screen and (max-width:1440px) {
+                width: 60%;
+            }
+            @media screen and (max-width:1094px) {
+                width: 80%;
+            }
+            @media screen and (max-width:480px) {
+                @include typography(12,20,400,#707070);
+            }
         }
+
+        
         .full-spectrum-cards{
             width: 80%;
             @include flex-box(na, na,na,na,20);
+            @media screen and (max-width:1810px) {
+                flex-wrap: wrap;
+                width: 96%;
+                justify-content: center;
+            }
             .full-spectrum-inner{
                 padding: 25px;
                 border-radius: 15px;
                 background-color: #F9F9F9;
+                width: 20%;
+                @media screen and (max-width:1400px) {
+                    width: 40%;
+                }
+
+                @media screen and (max-width:620px) {
+                    width: 80%;
+                }
                 .spectrum{
                     @include flex-box(na, na,center,na,10);
                     .div{
@@ -244,6 +471,10 @@
                         padding: 12px;
                         img{
                             width: 100%;
+                        }
+                        @media screen and (max-width:480px){
+                            width: 20px;
+                            height: 20px;
                         }
                     }
                     .img-div2{
@@ -257,10 +488,16 @@
                     }
                     .mobile{
                         @include typography(18,30,600,#202323);
+                        @media screen and (max-width:870px) {
+                           @include typography(16,26,600,#202323);
+                        }
                     }
                 }
                 .text{
                     @include typography(14,25,400,#707070);
+                    @media screen and (max-width:870px) {
+                        @include typography(13,20,400,#707070);
+                     }
                 }
             }
         }

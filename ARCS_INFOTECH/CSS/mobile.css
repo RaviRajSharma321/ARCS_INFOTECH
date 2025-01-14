@@ -703,16 +703,56 @@
 .outer-box .ios-app-outer {
   background-color: #F9F9F9;
   height: 738px;
+  z-index: 1;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1400px) {
+  .outer-box .ios-app-outer {
+    margin-bottom: 100px;
+    height: auto;
+    padding: 50px 0;
+  }
+}
 .outer-box .ios-app-outer .ios-app {
   width: 94%;
-  height: 480px;
   display: flex;
   overflow: hidden;
+}
+@media screen and (max-width: 1400px) {
+  .outer-box .ios-app-outer .ios-app {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-box .ios-app-outer .ios-app {
+    gap: 0;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .outer-box .ios-app-outer .ios-app .img-section {
+    width: 100%;
+  }
+}
+.outer-box .ios-app-outer .ios-app .img-section img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+@media screen and (max-width: 1400px) {
+  .outer-box .ios-app-outer .ios-app .img-section img {
+    width: 100%;
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-box .ios-app-outer .ios-app .img-section img {
+    width: 100%;
+    border-radius: 20px;
+  }
 }
 .outer-box .ios-app-outer .ios-app .text-section {
   background-color: white;
@@ -723,11 +763,21 @@
   align-items: center;
   overflow: hidden;
 }
+@media screen and (max-width: 1400px) {
+  .outer-box .ios-app-outer .ios-app .text-section {
+    border-radius: 30px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-box .ios-app-outer .ios-app .text-section {
+    border-radius: 10px;
+  }
+}
 .outer-box .ios-app-outer .ios-app .text-section .ios-app-circle1 {
   background-color: #136dfb;
   filter: blur(195px);
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -735,8 +785,8 @@
 .outer-box .ios-app-outer .ios-app .text-section .ios-app-circle2 {
   background-color: #136dfb;
   filter: blur(105px);
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   position: absolute;
   bottom: 0px;
@@ -749,17 +799,78 @@
   justify-content: start;
   align-items: start;
 }
+@media screen and (max-width: 1700px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section {
+    width: 85%;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section {
+    justify-content: start;
+    align-items: start;
+    padding: 30px;
+  }
+}
 .outer-box .ios-app-outer .ios-app .text-section .section .large-heading {
+  margin: 0;
   font-size: 48px;
   line-height: 72px;
   font-weight: 600;
   color: #202323;
+}
+@media screen and (max-width: 1480px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section .large-heading {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section .large-heading {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section .large-heading {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #202323;
+  }
 }
 .outer-box .ios-app-outer .ios-app .text-section .section .normal-text {
   font-size: 14px;
   line-height: 25px;
   font-weight: 400;
   color: #707070;
+}
+@media screen and (max-width: 480px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section .normal-text {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .ios-app-outer .ios-app .text-section .section .primary-button {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ffffff;
+  }
 }
 .outer-box .ios-app-outer .ios-app .text-section .z-img1 {
   position: absolute;
@@ -774,11 +885,38 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1094px) {
+  .outer-box .start-your-project {
+    height: auto;
+    padding: 100px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .start-your-project {
+    padding: 20px;
+  }
+}
 .outer-box .start-your-project .large-text {
   font-size: 38px;
   line-height: 60px;
   font-weight: 600;
   color: #202323;
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .start-your-project .large-text {
+    font-size: 28px;
+    line-height: 60px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .start-your-project .large-text {
+    font-size: 18px;
+    line-height: 60px;
+    font-weight: 600;
+    color: #202323;
+  }
 }
 .outer-box .start-your-project .normal-text {
   width: 40%;
@@ -788,18 +926,50 @@
   font-weight: 400;
   color: #707070;
 }
+@media screen and (max-width: 580px) {
+  .outer-box .start-your-project .normal-text {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .start-your-project .normal-text {
+    width: 90%;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .start-your-project .primary-button {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ffffff;
+  }
+}
+.outer-box .start-your-project .right-side {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.outer-box .start-your-project .left-side {
+  position: absolute;
+  bottom: 0;
+  left: -11px;
+}
 .outer-box .start-your-project .ios-app-circle1 {
   background-color: #136dfb;
-  filter: blur(235px);
-  width: 250px;
-  height: 250px;
+  filter: blur(270px);
+  width: 350px;
+  height: 350px;
   position: absolute;
   right: 0px;
   bottom: 0px;
 }
 .outer-box .start-your-project .ios-app-circle2 {
   background-color: #136dfb;
-  filter: blur(235px);
+  filter: blur(185px);
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -809,12 +979,17 @@
 }
 .outer-box .start-your-project .z-img2 {
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 0;
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .start-your-project .z-img2 {
+    display: none;
+  }
 }
 .outer-box .start-your-project .z-img3 {
   position: absolute;
-  top: 0;
+  top: 50px;
   right: 0;
 }
 .outer-box .start-your-project ::before {
@@ -843,11 +1018,27 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1810px) {
+  .outer-box .android-app, .outer-box .hybrid-app {
+    padding: 40px;
+    height: auto;
+  }
+}
 .outer-box .android-app .text-section, .outer-box .hybrid-app .text-section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 120px;
+}
+@media screen and (max-width: 1620px) {
+  .outer-box .android-app .text-section, .outer-box .hybrid-app .text-section {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 1520px) {
+  .outer-box .android-app .text-section, .outer-box .hybrid-app .text-section {
+    flex-direction: column;
+  }
 }
 .outer-box .android-app .text-section .section, .outer-box .hybrid-app .text-section .section {
   display: flex;
@@ -855,11 +1046,47 @@
   justify-content: start;
   align-items: start;
 }
+@media screen and (max-width: 1520px) {
+  .outer-box .android-app .text-section .section, .outer-box .hybrid-app .text-section .section {
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .android-app .text-section .section, .outer-box .hybrid-app .text-section .section {
+    justify-content: start;
+    align-items: start;
+  }
+}
 .outer-box .android-app .text-section .section .large-heading, .outer-box .hybrid-app .text-section .section .large-heading {
   font-size: 48px;
   line-height: 72px;
   font-weight: 600;
   color: #202323;
+}
+@media screen and (max-width: 1480px) {
+  .outer-box .android-app .text-section .section .large-heading, .outer-box .hybrid-app .text-section .section .large-heading {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .android-app .text-section .section .large-heading, .outer-box .hybrid-app .text-section .section .large-heading {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .android-app .text-section .section .large-heading, .outer-box .hybrid-app .text-section .section .large-heading {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #202323;
+  }
 }
 .outer-box .android-app .text-section .section .normal-text, .outer-box .hybrid-app .text-section .section .normal-text {
   font-size: 14px;
@@ -867,10 +1094,39 @@
   font-weight: 400;
   color: #707070;
 }
+@media screen and (max-width: 480px) {
+  .outer-box .android-app .text-section .section .normal-text, .outer-box .hybrid-app .text-section .section .normal-text {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .android-app .text-section .section .primary-button, .outer-box .hybrid-app .text-section .section .primary-button {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ffffff;
+  }
+}
 .outer-box .android-app .text-section .img-section, .outer-box .hybrid-app .text-section .img-section {
   background-color: #FFFFFF;
   border-radius: 15px;
   padding: 20px;
+}
+@media screen and (max-width: 1520px) {
+  .outer-box .android-app .text-section .img-section, .outer-box .hybrid-app .text-section .img-section {
+    width: 100%;
+  }
+  .outer-box .android-app .text-section .img-section img, .outer-box .hybrid-app .text-section .img-section img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .android-app .text-section .img-section, .outer-box .hybrid-app .text-section .img-section {
+    padding: 5px;
+  }
 }
 .outer-box .outer-featured-aspect {
   background-color: #FFFFFF;
@@ -879,17 +1135,62 @@
   align-items: center;
   padding: 120px 107px;
 }
+@media screen and (max-width: 1440px) {
+  .outer-box .outer-featured-aspect {
+    padding: 90px;
+  }
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .outer-featured-aspect {
+    padding: 50px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-box .outer-featured-aspect {
+    padding: 20px;
+  }
+}
 .outer-box .outer-featured-aspect .features {
   border: 1px solid #E8E8E8;
   border-radius: 30px;
   padding: 40px;
   position: relative;
 }
+@media screen and (max-width: 580px) {
+  .outer-box .outer-featured-aspect .features {
+    padding: 20px;
+    border-radius: 15px;
+  }
+}
 .outer-box .outer-featured-aspect .features .large-heading {
   font-size: 48px;
   line-height: 72px;
   font-weight: 600;
   color: #202323;
+}
+@media screen and (max-width: 1480px) {
+  .outer-box .outer-featured-aspect .features .large-heading {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .outer-featured-aspect .features .large-heading {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .outer-featured-aspect .features .large-heading {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #202323;
+  }
 }
 .outer-box .outer-featured-aspect .features .invisible {
   font-size: 120px;
@@ -903,11 +1204,28 @@
 .outer-box .outer-featured-aspect .features .inner-featured-aspect {
   display: flex;
   gap: 43px;
+  flex-wrap: wrap;
 }
 .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect {
   background-color: #F9F9F9;
   border-radius: 12px;
   padding: 20px;
+  width: 20%;
+}
+@media screen and (max-width: 1750px) {
+  .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 1480px) {
+  .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect {
+    width: 41%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect {
+    width: 93%;
+  }
 }
 .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect img {
   width: 40px;
@@ -924,6 +1242,14 @@
   line-height: 36px;
   font-weight: 600;
   color: #202323;
+}
+@media screen and (max-width: 480px) {
+  .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect .card-heading {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #202323;
+  }
 }
 .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect .card-text {
   font-size: 14px;
@@ -976,6 +1302,30 @@
   font-weight: 600;
   color: #202323;
 }
+@media screen and (max-width: 1480px) {
+  .outer-box .full-spectrum-outer .large-heading {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .full-spectrum-outer .large-heading {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .full-spectrum-outer .large-heading {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
 .outer-box .full-spectrum-outer .normal-text {
   text-align: center;
   width: 40%;
@@ -984,15 +1334,51 @@
   font-weight: 400;
   color: #707070;
 }
+@media screen and (max-width: 1440px) {
+  .outer-box .full-spectrum-outer .normal-text {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1094px) {
+  .outer-box .full-spectrum-outer .normal-text {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .outer-box .full-spectrum-outer .normal-text {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
+}
 .outer-box .full-spectrum-outer .full-spectrum-cards {
   width: 80%;
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 1810px) {
+  .outer-box .full-spectrum-outer .full-spectrum-cards {
+    flex-wrap: wrap;
+    width: 96%;
+    justify-content: center;
+  }
+}
 .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner {
   padding: 25px;
   border-radius: 15px;
   background-color: #F9F9F9;
+  width: 20%;
+}
+@media screen and (max-width: 1400px) {
+  .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner {
+    width: 80%;
+  }
 }
 .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .spectrum {
   display: flex;
@@ -1006,6 +1392,12 @@
 }
 .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .spectrum .div img {
   width: 100%;
+}
+@media screen and (max-width: 480px) {
+  .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .spectrum .div {
+    width: 20px;
+    height: 20px;
+  }
 }
 .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .spectrum .img-div2 {
   background-color: #BB64FF;
@@ -1022,9 +1414,25 @@
   font-weight: 600;
   color: #202323;
 }
+@media screen and (max-width: 870px) {
+  .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .spectrum .mobile {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    color: #202323;
+  }
+}
 .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .text {
   font-size: 14px;
   line-height: 25px;
   font-weight: 400;
   color: #707070;
+}
+@media screen and (max-width: 870px) {
+  .outer-box .full-spectrum-outer .full-spectrum-cards .full-spectrum-inner .text {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
 }/*# sourceMappingURL=mobile.css.map */
