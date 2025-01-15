@@ -1,0 +1,224 @@
+@import "./foundation.scss";
+@import "./mixins.scss";
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+    @include typography(24, 36, 600, na);
+    background: $title-text-gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .section-heading {
+    @include typography(48, 60, 600, $primary-text-color);
+    @include max-width(1440) {
+      @include typography(40, 46, 600, $primary-text-color);
+    }
+  }
+
+  .section-content{
+    @include typography(14,25,400,$secondry-text-color);
+  }
+  
+  .oe-upper-triangle {
+    @include dimensions(96, 1930);
+    @include absolute(-96, na, na, na);
+    border-top: 48px solid transparent;
+    border-right: 965px solid $primary-bg-color;
+    border-bottom: 48px solid $primary-bg-color;
+    border-left: 965px solid transparent;
+  }
+
+.primary-button {
+    width: fit-content;
+    @include btn(48, 20, 24, $primary-color);
+    @include typography(16, 24, 500, $secondry-color);
+    transition: all 0.3s ease;
+    @include max-width(1200) {
+      height: 42px;
+      font-size: 14px;
+    }
+    box-shadow: $primary-box-shadow;
+    &:hover {
+      box-shadow: $primary-box-shadow;
+      background-color: $primary-hover-color;
+    }
+}
+
+
+.outer-box{
+    .header-wrapper {
+        border-bottom: 1px solid $header-border-color;
+        background-color: $header-bg-color;
+        backdrop-filter: blur(10px);
+        z-index: 40;
+        .contact-us {
+          background-color: $learn-more-hover-color;
+          box-shadow: none;
+          &:hover {
+            background-color: $primary-hover-color;
+          }
+        }
+        .header {
+          @include dimensions(80, na);
+          @include flex-box(row, space-between, center, "na", "na");
+          .burger-btn {
+            @include max-width(992) {
+              display: block !important;
+            }
+          }
+          .navbar {
+            @include navbar(46);
+            @include max-width(1200) {
+              gap: 35px;
+            }
+            @include max-width(992) {
+              display: none;
+            }
+            .nav-items {
+              @include nav-items(16, 24, 400, $secondry-text-color);
+              @include max-width(1200) {
+                font-size: 14px;
+              }
+              &:hover,
+              &.active {
+                color: $primary-color;
+              }
+            }
+          }
+          .burger-btn {
+            display: none;
+          }
+        }
+      }
+
+
+      .ui-banner {
+        .ui-banner-blur-circle {
+          background-color: $primary-color;
+          filter: blur(195px);
+          @include dimensions(325, 325);
+          @include absolute(225, na, na, 50%);
+          transform: translateX(-50%);
+        }
+        .banner-girl-image {
+          @include absolute(135, na, na, 50%);
+          transform: translateX(-50%);
+        }
+        .user-box {
+          border-radius: 8px;
+          border: 1px solid #136dfb0d;
+          backdrop-filter: blur(150px);
+          box-shadow: 0px 30px 60px 0px #00000033;
+          background: linear-gradient(
+            178.83deg,
+            rgba(255, 255, 255, 0.6) 2.73%,
+            rgba(249, 249, 249, 0.6) 97.04%
+          );
+          @include flex-box(row, center, center, na, 10);
+          &.user-interface {
+            @include absolute(325, na, na, 340);
+            @include max-width(1720){
+              @include absolute(310, na, na, 370);
+            }
+            @include max-width(1440){
+              @include absolute(330, na, na, 240);
+            }
+          }
+          &.user-exp {
+            @include absolute(165, 347, na, na);
+            @include max-width(1720){
+              @include absolute(155, 410, na, na);
+            }
+            @include max-width(1440){
+              @include absolute(155, 290, na, na);
+            }
+          }
+          .icon {
+            @include dimensions(47, 47);
+            @include flex-box(na, center, center, na, na);
+            background-color: $primary-color;
+            border-radius: 8px;
+          }
+          span {
+            @include typography(16, 24, 600, $primary-text-color);
+          }
+        }
+        .line-design {
+          @include flex-box(column, center, center, na, 15);
+          &.guided {
+            @include absolute(80, -70, na, na);
+            @include max-width(1440){
+            @include absolute(80, -150, na, na);
+            }
+            .guided-line {
+              top: 85px;
+              right: 43px;
+              @include max-width(1440){
+                top: 85px;
+                right: -80px;
+              }
+            }
+          }
+          &.effective-nav {
+            @include absolute(165, na, na, -75);
+            @include max-width(1440){
+              @include absolute(165,na,na,-150);
+            }
+            .nav-line {
+              top: 80px;
+              left: 80px;
+              @include max-width(1440){
+                top: 100px;
+                left: -42px;
+              }
+            }
+          }
+          span {
+            @include typography(16, 24, 600, #d9d9d9);
+          }
+          .logo-box {
+            border: 1px solid #e5e6e8;
+            @include flex-box(na, center, center, na, na);
+            @include dimensions(61, 61);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(
+              178.83deg,
+              rgba(255, 255, 255, 0.6) 2.73%,
+              rgba(249, 249, 249, 0.6) 97.04%
+            );
+          }
+        }
+        .ui-banner-details {
+          background: linear-gradient(
+            178.83deg,
+            rgba(255, 255, 255, 0.6) 2.73%,
+            rgba(249, 249, 249, 0.6) 97.04%
+          );
+          @include dimensions(calc(100vh - 480px),100%);
+          @include flex-box(column, center, center, na, na);
+          @include absolute(na, 0, 0, 0);
+          backdrop-filter: blur(30px);
+          .banner-heading {
+            width: 970px;
+            margin-bottom: 16px;
+            @include typography(58, 86.7, 700, $primary-text-color);
+            @include max-width(1200) {
+              @include typography(36, 48.7, 700, $primary-text-color);
+              width: 840px;
+            }
+          }
+          .banner-content {
+            width: 970px;
+            margin-bottom: 28px;
+            @include typography(16, 24, 500, $secondry-text-color);
+          }
+        }
+      }
+
+      
+}
