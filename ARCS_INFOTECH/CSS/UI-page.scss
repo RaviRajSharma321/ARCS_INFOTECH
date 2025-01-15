@@ -2,107 +2,845 @@
 @import "./mixins.scss";
 
 * {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  @include typography(24, 36, 600, na);
+  background: $title-text-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading {
+  @include typography(48, 60, 600, $primary-text-color);
+  @include max-width(1440) {
+    @include typography(40, 46, 600, $primary-text-color);
+  }
+}
+
+.oe-upper-triangle {
+  @include dimensions(96, 1930);
+  @include absolute(-96, na, na, na);
+  border-top: 48px solid transparent;
+  border-right: 965px solid $primary-bg-color;
+  border-bottom: 48px solid $primary-bg-color;
+  border-left: 965px solid transparent;
 }
 
 .primary-button {
-    @include btn(48, 20, 24, $primary-color);
-    @include typography(16, 24, 500, $secondry-color);
-    transition: all 0.3s ease;
-    @include max-width(1200) {
-      height: 42px;
-      font-size: 14px;
-    }
+  @include btn(48, 20, 24, $primary-color);
+  @include typography(16, 24, 500, $secondry-color);
+  transition: all 0.3s ease;
+  @include max-width(1200) {
+    height: 42px;
+    font-size: 14px;
+  }
+  box-shadow: $primary-box-shadow;
+  &:hover {
     box-shadow: $primary-box-shadow;
-    &:hover {
-      box-shadow: $primary-box-shadow;
-      background-color: $primary-hover-color;
-    }
+    background-color: $primary-hover-color;
+  }
 }
 
-.outer-box{
-
-    /********************** banner **********************/
-    .ui-banner{
-        .ui-banner-blur-circle{
-            background-color: $primary-color;
-            filter: blur(195px);
-            @include dimensions(325,325);
-            @include absolute(225,na,na,50%);
-            transform: translateX(-50%);
-        }
-        .banner-girl-image{
-            @include absolute(135,na,na,50%);
-            transform: translateX(-50%);
-        }
-        .user-box{
-            border-radius: 8px;
-            border: 1px solid #136DFB0D;
-            backdrop-filter: blur(150px);
-            box-shadow: 0px 30px 60px 0px #00000033;
-            background: linear-gradient(178.83deg, rgba(255, 255, 255, 0.6) 2.73%, rgba(249, 249, 249, 0.6) 97.04%);
-            @include flex-box(row,center,center,na,10);
-            &.user-interface{
-                @include absolute(325,na,na,500);
-            }
-            &.user-exp{
-                @include absolute(120,570,na,na);
-            }
-            .icon{
-                @include dimensions(47,47);
-                @include flex-box(na,center,center,na,na);
-                background-color: $primary-color;
-                border-radius: 8px;
-            }
-            span{
-                @include typography(16,24,600,$primary-text-color);
-            }
-        }
-        .line-design{
-            @include flex-box(column,center,center,na,15);
-            &.guided{
-                @include absolute(80,-70,na,na);
-                .guided-line{
-                    top: 85px;
-                    right: 43px;                
-                }
-            }
-            &.effective-nav{
-                @include absolute(165,na,na,-75);
-                .nav-line{
-                    top: 80px;
-                    left: 80px;
-                }
-            }
-            span{
-                @include typography(16,24,600,#D9D9D9);
-            }
-            .logo-box{
-                border: 1px solid #E5E6E8;
-                @include flex-box(na,center,center,na,na);
-                @include dimensions(61,61);
-                border-radius: 12px;
-                backdrop-filter: blur(10px);
-                background: linear-gradient(178.83deg, rgba(255, 255, 255, 0.6) 2.73%, rgba(249, 249, 249, 0.6) 97.04%);
-            }
-        }
-        .ui-banner-details{
-            background: linear-gradient(178.83deg, rgba(255, 255, 255, 0.6) 2.73%, rgba(249, 249, 249, 0.6) 97.04%);
-            @include dimensions(460,100%);
-            @include flex-box(column,center,center,na,na);
-            @include absolute(na,0,0,0);
-            backdrop-filter: blur(30px);
-            .banner-heading{
-                width: 1240px;
-                margin-bottom: 16px;
-                @include typography(60,86.7,700,$primary-text-color);
-            }
-            .banner-content{
-                width: 649px;
-                margin-bottom: 28px;
-                @include typography(16,24,500,$secondry-text-color);
-            }
-        }
+.outer-box {
+  .header-wrapper {
+    border-bottom: 1px solid $header-border-color;
+    background-color: $header-bg-color;
+    backdrop-filter: blur(10px);
+    z-index: 40;
+    .contact-us {
+      background-color: $learn-more-hover-color;
+      box-shadow: none;
+      &:hover {
+        background-color: $primary-hover-color;
+      }
     }
+    .header {
+      @include dimensions(80, na);
+      @include flex-box(row, space-between, center, "na", "na");
+      .burger-btn {
+        @include max-width(992) {
+          display: block !important;
+        }
+      }
+      .navbar {
+        @include navbar(46);
+        @include max-width(1200) {
+          gap: 35px;
+        }
+        @include max-width(992) {
+          display: none;
+        }
+        .nav-items {
+          @include nav-items(16, 24, 400, $secondry-text-color);
+          @include max-width(1200) {
+            font-size: 14px;
+          }
+          &:hover,
+          &.active {
+            color: $primary-color;
+          }
+        }
+      }
+      .burger-btn {
+        display: none;
+      }
+    }
+  }
+  /******** banner ********/
+  .ui-banner {
+    .ui-banner-blur-circle {
+      background-color: $primary-color;
+      filter: blur(195px);
+      @include dimensions(325, 325);
+      @include absolute(225, na, na, 50%);
+      transform: translateX(-50%);
+    }
+    .banner-girl-image {
+      @include absolute(135, na, na, 50%);
+      transform: translateX(-50%);
+    }
+    .user-box {
+      border-radius: 8px;
+      border: 1px solid #136dfb0d;
+      backdrop-filter: blur(150px);
+      box-shadow: 0px 30px 60px 0px #00000033;
+      background: linear-gradient(
+        178.83deg,
+        rgba(255, 255, 255, 0.6) 2.73%,
+        rgba(249, 249, 249, 0.6) 97.04%
+      );
+      @include flex-box(row, center, center, na, 10);
+      &.user-interface {
+        @include absolute(325, na, na, 500);
+        @include max-width(1720){
+          @include absolute(310, na, na, 370);
+        }
+        @include max-width(1440){
+          @include absolute(330, na, na, 240);
+        }
+      }
+      &.user-exp {
+        @include absolute(120, 570, na, na);
+        @include max-width(1720){
+          @include absolute(155, 410, na, na);
+        }
+        @include max-width(1440){
+          @include absolute(155, 290, na, na);
+        }
+      }
+      .icon {
+        @include dimensions(47, 47);
+        @include flex-box(na, center, center, na, na);
+        background-color: $primary-color;
+        border-radius: 8px;
+      }
+      span {
+        @include typography(16, 24, 600, $primary-text-color);
+      }
+    }
+    .line-design {
+      @include flex-box(column, center, center, na, 15);
+      &.guided {
+        @include absolute(80, -70, na, na);
+        @include max-width(1440){
+        @include absolute(80, -150, na, na);
+        }
+        .guided-line {
+          top: 85px;
+          right: 43px;
+          @include max-width(1440){
+            top: 85px;
+            right: -80px;
+          }
+        }
+      }
+      &.effective-nav {
+        @include absolute(165, na, na, -75);
+        @include max-width(1440){
+          @include absolute(165,na,na,-150);
+        }
+        .nav-line {
+          top: 80px;
+          left: 80px;
+          @include max-width(1440){
+            top: 100px;
+            left: -42px;
+          }
+        }
+      }
+      span {
+        @include typography(16, 24, 600, #d9d9d9);
+      }
+      .logo-box {
+        border: 1px solid #e5e6e8;
+        @include flex-box(na, center, center, na, na);
+        @include dimensions(61, 61);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          178.83deg,
+          rgba(255, 255, 255, 0.6) 2.73%,
+          rgba(249, 249, 249, 0.6) 97.04%
+        );
+      }
+    }
+    .ui-banner-details {
+      background: linear-gradient(
+        178.83deg,
+        rgba(255, 255, 255, 0.6) 2.73%,
+        rgba(249, 249, 249, 0.6) 97.04%
+      );
+      @include dimensions(calc(100vh - 480px),100%);
+      @include flex-box(column, center, center, na, na);
+      @include absolute(na, 0, 0, 0);
+      backdrop-filter: blur(30px);
+      .banner-heading {
+        width: 1188px;
+        margin-bottom: 16px;
+        @include typography(58, 86.7, 700, $primary-text-color);
+        @include max-width(1200) {
+          @include typography(36, 48.7, 700, $primary-text-color);
+          width: 840px;
+        }
+      }
+      .banner-content {
+        width: 649px;
+        margin-bottom: 28px;
+        @include typography(16, 24, 500, $secondry-text-color);
+      }
+    }
+  }
 
+  .ux-design-services-wrapper {
+    background-color: $primary-bg-color;
+    padding: 120px 0;
+    .service-boxes {
+      @include flex-box(row, space-between, center, na, 47);
+      @include max-width(1440) {
+        @include flex-box(column, space-between, center, na, 47);
+      }
+      .box {
+        background-color: $secondry-color;
+        border-radius: 15px;
+        @include dimensions(347, 377);
+        @include max-width(1720) {
+          height: 390px;
+        }
+        @include max-width(1440) {
+          @include dimensions(100%, auto);
+        }
+        .overlay{
+          @include dimensions(100%, 100%);
+          background-color: $secondry-color;
+          border-radius: 15px;
+          @include absolute(50%,na,na,50%);
+          transform: translate(-50%, -50%);
+        }
+        &::before{
+          content: ""; 
+          @include absolute(50%,na,na,50%);
+          transform: translate(-50%, -50%);
+          background: $border-hover-color-ui-section-ui-design-services;
+          @include dimensions(calc(100% + 2px),calc(100% + 2px));
+          visibility: hidden;
+          border-radius: 15px;
+        }
+        .logo-n-heading {
+          @include flex-box(row, na, center, na, 10);
+          .logo {
+            @include dimensions(50, 50);
+            @include flex-box(na, center, center, na, na);
+            background: $ui-section-design-services-without-hover-logo-bg-color;
+            border-radius: 12px;
+          }
+          span {
+            @include typography(18, 30, 600, $primary-text-color);
+            @include max-width(1720) {
+              @include typography(18, 25, 600, $primary-text-color);
+            }
+          }
+        }
+        .content {
+          @include typography(14, 25, 400, $secondry-text-color);
+        }
+        .footer-n-arrow {
+          @include flex-box(row, space-between, center, na, na);
+          .without-hover{
+            display: block;
+          }
+          .with-hover{
+            display: none;
+            transform: rotate(45deg);
+          }
+          .lets-go {
+            @include typography(16, 22, 500, #d9d9d9);
+            &::before{
+              content: "";
+              background-color: #136DFB;
+              @include dimensions(1,8);
+              @include absolute(na,na,0,0);
+              visibility: hidden;
+              transition: all ease 0.3s;
+            }
+            &:hover{
+              &::before{
+                @include dimensions(1,100%);
+              }
+            }
+          }
+          .arrow-circle {
+            @include dimensions(34, 34);
+            @include flex-box(na, center, center, na, na);
+            border: 1px solid #d9d9d9;
+          }
+        }
+        &:hover{
+          &::before{
+            visibility: visible;
+          }
+          .without-hover{
+            display: none;
+          }
+          .with-hover{
+            display: block;
+            transform: rotate(0deg);
+          }
+          .arrow-circle {
+            border: 1px solid #136DFB;
+          }
+          .lets-go{
+            color: #136DFB;
+            &::before{
+              visibility: visible;
+            }
+          }
+          .logo{
+            background: $ui-section-design-services-hover-logo-bg-color;
+          }
+          .logo-img{
+            @include dimensions(26,26);
+          }
+          box-shadow: 0px 20px 40px 0px #00000033;
+        }
+      }
+    }
+  }
+
+  .digital-development-wrapper {
+    padding: 120px 0;
+    .digital-development {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      background-color: rgba(249, 249, 249, 0.6);;
+      gap: 30px;
+      padding: 80px;
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      @include max-width(1720) {
+        padding: 51px;
+      }
+      @include max-width(1440) {
+        padding: 35px;
+        grid-template-columns: repeat(3, auto);
+      }
+      @include max-width(1200) {
+        grid-template-columns: repeat(2, auto);
+      }
+      @include max-width(768) {
+        margin: 0 15px;
+        width: calc(100% - 30px);
+        @include flex-box(column, na, na, na, 30);
+      }
+      .rectangles-wrapper{
+        @include flex-box(row-reverse,na,na,na,na);
+        &.rectangles-wrapper-1{
+          @include absolute(0,200,na,na);
+        }
+        &.rectangles-wrapper-2{
+          @include absolute(na,200,0,na);
+        }
+        &.rectangles-wrapper-3{
+          @include absolute(0,na,na,200);
+        }
+        .rectangles{
+          @include dimensions(115,115);
+          filter: blur(100px);
+        }
+        .rectangle-1{
+          background-color: #EB7500;
+        }
+        .rectangle-2{
+          background-color: #F2416B;
+        }
+        .rectangle-3{
+          background-color: #BB64FF;
+        }
+        .rectangle-4{
+          background-color: #0096FF;
+        }
+      }
+      .title-n-heading {
+        grid-column: 1 / 3;
+        @include screen-size(992,1440) {
+          grid-column: 1 / 4;
+        }
+        .section-content {
+          @include typography(16, 25, 500, $secondry-text-color);
+        }
+      }
+      .inner-box {
+        @include dimensions(312, 347);
+        @include max-width(1720) {
+          @include dimensions(294, 290);
+        }
+        @include max-width(1440) {
+          @include dimensions(294, 295);
+        }
+        @include max-width(1200) {
+          @include dimensions(294, 269);
+        }
+        @include max-width(992) {
+          @include dimensions(294, 299);
+        }
+        @include max-width(768) {
+          @include dimensions(auto, 100%);
+        }
+        border-radius: 15px;
+        .z-img {
+          @include absolute(0, 0, na, na);
+        }
+        .logo {
+          @include dimensions(50, 50);
+          border-radius: 15px;
+          background: $primary-text-color;
+          @include flex-box(na, center, center, na, na);
+        }
+        .box-heading {
+          @include typography(28, 42, 400, $primary-text-color);
+        }
+        .box-content {
+          @include typography(14, 20, 500, $secondry-text-color);
+        }
+        &::before {
+          content: "";
+          @include dimensions(100%, 100%);
+          background: linear-gradient(
+            109.92deg,
+            #0096ff 12.78%,
+            #bb64ff 37.63%,
+            #f2416b 62.12%,
+            #eb7500 87.3%
+          );
+          transition: all 0.3s ease;
+          @include absolute(50%, na, na, 50%);
+          transform: translate(-50%, -50%);
+          z-index: 0;
+          border-radius: 15px;
+        }
+        .overlay {
+          @include dimensions(calc(100% - 2px), calc(100% - 2px));
+          background-color: $secondry-color;
+          @include absolute(50%, na, na, 50%);
+          transform: translate(-50%, -50%);
+          border-radius: 15px;
+        }
+        .circle {
+          @include dimensions(220, 220);
+          background-color: $banner-left-circle-bg-color;
+          filter: blur(100px);
+          @include absolute(0, 0, na, na);
+        }
+        &:hover{
+          &::before{
+            visibility: hidden;
+          }
+          .logo {
+            background: $ui-section-expert-hover-logo-bg-color;
+            @include flex-box(na, center, center, na, na);
+          }
+          box-shadow: 0px 30px 60px 0px #00000033;
+        }
+      }
+    }
+  }
+
+  .gs-border {
+    height: 1px;
+    background: linear-gradient(
+      109.92deg,
+      rgba(0, 150, 255, 0.3) 12.78%,
+      rgba(187, 100, 255, 0.3) 37.63%,
+      rgba(242, 65, 107, 0.3) 62.12%,
+      rgba(235, 117, 0, 0.3) 87.3%
+    );
+  }
+
+  .great-solution {
+    padding: 60px 0;
+    .section-heading {
+      @include typography(38, 60, 600, $primary-text-color);
+    }
+    .right-img {
+      @include absolute(0, 0, na, na);
+    }
+    .left-img {
+      @include absolute(0, na, na, 0);
+    }
+    .circle {
+      background-color: $banner-left-circle-bg-color;
+      @include dimensions(500, 500);
+      filter: blur(100px);
+      &.left-circle {
+        @include absolute(0, na, na, 0);
+      }
+      &.right-circle {
+        @include absolute(0, 0, na, na);
+      }
+    }
+  }
+
+  .your-expert-wrapper{
+    .circle-1{
+      @include dimensions(473,473);
+      filter: blur(150px);
+      background-color: $banner-left-circle-bg-color;
+      @include absolute(570,75,na,na);
+    }
+    .circle-2{
+      @include dimensions(312,312);
+      filter: blur(150px);
+      background-color: $banner-left-circle-bg-color;
+      @include absolute(80,na,na,0);
+    }
+  .your-expert {
+    padding: 120px 90px;
+    @include max-width(1440) {
+      padding: 120px 0;
+    }
+    @include max-width(1440) {
+      padding: 120px 15px;
+    }
+    .section-heading {
+      width: 880px;
+    }
+    .section-heading {
+      width: 740px;
+    }
+    .boxes {
+      @include flex-box(row, space-between, center, na, 27);
+      @include max-width(1720) {
+        @include flex-box(row, space-between, center, na, 16);
+      }
+      @include max-width(992) {
+        @include flex-box(column, space-between, center, na, 40);
+      }
+      .box {
+        @include dimensions(auto, 347);
+        @include max-width(1720) {
+          @include dimensions(auto, 270);
+        }
+        @include max-width(1440) {
+          @include dimensions(auto, 225);
+        }
+        @include max-width(992) {
+          @include dimensions(auto, 100%);
+          border-radius: 24px;
+        }
+        border: 1px solid #ececec;
+        background-color: $secondry-color;
+        border-radius: 12px;
+        img {
+          width: 100%;
+        }
+        .content {
+          .heading {
+            @include typography(18, 27, 600, $primary-text-color);
+          }
+          .inner-content {
+            @include typography(14, 25, 400, $secondry-text-color);
+          }
+        }
+        &:hover{
+          box-shadow: 0px 15px 60px 0px #00000033;
+        }
+      }
+    }
+  }
+  }
+
+  .ui-development {
+    @include flex-box(row, na, center, na, na);
+    box-shadow: 0px 20px 80px 0px #0000000d;
+    background-color: $secondry-color;
+    border-radius: 30px;
+    margin-bottom: 120px;
+    @include max-width(768){
+        margin-right: 15px;
+        margin-left: 15px;
+        width: calc(100% - 30px);
+    }
+    .left-part {
+      img {
+        width: 550px;
+        @include max-width(1200) {
+          width: 520px;
+        }
+        @include max-width(992) {
+          display: none;
+        }
+      }
+    }
+    .right-part {
+      padding: 0 120px;
+      @include max-width(1720) {
+        padding: 0 90px;
+      }
+      @include max-width(1440) {
+        padding: 0 25px;
+      }
+      @include max-width(992) {
+        padding: 60px;
+      }
+      .clr-variation {
+        color: $primary-color;
+      }
+      .section-content {
+        @include typography(14, 25, 400, $secondry-text-color);
+      }
+    }
+  }
+
+  .aspects {
+    border: 1px solid #e8e8e8;
+    border-radius: 30px;
+    background-color: $secondry-color;
+    box-shadow: 0px 20px 80px 0px #0000000d;
+    margin-bottom: 120px;
+    @include max-width(1200) {
+      padding: 25px;
+    }
+    @include max-width(768){
+      margin-right: 15px;
+      margin-left: 15px;
+      width: calc(100% - 30px);
+    }
+    .boxes {
+      @include flex-box(row, space-between, na, na, na);
+      @include max-width(992) {
+        @include flex-box(column, space-between, na, na, 24);
+      }
+      .box {
+        border-radius: 12px;
+        background-color: $primary-bg-color;
+        @include dimensions(auto, 360);
+        @include max-width(1720) {
+          @include dimensions(auto, 295);
+        }
+        @include max-width(1440) {
+          @include dimensions(auto, 225);
+        }
+        @include max-width(1200) {
+          @include dimensions(auto, 205);
+        }
+        @include max-width(992) {
+          @include dimensions(auto, 100%);
+        }
+        .box-heading {
+          @include typography(24, 36, 600, $primary-text-color);
+          @include max-width(1440) {
+            @include typography(24, 32, 600, $primary-text-color);
+          }
+        }
+        .box-text {
+          @include typography(14, 25, 400, $secondry-text-color);
+        }
+      }
+    }
+  }
+
+  .footers-wrapper {
+    margin-top: 220px;
+    background-color: $primary-bg-color;
+    @include flex-box(column, center, center, na, na);
+    padding-top: 90px;
+    .footer {
+      @include flex-box(row, space-between, center, na, na);
+      border-bottom: 1px solid #999a9c;
+      padding-bottom: 35px;
+      @include max-width(992) {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 24px;
+        @include flex-box(column, na, baseline, na, 24);
+      }
+      @include max-width(768) {
+        padding-bottom: 35px;
+      }
+      .address {
+        .img {
+          margin-right: 10px;
+        }
+      }
+      .address-content {
+        @include typography(14, 21, 600, $secondry-text-color);
+      }
+      .enquiry {
+        @include max-width(768) {
+          width: 100%;
+        }
+        .mail-id,
+        .phone-no {
+          @include typography(14, 21, 600, $secondry-text-color);
+        }
+        .email-input {
+          @include max-width(992) {
+            position: relative;
+            margin: 20px 0 12px 0;
+          }
+          @include max-width(768) {
+            width: 100%;
+          }
+          input {
+            @include dimensions(48, 345);
+            @include flex-box(row, na, center, na, na);
+            @include typography(14, 21, 600, $secondry-text-color);
+            padding: 0 120px 0 45px;
+            border-radius: 24px;
+            border: 1px solid #999a9c;
+          }
+          .input-wds {
+            @include max-width(1440) {
+              width: 180px;
+            }
+            @include max-width(1200) {
+              width: 110px;
+            }
+            @include max-width(992) {
+              width: 533px;
+            }
+            @include max-width(768) {
+              width: calc(100% - 167px);
+            }
+          }
+          img {
+            @include absolute(12, na, na, 16);
+          }
+          button {
+            @include absolute(3, 3, na, na);
+            height: 44px;
+          }
+        }
+      }
+    }
+    .enquiry-heading-lg {
+      @include max-width(992) {
+        display: none;
+      }
+    }
+    .enquiry-heading-sm {
+      @include max-width(992) {
+        display: block;
+        margin-top: 40px;
+      }
+    }
+    .second-footer {
+      padding: 45px 0;
+      @include flex-box(row, space-between, center, na, na);
+      @include max-width(768) {
+        padding: 45px 15px !important;
+        @include flex-box(column, na, baseline, na, 16);
+      }
+      .footer-buttons {
+        @include flex-box(row, na, center, na, 15);
+      }
+      .firm-logos {
+        @include flex-box(row, space-between, center, na, 5);
+        @include typography(14, 21, 500, $tertiary-text-color);
+        padding: 0 15px;
+        border: 0;
+        height: 38px;
+        border-radius: 19px;
+        .outer-border {
+          @include absolute(0, 0, 0, 0);
+          @include dimensions(38, 100%);
+          border-radius: 19px;
+          background-color: transparent;
+          border: 1px solid $footer-border-color;
+        }
+        &:hover {
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          overflow: hidden;
+          background-color: transparent;
+          .outer-border {
+            transform: translateX(+101%);
+          }
+          .f-with-hover {
+            display: block;
+          }
+          .f-no-hover {
+            display: none;
+          }
+        }
+      }
+      .facebook {
+        &:hover {
+          color: $learn-more-hover-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $learn-more-hover-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .linkdin {
+        &:hover {
+          color: $learn-more-hover-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $learn-more-hover-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .intagram {
+        &:hover {
+          color: $footer-btn-instagram-bg-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $footer-btn-instagram-bg-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .rights-reserved {
+        @include typography(14, 21, 500, $primary-text-color);
+      }
+    }
+    .footer-headings {
+      @include flex-box(row, space-between, na, na, na);
+      .footer-heading {
+        @include typography(24, 36, 600, $primary-text-color);
+      }
+    }
+  }
 }

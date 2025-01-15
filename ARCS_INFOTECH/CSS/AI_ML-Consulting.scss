@@ -1,0 +1,441 @@
+@import "./foundation.scss";
+@import "./mixins.scss";
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+    @include typography(24, 36, 600, na);
+    background: $title-text-gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .section-heading {
+    @include typography(48, 60, 600, $primary-text-color);
+    @include max-width(1440) {
+      @include typography(40, 46, 600, $primary-text-color);
+    }
+  }
+
+  .section-content{
+    @include typography(14,25,400,$secondry-text-color);
+  }
+  
+  .oe-upper-triangle {
+    @include dimensions(96, 1930);
+    @include absolute(-96, na, na, na);
+    border-top: 48px solid transparent;
+    border-right: 965px solid $primary-bg-color;
+    border-bottom: 48px solid $primary-bg-color;
+    border-left: 965px solid transparent;
+  }
+
+.primary-button {
+    width: fit-content;
+    @include btn(48, 20, 24, $primary-color);
+    @include typography(16, 24, 500, $secondry-color);
+    transition: all 0.3s ease;
+    @include max-width(1200) {
+      height: 42px;
+      font-size: 14px;
+    }
+    box-shadow: $primary-box-shadow;
+    &:hover {
+      box-shadow: $primary-box-shadow;
+      background-color: $primary-hover-color;
+    }
+}
+
+.outer-box{
+    .header-wrapper {
+        border-bottom: 1px solid $header-border-color;
+        background-color: $header-bg-color;
+        backdrop-filter: blur(10px);
+        z-index: 40;
+        .contact-us {
+          background-color: $learn-more-hover-color;
+          box-shadow: none;
+          &:hover {
+            background-color: $primary-hover-color;
+          }
+        }
+        .header {
+          @include dimensions(80, na);
+          @include flex-box(row, space-between, center, "na", "na");
+          .burger-btn {
+            @include max-width(992) {
+              display: block !important;
+            }
+          }
+          .navbar {
+            @include navbar(46);
+            @include max-width(1200) {
+              gap: 35px;
+            }
+            @include max-width(992) {
+              display: none;
+            }
+            .nav-items {
+              @include nav-items(16, 24, 400, $secondry-text-color);
+              @include max-width(1200) {
+                font-size: 14px;
+              }
+              &:hover,
+              &.active {
+                color: $primary-color;
+              }
+            }
+          }
+          .burger-btn {
+            display: none;
+          }
+        }
+      }
+      /******** banner ********/
+      .ui-banner {
+        .the-circle{
+          filter: blur(195px);
+          @include dimensions(325, 325);
+          transform: translateX(-50%);
+        }
+        .ui-banner-blur-circle {
+          background-color: $primary-color;
+          @include absolute(225, na, na, 50%);
+        }
+        .ui-banner-blur-circle-II{
+          background-color: #F2416B;
+          @include absolute(225, na, na, 64%);
+        }
+        .ai-ml-banner-line{
+           @include absolute(140,na,na,-42);
+        }
+        .banner-girl-image {
+          @include absolute(135, na, na, 50%);
+          transform: translateX(-50%);
+          .banner-gif{
+            width: 300px;
+            @include absolute(-86, na, na, -50);
+          }
+        }
+        .user-box {
+          border-radius: 8px;
+          border: 1px solid #136dfb0d;
+          backdrop-filter: blur(150px);
+          box-shadow: 0px 30px 60px 0px #00000033;
+          background: linear-gradient(
+            178.83deg,
+            rgba(255, 255, 255, 0.6) 2.73%,
+            rgba(249, 249, 249, 0.6) 97.04%
+          );
+          @include flex-box(row, center, center, na, 10);
+          &.ios-app-left {
+            @include absolute(385, na, na, 340);
+          }
+          &.ios-app-right {
+            @include absolute(385, 330, na, na);
+          }
+          &.ios-app-bottom {
+            @include absolute(180, na, na, 390);
+          }
+          &.ai-bot {
+            padding: 8px 8px 8px 16px;
+            @include absolute(205, 410, na, na);
+            .icon{
+                box-shadow: 0px 20px 40px 0px #136DFB80;
+                background-color: $secondry-color;
+                img{
+                    width: 34px;
+                }
+            }
+          }
+          .icon {
+            @include dimensions(47, 47);
+            @include flex-box(na, center, center, na, na);
+            background-color: $primary-color;
+            border-radius: 8px;
+          }
+          span {
+            @include typography(16, 24, 600, $primary-text-color);
+          }
+        }
+        .ui-banner-details {
+          background: linear-gradient(
+            178.83deg,
+            rgba(255, 255, 255, 0.6) 2.73%,
+            rgba(249, 249, 249, 0.6) 97.04%
+          );
+          @include dimensions(calc(100vh - 504px),100%);
+          @include flex-box(column, center, center, na, na);
+          @include absolute(na, 0, 0, 0);
+          backdrop-filter: blur(30px);
+          .banner-heading {
+            width: 1188px;
+            margin-bottom: 16px;
+            @include typography(58, 86.7, 700, $primary-text-color);
+            @include max-width(1200) {
+              @include typography(36, 48.7, 700, $primary-text-color);
+              width: 840px;
+            }
+          }
+          .banner-content {
+            width: 960px;
+            margin-bottom: 28px;
+            @include typography(16, 24, 500, $secondry-text-color);
+          }
+        }
+      }
+
+      .business-growth-wrapper{
+        height: 908px;
+      .business-growth-outer{
+        background-color: $primary-color;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        height: 455px;
+        .business-growth-content{
+            padding-top: 80px;
+            .section-title{
+                color: $secondry-color;
+                background: none;
+                -webkit-text-fill-color: unset;
+            }
+            .section-heading{
+                color: $secondry-color;
+            }
+            .section-content{
+                @include typography(16,24,500,$secondry-color);
+            }
+        }
+        .business-growth-boxes{
+            background-color: $secondry-color;
+            border-radius: 30px;
+            @include flex-box(row,space-between,na,na,na);
+            @include absolute(280, na, na, 50%);
+            transform: translateX(-50%);
+            .inner-box {
+                @include dimensions(382, 369);
+                @include max-width(1720) {
+                  @include dimensions(294, 290);
+                }
+                @include max-width(1440) {
+                  @include dimensions(294, 295);
+                }
+                @include max-width(1200) {
+                  @include dimensions(294, 269);
+                }
+                @include max-width(992) {
+                  @include dimensions(294, 299);
+                }
+                @include max-width(768) {
+                  @include dimensions(auto, 100%);
+                }
+                border-radius: 15px;
+                .z-img {
+                  @include absolute(0, 0, na, na);
+                }
+                .logo {
+                  @include dimensions(60, 60);
+                  border-radius: 15px;
+                  background: $primary-text-color;
+                  @include flex-box(na, center, center, na, na);
+                }
+                .box-heading {
+                  @include typography(28, 42, 400, $primary-text-color);
+                }
+                .box-content {
+                  @include typography(14, 20, 500, $secondry-text-color);
+                }
+                &::before {
+                  content: "";
+                  @include dimensions(100%, 100%);
+                  background: linear-gradient(
+                    109.92deg,
+                    #0096ff 12.78%,
+                    #bb64ff 37.63%,
+                    #f2416b 62.12%,
+                    #eb7500 87.3%
+                  );
+                  transition: all 0.3s ease;
+                  @include absolute(50%, na, na, 50%);
+                  transform: translate(-50%, -50%);
+                  z-index: 0;
+                  border-radius: 15px;
+                }
+                .overlay {
+                  @include dimensions(calc(100% - 2px), calc(100% - 2px));
+                  background-color: $secondry-color;
+                  @include absolute(50%, na, na, 50%);
+                  transform: translate(-50%, -50%);
+                  border-radius: 15px;
+                }
+                .circle {
+                  @include dimensions(220, 220);
+                  background-color: $banner-left-circle-bg-color;
+                  filter: blur(100px);
+                  @include absolute(0, 0, na, na);
+                }
+                &:hover{
+                  &::before{
+                    visibility: hidden;
+                  }
+                  .logo {
+                    background: $ui-section-expert-hover-logo-bg-color;
+                    @include flex-box(na, center, center, na, na);
+                  }
+                  box-shadow: 0px 30px 60px 0px #00000033;
+                }
+              }
+        }
+      }
+      }
+
+      .transform-future-wrapper{
+        margin-bottom: 120px;
+        padding: 40px 0;
+        background-color: $primary-bg-color;
+        .transform-future{
+            @include flex-box(row,space-between,na,na,60);
+          .left-part{
+            width: 50%;
+            @include flex-box(column,center,na,na,na);
+          }
+          .right-part{
+            width: 50%;
+              background-color: $secondry-color;
+              border-radius: 15px;
+          }
+        }
+      }
+
+      .remarkable-benefits-wrapper{
+        margin-bottom: 120px;
+          .main-content{
+            width: 936px;
+          }
+          .boxes-wrapper{
+            box-shadow: 0px 20px 80px 0px #0000000D;
+            border: 1px solid $border-section-4-ai-ml-page;
+            border-radius: 30px;
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            justify-content: space-between;
+            gap: 46px;
+            margin-top: 40px;
+            .box{
+                @include dimensions(auto,358);
+                background-color: $primary-bg-color;
+                border-radius: 15px;
+                .upper-part{
+                    margin-bottom: 18px;
+                    @include flex-box(row,na,center,na,15);
+                    .logo{
+                        @include dimensions(60,60);
+                        @include flex-box(na,center,center,na,na);
+                        border-radius: 16px;
+                        &.logo-1{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-1-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-1-box-shadow;
+                        }
+                        &.logo-2{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-2-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-2-box-shadow;
+                        }
+                        &.logo-3{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-3-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-3-box-shadow;
+                        }
+                        &.logo-4{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-4-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-4-box-shadow;
+                        }
+                        &.logo-5{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-5-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-5-box-shadow;
+                        }
+                        &.logo-6{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-6-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-6-box-shadow;
+                        }
+                        &.logo-7{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-7-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-7-box-shadow;
+                        }
+                        &.logo-8{
+                            background-color: $ai-ml-page-remarkable-benefits-logo-8-bg-color;
+                            box-shadow: $ai-ml-page-remarkable-benefits-logo-8-box-shadow;
+                        }
+                    }
+                    .box-heading{
+                        @include typography(24,30,600,$primary-text-color);
+                    }
+                }
+            }
+          }
+      }
+
+      .key-features-wrapper{
+        padding: 120px 0;
+        background-color: $primary-bg-color;
+        .main-content{
+            width: 700px;
+        }
+        .boxes-wrapper{
+            @include flex-box(row,space-between,center,na,20);
+            .box{
+                @include dimensions(142,313);
+                border-radius: 16px;
+                background-color: $secondry-color;
+                .box-heading{
+                    @include typography(18,22,600,$primary-color);
+                    span{
+                        color: $primary-text-color;
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+      }
+
+      .ai-solutions{
+        .boxes{
+          display: grid;
+          justify-content: space-between;
+          gap: 30px;
+          grid-template-columns: repeat(4, auto);
+          margin-top: 40px;
+          .box{
+            @include dimensions(150,345);
+            box-shadow: 0px 20px 80px 0px #0000000D;
+            background-color: $secondry-color;
+            border: 1px solid #E8E8E8;
+            border-radius: 12px;
+            .upper-part{
+              @include flex-box(row,na,center,na,16);
+              @include absolute(0,na,na,0);
+              .logo-wrapper{
+                @include dimensions(58,58);
+                background-color: $secondry-color;
+                border-bottom-right-radius: 12px;
+                border-right: 1px solid #E8E8E8;
+                border-bottom: 1px solid #E8E8E8;
+                padding: 0 8px 8px 0;
+                .logo{
+                  @include flex-box(na,center,center,na,na);
+                  background-color: $primary-text-color;
+                  @include dimensions(50,50);
+                  border-radius: 12px;
+                }
+              }
+            }
+            .box-heading{
+              @include typography(24,na,600,$primary-color);
+            }
+            .section-content{
+              margin-top: 48px;
+            }
+          }
+        }
+      }
+}
