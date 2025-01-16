@@ -66,6 +66,8 @@ $ai-ml-page-remarkable-benefits-logo-6-bg-color: #F2416B;
 $ai-ml-page-remarkable-benefits-logo-7-bg-color: #136DFB;
 $ai-ml-page-remarkable-benefits-logo-8-bg-color: #EB7500;
 
+$light-text: #EDEEED;
+
 
 $learn-more-hover-color: #0a51c9;
 $primary-hover-color: #0041ae;
@@ -411,6 +413,10 @@ $overflow-property-shortcuts: a, h ,s, v;
 
 .w-full{
   width: 100%;
+}
+
+.w-fc{
+  width: fit-content;
 }
 
 .cp{
