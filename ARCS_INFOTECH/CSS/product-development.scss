@@ -6,575 +6,736 @@
 }
 
 .section-title {
-    @include typography(24, 36, 600, na);
-    background: $title-text-gradient;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .section-heading {
-    @include typography(48, 60, 600, $primary-text-color);
-    @include max-width(1440) {
-      @include typography(40, 46, 600, $primary-text-color);
-    }
-  }
-
-  .section-content{
-    @include typography(14,25,400,$secondry-text-color);
-  }
-  
-  .oe-upper-triangle {
-    @include dimensions(96, 1930);
-    @include absolute(-96, na, na, na);
-    border-top: 48px solid transparent;
-    border-right: 965px solid $primary-bg-color;
-    border-bottom: 48px solid $primary-bg-color;
-    border-left: 965px solid transparent;
-  }
-
-.primary-button {
-    width: fit-content;
-    @include btn(48, 20, 24, $primary-color);
-    @include typography(16, 24, 500, $secondry-color);
-    transition: all 0.3s ease;
-    @include max-width(1200) {
-      height: 42px;
-      font-size: 14px;
-    }
-    box-shadow: $primary-box-shadow;
-    &:hover {
-      box-shadow: $primary-box-shadow;
-      background-color: $primary-hover-color;
-    }
+  @include typography(24, 36, 600, na);
+  background: $title-text-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.outer-box{
-    .header-wrapper {
-        border-bottom: 1px solid $header-border-color;
-        background-color: $header-bg-color;
-        backdrop-filter: blur(10px);
-        z-index: 40;
-        .contact-us {
-          background-color: $learn-more-hover-color;
-          box-shadow: none;
-          &:hover {
-            background-color: $primary-hover-color;
-          }
-        }
-        .header {
-          @include dimensions(80, na);
-          @include flex-box(row, space-between, center, "na", "na");
-          .burger-btn {
-            @include max-width(992) {
-              display: block !important;
-            }
-          }
-          .navbar {
-            @include navbar(46);
-            @include max-width(1200) {
-              gap: 35px;
-            }
-            @include max-width(992) {
-              display: none;
-            }
-            .nav-items {
-              @include nav-items(16, 24, 400, $secondry-text-color);
-              @include max-width(1200) {
-                font-size: 14px;
-              }
-              &:hover,
-              &.active {
-                color: $primary-color;
-              }
-            }
-          }
-          .burger-btn {
-            display: none;
-          }
-        }
-      }
-      /******** banner ********/
-      .ui-banner {
-        .the-circle{
-          filter: blur(195px);
-          @include dimensions(325, 325);
-          transform: translateX(-50%);
-        }
-        .ui-banner-blur-circle {
-          background-color: $primary-color;
-          @include absolute(225, na, na, 50%);
-        }
-        .ui-banner-blur-circle-II{
-          background-color: #F2416B;
-          @include absolute(225, na, na, 64%);
-        }
-        .ai-ml-banner-line{
-           @include absolute(140,na,na,-42);
-        }
-        .banner-girl-image {
-          @include absolute(135, na, na, 37%);
-          // transform: translateX(-50%);
-          .banner-gif{
-            width: 499px;
-            @include absolute(na, 0, na,0);
-          }
-        }
-        .user-box {
-          border-radius: 8px;
-          border: 1px solid #136dfb0d;
-          backdrop-filter: blur(150px);
-          box-shadow: 0px 30px 60px 0px #00000033;
-          background: linear-gradient(
-            178.83deg,
-            rgba(255, 255, 255, 0.6) 2.73%,
-            rgba(249, 249, 249, 0.6) 97.04%
-          );
-          @include flex-box(row, center, center, na, 10);
-          &.ios-app-left {
-            @include absolute(385, na, na, 340);
-          }
-          &.ios-app-right {
-            @include absolute(385, 270, na, na);
-          }
-          &.ios-app-bottom {
-            @include absolute(180, na, na, 390);
-          }
-          &.ai-bot {
-            @include absolute(205, 348, na, na);
-          }
-          .icon {
-            @include dimensions(47, 47);
-            @include flex-box(na, center, center, na, na);
-            background-color: $primary-color;
-            border-radius: 8px;
-          }
-          span {
-            @include typography(16, 24, 600, $primary-text-color);
-          }
-        }
-        .ui-banner-details {
-          background: linear-gradient(
-            178.83deg,
-            rgba(255, 255, 255, 0.6) 2.73%,
-            rgba(249, 249, 249, 0.6) 97.04%
-          );
-          @include dimensions(calc(100vh - 504px),100%);
-          @include flex-box(column, center, center, na, na);
-          @include absolute(na, 0, 0, 0);
-          backdrop-filter: blur(30px);
-          .banner-heading {
-            width: 1188px;
-            margin-bottom: 16px;
-            @include typography(58, 86.7, 700, $primary-text-color);
-            @include max-width(1200) {
-              @include typography(36, 48.7, 700, $primary-text-color);
-              width: 840px;
-            }
-          }
-          .banner-content {
-            width: 960px;
-            margin-bottom: 28px;
-            @include typography(16, 24, 500, $secondry-text-color);
-          }
-        }
-      }
-
-
-      .transform-future-wrapper{
-        margin-bottom: 120px;
-        padding: 120px 0;
-        background-color: $primary-bg-color;
-        .transform-future{
-            @include flex-box(row,space-between,na,na,32);
-          .left-part{
-            width: 50%;
-            @include flex-box(column,center,na,na,na);
-          }
-          .right-part{
-            width: 50%;
-              background-color: $secondry-color;
-              border-radius: 15px;
-          }
-        }
-      }
-
-      .ai-solutions{
-        .boxes{
-          display: grid;
-          justify-content: space-between;
-          gap: 30px;
-          grid-template-columns: repeat(4, auto);
-          margin-top: 40px;
-          .box{
-            @include dimensions(150,345);
-            box-shadow: 0px 20px 80px 0px #0000000D;
-            background-color: $secondry-color;
-            border: 1px solid #E8E8E8;
-            border-radius: 12px;
-            .upper-part{
-              @include flex-box(row,na,center,na,16);
-              @include absolute(0,na,na,0);
-              .logo-wrapper{
-                @include dimensions(58,58);
-                background-color: $secondry-color;
-                border-bottom-right-radius: 12px;
-                border-right: 1px solid #E8E8E8;
-                border-bottom: 1px solid #E8E8E8;
-                padding: 0 8px 8px 0;
-                .logo{
-                  @include flex-box(na,center,center,na,na);
-                  background-color: $primary-text-color;
-                  @include dimensions(50,50);
-                  border-radius: 12px;
-                }
-              }
-            }
-            .box-heading{
-              @include typography(24,na,600,$primary-color);
-            }
-            .section-content{
-              margin-top: 48px;
-            }
-          }
-        }
-      }
-
-
-      .key-features{
-        padding: 120px;
-        background-color: #136DFB;
-        margin: 120px 0;
-        gap: 30px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(470px, 1fr)); 
-        grid-template-rows: repeat(auto-fill, minmax(195px, 1fr)); 
-        
-        @media screen and (max-width:1094px) {
-          padding:50px 150px;
-          grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)); 
-          
-        } 
-        @media screen and (max-width:580px) {
-          padding:50px;
-          grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); 
-          
-        }
-        @media screen and (max-width:580px) {
-          padding:10px;   
-        }
-          p{
-            margin: 0;
-            @include typography(48,55,300,$secondry-color);
-            span{
-              @include typography(48,55,600,$secondry-color);
-              @media screen and (max-width:1094px) {
-                @include typography(42,50,600,$secondry-color);
-              }
-              @media screen and (max-width:768px) {
-                @include typography(34,45,600,$secondry-color);
-              }
-              @media screen and (max-width:580px) {
-                @include typography(22,32,600,$secondry-color);
-              }
-            }
-            @media screen and (max-width:1094px) {
-              @include typography(42,50,300,$secondry-color);
-            }
-            @media screen and (max-width:768px) {
-              @include typography(34,45,300,$secondry-color);
-            }
-            @media screen and (max-width:580px) {
-              @include typography(22,32,300,$secondry-color);
-            }
-          }
-        
-     
-        .divs{
-          background-color: #FFFFFF;
-          border: 1px solid #E8E8E8;
-          border-radius: 16px;
-          padding: 28px;
-          .upper-div{
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            .img-div{
-              background-color: #F2416B;
-              border-radius: 16px;
-              padding: 11px;
-            }
-            h1{
-              @include typography(80,120,900,#F2F7FF);
-              margin: 0;
-              position: absolute;
-              top: -30px;
-              right: 0;
-            }
-          }
-          h3{
-          @include typography(24,36,600,#202323);
-          margin-top: 15px;
-          margin-bottom: 5px;
-          }
-          p{
-            @include typography(16,24,400,#707070);
-          }
-        }
-      }
-
-      .remarkable-benefits-wrapper{
-        margin-bottom: 120px;
-          .main-content{
-            width: 936px;
-          }
-          .boxes-wrapper{
-            border-radius: 30px;
-            display: grid;
-            grid-template-columns: repeat(4, auto);
-            justify-content: space-between;
-            gap: 46px;
-            margin-top: 40px;
-            .box{
-                @include dimensions(auto,358);
-                background-color: $secondry-color;
-                border-radius: 15px;
-                box-shadow: 0px 20px 80px 0px #0000000D;
-                border: 1px solid $border-section-4-ai-ml-page;
-                .upper-part{
-                    margin-bottom: 18px;
-                    @include flex-box(column,na,start,na,10);
-                    position: relative;
-                    .logo{
-                        @include dimensions(60,60);
-                        @include flex-box(na,center,center,na,na);
-                        border-radius: 16px;
-                        position: absolute;
-                        top: -51px;
-                        &.logo-1{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-1-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-1-box-shadow;
-                        }
-                        &.logo-2{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-2-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-2-box-shadow;
-                        }
-                        &.logo-3{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-3-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-3-box-shadow;
-                        }
-                        &.logo-4{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-4-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-4-box-shadow;
-                        }
-                        &.logo-5{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-5-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-5-box-shadow;
-                        }
-                        &.logo-6{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-6-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-6-box-shadow;
-                        }
-                        &.logo-7{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-7-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-7-box-shadow;
-                        }
-                        &.logo-8{
-                            background-color: $ai-ml-page-remarkable-benefits-logo-8-bg-color;
-                            box-shadow: $ai-ml-page-remarkable-benefits-logo-8-box-shadow;
-                        }
-                    }
-                    .box-heading{
-                        @include typography(24,30,600,#202323);
-                    }
-                }
-                .section-content{
-                  @include typography(14,21,400,#707070);
-                }
-            }
-          }
-      }
-
-      .footers-wrapper {
-        margin-top: 220px;
-        background-color: $primary-bg-color;
-        @include flex-box(column, center, center, na, na);
-        padding-top: 90px;
-        .footer {
-          @include flex-box(row, space-between, center, na, na);
-          border-bottom: 1px solid #999a9c;
-          padding-bottom: 35px;
-          @include max-width(992) {
-            flex-direction: column;
-            align-items: baseline;
-            gap: 24px;
-            @include flex-box(column, na, baseline, na, 24);
-          }
-          @include max-width(768) {
-            padding-bottom: 35px;
-          }
-          .address {
-            .img {
-              margin-right: 10px;
-            }
-          }
-          .address-content {
-            @include typography(14, 21, 600, $secondry-text-color);
-          }
-          .enquiry {
-            @include max-width(768) {
-              width: 100%;
-            }
-            .mail-id,
-            .phone-no {
-              @include typography(14, 21, 600, $secondry-text-color);
-            }
-            .email-input {
-              @include max-width(992) {
-                position: relative;
-                margin: 20px 0 12px 0;
-              }
-              @include max-width(768) {
-                width: 100%;
-              }
-              input {
-                @include dimensions(48, 345);
-                @include flex-box(row, na, center, na, na);
-                @include typography(14, 21, 600, $secondry-text-color);
-                padding: 0 120px 0 45px;
-                border-radius: 24px;
-                border: 1px solid #999a9c;
-              }
-              .input-wds {
-                @include max-width(1440) {
-                  width: 180px;
-                }
-                @include max-width(1200) {
-                  width: 110px;
-                }
-                @include max-width(992) {
-                  width: 533px;
-                }
-                @include max-width(768) {
-                  width: calc(100% - 167px);
-                }
-              }
-              img {
-                @include absolute(12, na, na, 16);
-              }
-              button {
-                @include absolute(3, 3, na, na);
-                height: 44px;
-              }
-            }
-          }
-        }
-        .enquiry-heading-lg {
-          @include max-width(992) {
-            display: none;
-          }
-        }
-        .enquiry-heading-sm {
-          @include max-width(992) {
-            display: block;
-            margin-top: 40px;
-          }
-        }
-        .second-footer {
-          padding: 45px 0;
-          @include flex-box(row, space-between, center, na, na);
-          @include max-width(768) {
-            padding: 45px 15px !important;
-            @include flex-box(column, na, baseline, na, 16);
-          }
-          .footer-buttons {
-            @include flex-box(row, na, center, na, 15);
-          }
-          .firm-logos {
-            @include flex-box(row, space-between, center, na, 5);
-            @include typography(14, 21, 500, $tertiary-text-color);
-            padding: 0 15px;
-            border: 0;
-            height: 38px;
-            border-radius: 19px;
-            .outer-border {
-              @include absolute(0, 0, 0, 0);
-              @include dimensions(38, 100%);
-              border-radius: 19px;
-              background-color: transparent;
-              border: 1px solid $footer-border-color;
-            }
-            &:hover {
-              border-top: 0;
-              border-right: 0;
-              border-left: 0;
-              border-radius: 0;
-              overflow: hidden;
-              background-color: transparent;
-              .outer-border {
-                transform: translateX(+101%);
-              }
-              .f-with-hover {
-                display: block;
-              }
-              .f-no-hover {
-                display: none;
-              }
-            }
-          }
-          .facebook {
-            &:hover {
-              color: $learn-more-hover-color;
-              &::after {
-                width: 100%;
-              }
-            }
-            &::after {
-              content: "";
-              @include absolute(na, na, 0, 0);
-              @include dimensions(1, 0);
-              background-color: $learn-more-hover-color;
-              transition: width 0.3s ease;
-            }
-          }
-          .linkdin {
-            &:hover {
-              color: $learn-more-hover-color;
-              &::after {
-                width: 100%;
-              }
-            }
-            &::after {
-              content: "";
-              @include absolute(na, na, 0, 0);
-              @include dimensions(1, 0);
-              background-color: $learn-more-hover-color;
-              transition: width 0.3s ease;
-            }
-          }
-          .intagram {
-            &:hover {
-              color: $footer-btn-instagram-bg-color;
-              &::after {
-                width: 100%;
-              }
-            }
-            &::after {
-              content: "";
-              @include absolute(na, na, 0, 0);
-              @include dimensions(1, 0);
-              background-color: $footer-btn-instagram-bg-color;
-              transition: width 0.3s ease;
-            }
-          }
-          .rights-reserved {
-            @include typography(14, 21, 500, $primary-text-color);
-          }
-        }
-        .footer-headings {
-          @include flex-box(row, space-between, na, na, na);
-          .footer-heading {
-            @include typography(24, 36, 600, $primary-text-color);
-          }
-        }
-      }
+.section-heading {
+  @include typography(48, 60, 600, $primary-text-color);
+  @include max-width(1440) {
+    @include typography(40, 46, 600, $primary-text-color);
   }
+}
+
+.section-content {
+  @include typography(14, 25, 400, $secondry-text-color);
+}
+
+.oe-upper-triangle {
+  @include dimensions(96, 1930);
+  @include absolute(-96, na, na, na);
+  border-top: 48px solid transparent;
+  border-right: 965px solid $primary-bg-color;
+  border-bottom: 48px solid $primary-bg-color;
+  border-left: 965px solid transparent;
+}
+
+.primary-button {
+  width: fit-content;
+  @include btn(48, 20, 24, $primary-color);
+  @include typography(16, 24, 500, $secondry-color);
+  transition: all 0.3s ease;
+  @include max-width(1200) {
+    height: 42px;
+    font-size: 14px;
+  }
+  box-shadow: $primary-box-shadow;
+  &:hover {
+    box-shadow: $primary-box-shadow;
+    background-color: $primary-hover-color;
+  }
+}
+
+.outer-box {
+  .header-wrapper {
+    border-bottom: 1px solid $header-border-color;
+    background-color: $header-bg-color;
+    backdrop-filter: blur(10px);
+    z-index: 40;
+    .contact-us {
+      background-color: $learn-more-hover-color;
+      box-shadow: none;
+      &:hover {
+        background-color: $primary-hover-color;
+      }
+    }
+    .header {
+      @include dimensions(80, na);
+      @include flex-box(row, space-between, center, "na", "na");
+      .burger-btn {
+        @include max-width(992) {
+          display: block !important;
+        }
+      }
+      .navbar {
+        @include navbar(46);
+        @include max-width(1200) {
+          gap: 35px;
+        }
+        @include max-width(992) {
+          display: none;
+        }
+        .nav-items {
+          @include nav-items(16, 24, 400, $secondry-text-color);
+          @include max-width(1200) {
+            font-size: 14px;
+          }
+          &:hover,
+          &.active {
+            color: $primary-color;
+          }
+        }
+      }
+      .burger-btn {
+        display: none;
+      }
+    }
+  }
+  /******** banner ********/
+  .ui-banner {
+    .the-circle {
+      filter: blur(195px);
+      @include dimensions(325, 325);
+      transform: translateX(-50%);
+    }
+    .ui-banner-blur-circle {
+      background-color: $primary-color;
+      @include absolute(225, na, na, 50%);
+    }
+    .ui-banner-blur-circle-II {
+      background-color: #f2416b;
+      @include absolute(225, na, na, 64%);
+    }
+    .ai-ml-banner-line {
+      @include absolute(140, na, na, -42);
+    }
+    .banner-girl-image {
+      @include absolute(135, na, na, 37%);
+      // transform: translateX(-50%);
+      .banner-gif {
+        width: 499px;
+        @include absolute(na, 0, na, 0);
+      }
+    }
+    .user-box {
+      border-radius: 8px;
+      border: 1px solid #136dfb0d;
+      backdrop-filter: blur(150px);
+      box-shadow: 0px 30px 60px 0px #00000033;
+      background: linear-gradient(
+        178.83deg,
+        rgba(255, 255, 255, 0.6) 2.73%,
+        rgba(249, 249, 249, 0.6) 97.04%
+      );
+      @include flex-box(row, center, center, na, 10);
+      &.ios-app-left {
+        @include absolute(385, na, na, 340);
+      }
+      &.ios-app-right {
+        @include absolute(385, 270, na, na);
+      }
+      &.ios-app-bottom {
+        @include absolute(180, na, na, 390);
+      }
+      &.ai-bot {
+        @include absolute(205, 348, na, na);
+      }
+      .icon {
+        @include dimensions(47, 47);
+        @include flex-box(na, center, center, na, na);
+        background-color: $primary-color;
+        border-radius: 8px;
+      }
+      span {
+        @include typography(16, 24, 600, $primary-text-color);
+      }
+    }
+    .ui-banner-details {
+      background: linear-gradient(
+        178.83deg,
+        rgba(255, 255, 255, 0.6) 2.73%,
+        rgba(249, 249, 249, 0.6) 97.04%
+      );
+      @include dimensions(calc(100vh - 504px), 100%);
+      @include flex-box(column, center, center, na, na);
+      @include absolute(na, 0, 0, 0);
+      backdrop-filter: blur(30px);
+      .banner-heading {
+        width: 900px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        @include typography(58, 86.7, 700, $primary-text-color);
+        @include max-width(1200) {
+          @include typography(36, 48.7, 700, $primary-text-color);
+          width: 840px;
+        }
+      }
+      .banner-content {
+        width: 960px;
+        margin-bottom: 28px;
+        @include typography(16, 24, 500, $secondry-text-color);
+      }
+    }
+  }
+
+  .transform-future-wrapper {
+    margin-bottom: 120px;
+    padding: 120px 0;
+    background-color: $primary-bg-color;
+    @media screen and (max-width:1700px) {
+      padding: 60px;
+    }
+    .transform-future {
+      width: 90%;
+      @include flex-box(row, space-between, na, na, 32);
+      .left-part {
+        width: 50%;
+        @include flex-box(column, center, na, na, na);
+        .section-title {
+          text-transform: uppercase;
+        }
+      }
+      .right-part {
+        width: 50%;
+        background-color: $secondry-color;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .ai-solutions {
+    .section-title {
+      @include typography(24, 36, 600, $primary-color);
+      text-transform: uppercase;
+      @media screen and (max-width:1354px) {
+        @include typography(18, 28, 600, $primary-color);
+      }
+      @media screen and (max-width:1070px) {
+        @include typography(14, 22, 600, $primary-color);
+      }
+    }
+    .section-heading {
+      @include typography(40, 48, 600, #202323);
+      @media screen and (max-width:1354px) {
+        @include typography(32, 40, 600, #202323);
+      }
+      @media screen and (max-width:1070px) {
+        @include typography(24, 36, 600, #202323);
+      }
+    }
+    .main-content {
+      width: 70%;
+      @include typography(16, 24, 400, #707070);
+      @media screen and (max-width:1354px) {
+        @include typography(14, 22, 400, #707070);
+        width: 80%;
+      }
+      @media screen and (max-width:1070px) {
+        @include typography(12, 18, 400, #707070);
+        width: 90%;
+      }
+    }
+    .boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 90px;
+      .box {
+        @include dimensions(150, 345);
+        box-shadow: 0px 20px 80px 0px #0000000d;
+        background-color: $secondry-color;
+        border: 1px solid #e8e8e8;
+        border-radius: 12px;
+        @media screen and (max-width:1354px) {
+          @include dimensions(150, 430);
+        }
+        @media screen and (max-width:1070px) {
+          @include dimensions(150, 530);
+        }
+        .upper-part {
+          @include flex-box(row, na, center, na, 16);
+          @include absolute(0, na, na, 0);
+          .logo-wrapper {
+            @include dimensions(58, 58);
+            background-color: $secondry-color;
+            border-bottom-right-radius: 12px;
+            border-right: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 0 8px 8px 0;
+            .logo {
+              @include flex-box(na, center, center, na, na);
+              background-color: $primary-text-color;
+              @include dimensions(50, 50);
+              border-radius: 12px;
+            }
+          }
+        }
+        .box-heading {
+          @include typography(24, na, 600, $primary-color);
+          
+          @media screen and (max-width:780px) {
+            @include typography(18, 28, 600, $primary-color);
+          }
+          @media screen and (max-width:480px) {
+            @include typography(14, 18, 600, $primary-color);
+          }
+        }
+        .section-content {
+          margin-top: 48px; 
+          @include typography(16, 24, 400, #707070);
+          @media screen and (max-width:780px) {
+            @include typography(14, 22, 400, #707070);
+          }
+          @media screen and (max-width:480px) {
+            @include typography(12, 16, 400, #707070);
+          }
+        }
+      }
+    }
+  }
+
+  .key-features {
+    padding: 120px;
+    background-color: #136dfb;
+    margin: 120px 0;
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(195px, 1fr));
+    
+    @media screen and (max-width: 1210px) {
+      padding: 70px;
+      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    }
+    @media screen and (max-width: 980px) {
+      padding: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    }
+    @media screen and (max-width: 580px) {
+      padding: 10px;
+    }
+    p {
+      margin: 0;
+      @include typography(48, 55, 300, $secondry-color);
+      span {
+        @include typography(48, 55, 600, $secondry-color);
+        @media screen and (max-width: 1094px) {
+          @include typography(42, 50, 600, $secondry-color);
+        }
+        @media screen and (max-width: 768px) {
+          @include typography(34, 45, 600, $secondry-color);
+        }
+        @media screen and (max-width: 580px) {
+          @include typography(22, 32, 600, $secondry-color);
+        }
+      }
+      @media screen and (max-width: 1094px) {
+        @include typography(42, 50, 300, $secondry-color);
+      }
+      @media screen and (max-width: 768px) {
+        @include typography(34, 45, 300, $secondry-color);
+      }
+      @media screen and (max-width: 580px) {
+        @include typography(22, 32, 300, $secondry-color);
+      }
+    }
+
+    .divs {
+      background-color: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 28px;
+      .upper-div {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        .img-div {
+          background-color: #f2416b;
+          box-shadow: 0px 10px 60px 0px #F2416B66;
+          border-radius: 16px;
+          padding: 11px;
+        }
+        h1 {
+          @include typography(80, 120, 900, #f2f7ff);
+          margin: 0;
+          position: absolute;
+          top: -30px;
+          right: 0;
+        }
+      }
+      h3 {
+        @include typography(24, 36, 600, #202323);
+        margin-top: 15px;
+        margin-bottom: 5px;
+        @media screen and (max-width:780px) {
+          @include typography(18, 28, 600, #202323);
+        }
+        @media screen and (max-width:480px) {
+          @include typography(14, 18, 600, #202323);
+        }
+      }
+      p {
+        @include typography(16, 24, 400, #707070);
+        @media screen and (max-width:780px) {
+          @include typography(14, 22, 600, #707070);
+        }
+        @media screen and (max-width:480px) {
+          @include typography(12, 16, 600, #707070);
+        }
+      }
+      // &:hover{
+      //   .upper-div{
+      //     .img-div{
+      //       background-color: #ffffff;
+      //       .logo-img path {
+      //         fill: #000;
+      //       }
+      //     }
+      //   }
+      // }
+    }
+    .div2,
+    .div3 {
+      .upper-div {
+        .img-div {
+          background-color: #bb64ff;
+          box-shadow: 0px 10px 60px 0px rgba(187, 100, 255, 0.4);
+        }
+      }
+    }
+    .div4 {
+      .upper-div {
+        .img-div {
+          background-color: #eb7500;
+          box-shadow: 0px 10px 60px 0px #EB750066;
+        }
+      }
+    }
+    .div5 {
+      .upper-div {
+        .img-div {
+          background-color: #136dfb;
+          box-shadow: 0px 10px 60px 0px #136DFB66;
+        }
+      }
+    }
+  }
+
+  .remarkable-benefits-wrapper {
+    margin-bottom: 120px;
+    // .section-title {
+    //   text-transform: uppercase;
+    // }
+    // .section-content {
+    //   @include typography(16, 24, 400, #707070);
+    //   margin-top: 20px;
+    // }
+    // .main-content {
+    //   width: 936px;
+    // }
+  
+    .section-title {
+      @include typography(24, 36, 600, $primary-color);
+      text-transform: uppercase;
+      @media screen and (max-width:1354px) {
+        @include typography(18, 28, 600, $primary-color);
+      }
+      @media screen and (max-width:1070px) {
+        @include typography(14, 22, 600, $primary-color);
+      }
+    }
+    .section-heading {
+      @include typography(40, 48, 600, #202323);
+      @media screen and (max-width:1354px) {
+        @include typography(32, 40, 600, #202323);
+      }
+      @media screen and (max-width:1070px) {
+        @include typography(24, 36, 600, #202323);
+      }
+    }
+    .main-content {
+      width: 70%;
+      margin-top: 10px;
+      @include typography(16, 24, 400, #707070);
+      @media screen and (max-width:1354px) {
+        @include typography(14, 22, 400, #707070);
+        width: 80%;
+      }
+      @media screen and (max-width:1070px) {
+        @include typography(12, 18, 400, #707070);
+        width: 90%;
+      }
+    }
+    .boxes-wrapper {
+      border-radius: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 46px;
+      margin-top: 40px;
+      width: 92%;
+      justify-content: center;
+      @media screen and (max-width:480px) {
+        width: 100%;
+      }
+      .box {
+        @include dimensions(auto, 358);
+        background-color: $secondry-color;
+        border-radius: 15px;
+        box-shadow: 0px 20px 80px 0px #0000000d;
+        border: 1px solid $border-section-4-ai-ml-page;
+        @media screen and (max-width:1354px) {
+          @include dimensions(auto, 430);
+        }
+        @media screen and (max-width:1070px) {
+          @include dimensions(auto, 530);
+        }
+        .upper-part {
+          margin-bottom: 18px;
+          @include flex-box(column, na, start, na, 10);
+          position: relative;
+          .logo {
+            @include dimensions(60, 60);
+            @include flex-box(na, center, center, na, na);
+            border-radius: 16px;
+            position: absolute;
+            top: -51px;
+            &.logo-1 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-1-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-1-box-shadow;
+            }
+            &.logo-2 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-2-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-2-box-shadow;
+            }
+            &.logo-3 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-3-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-3-box-shadow;
+            }
+            &.logo-4 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-4-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-4-box-shadow;
+            }
+            &.logo-5 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-5-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-5-box-shadow;
+            }
+            &.logo-6 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-6-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-6-box-shadow;
+            }
+            &.logo-7 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-7-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-7-box-shadow;
+            }
+            &.logo-8 {
+              background-color: $ai-ml-page-remarkable-benefits-logo-8-bg-color;
+              box-shadow: $ai-ml-page-remarkable-benefits-logo-8-box-shadow;
+            }
+          }
+          .box-heading {
+            @include typography(24, 30, 600, #202323);
+            @media screen and (max-width:1354px) {
+              @include typography(18, 28, 600, #202323);
+            }
+            @media screen and (max-width:1070px) {
+              @include typography(16, 22, 600, #202323);
+            }
+          }
+        }
+        .section-content {
+          @include typography(14, 21, 400, #707070);
+          @media screen and (max-width:480px) {
+            @include typography(12, 18, 400, #707070);
+          }
+        }
+      }
+    }
+  }
+
+  .footers-wrapper {
+    margin-top: 220px;
+    background-color: $primary-bg-color;
+    @include flex-box(column, center, center, na, na);
+    padding-top: 90px;
+    .footer {
+      @include flex-box(row, space-between, center, na, na);
+      border-bottom: 1px solid #999a9c;
+      padding-bottom: 35px;
+      @include max-width(992) {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 24px;
+        @include flex-box(column, na, baseline, na, 24);
+      }
+      @include max-width(768) {
+        padding-bottom: 35px;
+      }
+      .address {
+        .img {
+          margin-right: 10px;
+        }
+      }
+      .address-content {
+        @include typography(14, 21, 600, $secondry-text-color);
+      }
+      .enquiry {
+        @include max-width(768) {
+          width: 100%;
+        }
+        .mail-id,
+        .phone-no {
+          @include typography(14, 21, 600, $secondry-text-color);
+        }
+        .email-input {
+          @include max-width(992) {
+            position: relative;
+            margin: 20px 0 12px 0;
+          }
+          @include max-width(768) {
+            width: 100%;
+          }
+          input {
+            @include dimensions(48, 345);
+            @include flex-box(row, na, center, na, na);
+            @include typography(14, 21, 600, $secondry-text-color);
+            padding: 0 120px 0 45px;
+            border-radius: 24px;
+            border: 1px solid #999a9c;
+          }
+          .input-wds {
+            @include max-width(1440) {
+              width: 180px;
+            }
+            @include max-width(1200) {
+              width: 110px;
+            }
+            @include max-width(992) {
+              width: 533px;
+            }
+            @include max-width(768) {
+              width: calc(100% - 167px);
+            }
+          }
+          img {
+            @include absolute(12, na, na, 16);
+          }
+          button {
+            @include absolute(3, 3, na, na);
+            height: 44px;
+          }
+        }
+      }
+    }
+    .enquiry-heading-lg {
+      @include max-width(992) {
+        display: none;
+      }
+    }
+    .enquiry-heading-sm {
+      @include max-width(992) {
+        display: block;
+        margin-top: 40px;
+      }
+    }
+    .second-footer {
+      padding: 45px 0;
+      @include flex-box(row, space-between, center, na, na);
+      @include max-width(768) {
+        padding: 45px 15px !important;
+        @include flex-box(column, na, baseline, na, 16);
+      }
+      .footer-buttons {
+        @include flex-box(row, na, center, na, 15);
+      }
+      .firm-logos {
+        @include flex-box(row, space-between, center, na, 5);
+        @include typography(14, 21, 500, $tertiary-text-color);
+        padding: 0 15px;
+        border: 0;
+        height: 38px;
+        border-radius: 19px;
+        .outer-border {
+          @include absolute(0, 0, 0, 0);
+          @include dimensions(38, 100%);
+          border-radius: 19px;
+          background-color: transparent;
+          border: 1px solid $footer-border-color;
+        }
+        &:hover {
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          overflow: hidden;
+          background-color: transparent;
+          .outer-border {
+            transform: translateX(+101%);
+          }
+          .f-with-hover {
+            display: block;
+          }
+          .f-no-hover {
+            display: none;
+          }
+        }
+      }
+      .facebook {
+        &:hover {
+          color: $learn-more-hover-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $learn-more-hover-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .linkdin {
+        &:hover {
+          color: $learn-more-hover-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $learn-more-hover-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .intagram {
+        &:hover {
+          color: $footer-btn-instagram-bg-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $footer-btn-instagram-bg-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .rights-reserved {
+        @include typography(14, 21, 500, $primary-text-color);
+      }
+    }
+    .footer-headings {
+      @include flex-box(row, space-between, na, na, na);
+      .footer-heading {
+        @include typography(24, 36, 600, $primary-text-color);
+      }
+    }
+  }
+}
