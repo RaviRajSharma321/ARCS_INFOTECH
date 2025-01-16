@@ -423,6 +423,30 @@
       }
     }
   }
+  .vision-to-life{
+    background-image: url("../assets/images/bg-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flex-box(row,start,center,na,na);
+    background-position: right;
+    padding: 0 90px;
+    height: 460px;
+    border-radius: 30px;
+    margin-bottom: 120px;
+    border: 1px solid #E8E8E8;
+    @include max-width(1720){
+      height: 380px;
+    }
+    .content{
+        width: 838px;
+        .vision{
+            color: $ai-ml-page-remarkable-benefits-logo-4-bg-color;
+        }
+        .start{
+            color: $primary-color;
+        }
+    }
+  }
 
   .remarkable-benefits-wrapper {
     margin-bottom: 120px;
