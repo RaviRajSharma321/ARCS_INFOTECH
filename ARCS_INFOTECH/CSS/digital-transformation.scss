@@ -4,7 +4,19 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.back-transparent{
+    background-color: transparent
+}
+.blue-background{
+    background-color: #136DFB;
+}
+.gray-backgorund{
+    background-color: #F9F9F9;
+}
 
+.white-text{
+    color: #FFFFFF;
+}
 .section-title {
     @include typography(24, 36, 600, na);
     background: $title-text-gradient;
@@ -251,392 +263,9 @@
     }
     }
 
-    .services-we-offer{
-        margin-bottom: 120px;
-        margin-top: 120px;
-        .section-heading{
-          @include typography(48,60, 600, $primary-text-color);
-          @media screen and (max-width:1400px) {
-            @include typography(32, 40, 600, $primary-text-color);
-       
-          }
-          @media screen and (max-width:1140px) {
-            @include typography(24, 36, 600, $primary-text-color);
-          }
-        }
-        .boxes-wrapper{
-            @include flex-box(row,na,na,wrap,17);
-            width: 92%;
-            @include max-width(1800) {
-              @include flex-box(row,center,center,wrap,17);
-            }
-            .box{
-              @include dimensions(270,400);
-              border: 1px solid #E8E8E8;
-              box-shadow: 0px 20px 80px 0px #0000000D;
-              background-color: $secondry-color;
-              border-radius: 16px;
-              
-              @include max-width(1200){
-                @include dimensions(314,calc(33% - 9px));
-              }
-              @include max-width(992){
-                @include dimensions(285,calc(50% - 9px));
-              }
-              @include max-width(768){
-                @include dimensions(auto,100%);
-              }
-              .logo{
-                @include flex-box(row,center,center,na,na);
-                border-radius: 16px;
-                @include dimensions(60,60);
-                @include absolute(-30,na,na,25);
-                &.logo-1{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-1-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-1-box-shadow;
-                }
-                &.logo-2{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-2-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-2-box-shadow;
-                }
-                &.logo-3{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-3-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-3-box-shadow;
-                }
-                &.logo-4{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-4-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-4-box-shadow;
-                }
-                &.logo-5{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-5-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-5-box-shadow;
-                }
-                &.logo-6{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-6-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-6-box-shadow;
-                }
-                &.logo-7{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-7-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-7-box-shadow;
-                }
-                &.logo-8{
-                    background-color: $ai-ml-page-remarkable-benefits-logo-5-bg-color;
-                    box-shadow: $ai-ml-page-remarkable-benefits-logo-5-box-shadow;
-                }
-              }
-              .number{
-                @include typography(24,24,600,$light-text);
-                @include absolute(12,12,na,na);
-              }
-              .box-heading{
-                @include typography(24,36,600,$primary-text-color);
-                @media screen and (max-width:1400px) {
-                  @include typography(18,26,600,$primary-text-color);
-                }
-              }
-              .box-content{
-                @include typography(14,26,400,$secondry-text-color);
-                @media screen and (max-width:480px) {
-                  @include typography(12,22,400,$secondry-text-color);
-                }
-              }
-            }
-        }
-    }
-
-    .transform-future-wrapper {
-        padding: 120px 0;
-        background-color: $primary-bg-color;
-        @media screen and (max-width:1700px) {
-          padding: 60px;
-        }
-        @media screen and (max-width:1340px) {
-          padding: 40px;
-        }
-        .transform-future {
-          width: 90%;
-          @include flex-box(row, space-between, na, na, 86);
-          @media screen and (max-width:1520px) {
-            width: 100%;
-          }
-          @media screen and (max-width:980px) {
-            flex-direction: column;
-          }
-          .left-part {
-            width: 48%;
-            @include flex-box(column, center, na, na, na);
-            @media screen and (max-width:980px) {
-              width: 100%;
-            }
-            .section-title {
-              text-transform: uppercase;
-              @media screen and (max-width:1400px) {
-                @include typography(18, 28, 600, $primary-color);
-              }
-              @media screen and (max-width:1140px) {
-                @include typography(14, 22, 600, $primary-color);
-              }
-            }
-            .section-heading{
-              @include typography(48, 60, 600, $primary-text-color);
-              @media screen and (max-width:1600px) {
-                @include typography(40, 48, 600, $primary-text-color);
-              }
-              @media screen and (max-width:1400px) {
-                @include typography(32, 40, 600, $primary-text-color);
-              }
-              @media screen and (max-width:1140px) {
-                @include typography(24, 36, 600, $primary-text-color);
-              }
-            }
-            .section-content{
-              width: 70%;
-              @include typography(16, 24, 400, #707070);
-              @media screen and (max-width:1354px) {
-                @include typography(14, 22, 400, #707070);
-                width: 80%;
-              }
-              @media screen and (max-width:1070px) {
-                @include typography(12, 18, 400, #707070);
-                width: 90%;
-              }
-            }
-          }
-          .right-part {
-            width: 50%;
-            background-color: $secondry-color;
-            border-radius: 15px;
-            @media screen and (max-width:980px) {
-              width: 100%;
-            }
-          }
-        }
-    }
-
-    .benefits-wrapper {
-      padding: 120px 0;
-      background-color: #FFFFFF;
-      @media screen and (max-width:1700px) {
-        padding: 60px;
-      }
-      @media screen and (max-width:1340px) {
-        padding: 40px;
-      }
-      .transform-future {
-        width: 90%;
-        gap: 20px;
-        @include flex-box(row, space-between, na, na, 86);
-        @media screen and (max-width:1720px) {
-          width: 100%;
-        }
-        @media screen and (max-width:1490px) {
-          flex-direction: column;
-        }
-        .left-part {
-          width: 40%;
-          @include flex-box(column, center, na, na, na);
-          @media screen and (max-width:1490px) {
-            width: 100%;
-            @include flex-box(column, center, center, na, na);
-          }
-          .section-title {
-            text-transform: uppercase;
-            @media screen and (max-width:1490px) {
-              text-align: center;
-            }
-            @media screen and (max-width:1400px) {
-              @include typography(18, 28, 600, $primary-color);
-            }
-            @media screen and (max-width:1140px) {
-              @include typography(14, 22, 600, $primary-color);
-            }
-          }
-          .section-heading{
-            @include typography(48, 60, 600, $primary-text-color);
-            @media screen and (max-width:1490px) {
-              text-align: center;
-              @include typography(40, 48, 600, $primary-text-color);
-            }
-            @media screen and (max-width:1400px) {
-              @include typography(32, 40, 600, $primary-text-color);
-            }
-            @media screen and (max-width:1140px) {
-              @include typography(24, 36, 600, $primary-text-color);
-            }
-          }
-          .section-content{
-            width: 100%;
-            @include typography(16, 24, 400, #707070);
-            @media screen and (max-width:1490px) {
-              text-align: center;
-            }
-            @media screen and (max-width:1354px) {
-              @include typography(14, 22, 400, #707070);
-              
-            }
-            @media screen and (max-width:1070px) {
-              @include typography(12, 18, 400, #707070);
-             
-            }
-          }
-        }
-        .right-part {
-          width: 60%;
-          @include flex-box(row,na,na,wrap,20);
-          @media screen and (max-width:1570px) {
-            width: 70%;
-          }
-          @media screen and (max-width:1490px) {
-            margin: auto;
-            width: 90%;
-            @include flex-box(row,center,center,wrap,20);
-          }
-          .box{
-            @include dimensions(auto,397);
-            border-radius: 16px;
-            background-color: #F9F9F9;
-            @media screen and (max-width:1600px) {
-             margin: 0;
-            }
-            @media screen and (max-width:980px) {
-              @include dimensions(auto,600)
-             }
-            .upper-part{
-                @include flex-box(row,na,center,na,20);
-                .logo{
-                    @include dimensions(50,50);
-                    border-radius: 12px;
-                    background-color: #0096FF;
-                    @include flex-box(row,center,center,na,na);
-                  
-                }
-                .box-heading{
-                  @include typography(18,na,600,$primary-text-color);
-                  margin: 0;
-                  // @media screen and (max-width:1400px) {
-                  //   @include typography(14,na,600,$primary-text-color);
-                  // }
-                }
-            }
-            .box-content{
-              @include typography(14,26,400,#707070);
-              @media screen and (max-width:480px) {
-                @include typography(12,22,400,#707070);
-              }
-            }
-           
-          }
-        }
-      }
-  }
-
-    .solution-provide{
-      margin-bottom: 120px;
-      padding: 120px 0;
-      background-color: $primary-color;
-      @media screen and (max-width:1070px) {
-        padding: 40px 0;
-      }
-      .section-title-text {
-        text-transform: uppercase;
-        @include typography(24, 36, 600, #FFFFFF);
-        @media screen and (max-width:1400px) {
-          @include typography(18, 28, 600, #FFFFFF);
-        }
-        @media screen and (max-width:1140px) {
-          @include typography(14, 22, 600, #FFFFFF);
-        }
-      }
-      .section-heading{
-        @include typography(48, 60, 600, #FFFFFF);
-        @media screen and (max-width:1400px) {
-          @include typography(40, 48, 600, #FFFFFF);
-          
-        }
-        @media screen and (max-width:1140px) {
-          @include typography(28, 36, 600, #FFFFFF);
-        }
-      }
-      .main-content{
-        @include typography(16, 24, 400, #FFFFFF);
-        width: 58%;
-        margin: 20px auto;
-        @media screen and (max-width:1354px) {
-          @include typography(14, 22, 400, #FFFFFF);
-         width: 100%;
-        }
-        @media screen and (max-width:1070px) {
-          @include typography(12, 18, 400, #FFFFFF);
-          margin-top: 10px;
-        }
-      }
-      .boxes-wrapper{
-        @include flex-box(row,na,na,wrap,17);
-        width: 90%;
-        margin: auto;
-        @include max-width(1805){
-          width: 75%;
-        }
-        @include max-width(1650){
-          @include flex-box(row,center,center,wrap,17);
-          }
-          @include max-width(1091){
-            width: 90%;
-          }
-        .box{
-          @include dimensions(300,400);
-          border: 1px solid #E8E8E8;
-          box-shadow: 0px 20px 80px 0px #0000000D;
-          background-color: $secondry-color;
-          border-radius: 16px;
-          @include max-width(900){
-            @include dimensions(auto,600);
-          }
-          .logo{
-            @include flex-box(row,center,center,na,na);
-            border-radius: 16px;
-            @include dimensions(60,60);
-            @include absolute(-30,na,na,25);
-            &.logo-1{
-                background-color: $ai-ml-page-remarkable-benefits-logo-1-bg-color;
-                box-shadow: $ai-ml-page-remarkable-benefits-logo-1-box-shadow;
-            }
-            &.logo-2{
-                background-color: $ai-ml-page-remarkable-benefits-logo-2-bg-color;
-                box-shadow: $ai-ml-page-remarkable-benefits-logo-2-box-shadow;
-            }
-            &.logo-3{
-                background-color: $ai-ml-page-remarkable-benefits-logo-3-bg-color;
-                box-shadow: $ai-ml-page-remarkable-benefits-logo-3-box-shadow;
-            }
-            &.logo-4{
-                background-color: $ai-ml-page-remarkable-benefits-logo-4-bg-color;
-                box-shadow: $ai-ml-page-remarkable-benefits-logo-4-box-shadow;
-            }
-          }
-          .number{
-            @include typography(24,24,600,$light-text);
-            @include absolute(12,12,na,na);
-          }
-          .box-heading{
-            @include typography(24,36,600,$primary-text-color);
-            
-            @media screen and (max-width:1400px) {
-              @include typography(18,26,600,$primary-text-color);
-            }
-          }
-          .box-content{
-            @include typography(14,26,400,$secondry-text-color);
-            @media screen and (max-width:480px) {
-              @include typography(12,22,400,$secondry-text-color);
-            }
-          }
-        }
-    }
-    }
-
     .technos-wrapper{
       background-color: #FFFFFF;
+      margin: 120px 0;
       .technos{
         width: 100%;
         .section-title {
@@ -685,50 +314,303 @@
                 @include flex-box(row,center,center,wrap,20);
               }
               .box{
-                  @include dimensions(250,400);
-                  @include max-width(992){
-                    @include dimensions(auto,500);
-                  }
-                  @include max-width(768){
-                    @include dimensions(auto,600);
-                  }
-                  border: 1px solid #E8E8E8;
+                @include dimensions(auto,400);
+                border: 1px solid #E8E8E8;
+                box-shadow: 0px 20px 80px 0px #0000000D;
+                background-color: $secondry-color;
+                border-radius: 16px;
+                margin-top: 67px;
+                @include max-width(900){
+                  @include dimensions(auto,600);
+                }
+                .logo{
+                  @include flex-box(row,center,center,na,na);
                   border-radius: 16px;
-                  background-color: $secondry-color;
-                  box-shadow: 0px 20px 80px 0px #0000000D;
-                  .upper-part{
-                      @include flex-box(row,na,center,na,20);
-                      .logo{
-                          @include dimensions(60,60);
-                          border-radius: 16px;
-                          background-color: $ai-ml-page-remarkable-benefits-logo-2-bg-color;
-                          box-shadow: $ai-ml-page-remarkable-benefits-logo-2-box-shadow;
-                          @include flex-box(row,center,center,na,na);
-                        
-                      }
-                      .box-heading{
-                        @include typography(24,na,600,$primary-text-color);
-                        margin: 0;
-                       
-                        @media screen and (max-width:1400px) {
-                          @include typography(18,26,600,$primary-text-color);
-                        }
-                      }
+                  @include dimensions(60,60);
+                  @include absolute(-30,na,na,25);
+                  background-color: #EB7500;
+                  box-shadow: 0px 10px 60px 0px rgba(235, 117, 0, 0.4);
+              
+                }
+                .box-heading{
+                  @include typography(24,36,600,$primary-text-color);
+                  
+                  @media screen and (max-width:1400px) {
+                    @include typography(18,26,600,$primary-text-color);
                   }
-                  .box-content{
-                    @include typography(14,26,400,#707070);
-                    @media screen and (max-width:480px) {
-                      @include typography(12,22,400,$secondry-text-color);
-                    }
+                }
+                .box-content{
+                  @include typography(14,22,400,$secondry-text-color);
+                  @media screen and (max-width:480px) {
+                    @include typography(12,18,400,$secondry-text-color);
                   }
-                 
+                }
               }
           }
       }
     }
 
+    .digital-transformation{
+        width: 90%;
+        height: 520px;
+        margin-top: 120px;
+        overflow: hidden;
+        border-radius: 30px;
+        @include flex-box(row, space-between, na, na, 86);
+        @media screen and (max-width:1520px) {
+            width: 100%;
+        }
+        @media screen and (max-width:980px) {
+            flex-direction: column;
+        }
+        .left-part {
+            width: 48%;
+            @include flex-box(column, center, na, na, na);
+            @media screen and (max-width:980px) {
+            width: 100%;
+            }
+            .section-title-text {
+                text-transform: uppercase;
+                @include typography(24, 36, 600, #FFFFFF);
+                @media screen and (max-width:1400px) {
+                @include typography(18, 28, 600, #FFFFFF);
+                }
+                @media screen and (max-width:1140px) {
+                @include typography(14, 22, 600, #FFFFFF);
+                }
+            }
+            .section-title {
+            text-transform: uppercase;
+            @media screen and (max-width:1400px) {
+                @include typography(18, 28, 600, $primary-color);
+            }
+            @media screen and (max-width:1140px) {
+                @include typography(14, 22, 600, $primary-color);
+            }
+            }
+            .section-heading-white{
+                @include typography(48, 60, 600, #FFFFFF);
+                @media screen and (max-width:1600px) {
+                @include typography(40, 48, 600, #FFFFFF);
+                }
+                @media screen and (max-width:1400px) {
+                @include typography(32, 40, 600, #FFFFFF);
+                }
+                @media screen and (max-width:1140px) {
+                @include typography(24, 36, 600, #FFFFFF);
+                }
+            }
+            .section-content-white{
+                width: 70%;
+                @include typography(16, 24, 400, #FFFFFF);
+                @media screen and (max-width:1354px) {
+                @include typography(14, 22, 400, #FFFFFF);
+                width: 80%;
+                }
+                @media screen and (max-width:1070px) {
+                @include typography(12, 18, 400, #FFFFFF);
+                width: 90%;
+                }
+            }
+            .section-heading{
+            @include typography(48, 60, 600, $primary-text-color);
+            @media screen and (max-width:1600px) {
+                @include typography(40, 48, 600, $primary-text-color);
+            }
+            @media screen and (max-width:1400px) {
+                @include typography(32, 40, 600, $primary-text-color);
+            }
+            @media screen and (max-width:1140px) {
+                @include typography(24, 36, 600, $primary-text-color);
+            }
+            }
+            .section-content{
+            width: 70%;
+            @include typography(16, 24, 400, #707070);
+            @media screen and (max-width:1354px) {
+                @include typography(14, 22, 400, #707070);
+                width: 80%;
+            }
+            @media screen and (max-width:1070px) {
+                @include typography(12, 18, 400, #707070);
+                width: 90%;
+            }
+            }
+            .white-button{
+                background-color: #FFFFFF;
+                color: #136DFB;
+                
+            }
+        }
+        .right-part {
+            width: 50%;
+            background-color: $secondry-color;
+            border-radius: 15px;
+            @media screen and (max-width:980px) {
+            width: 100%;
+            }
+        }
+         .z-img1{
+            position: absolute;
+            z-index: 10;
+            right: 0;
+         } 
+         .circle4{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background-color: #C0BEDD;
+            filter: blur(195px);
+         }
+    }
+    .transform-future-wrapper {
+        padding: 120px 0;
+        @media screen and (max-width:1700px) {
+          padding: 60px;
+        }
+        @media screen and (max-width:1340px) {
+          padding: 40px;
+        }
+        .transform-future {
+          width: 90%;
+          @include flex-box(row, space-between, na, na, 86);
+          @media screen and (max-width:1520px) {
+            width: 100%;
+          }
+          @media screen and (max-width:980px) {
+            flex-direction: column;
+          }
+          .left-part {
+            width: 48%;
+            @include flex-box(column, center, na, na, na);
+            @media screen and (max-width:980px) {
+              width: 100%;
+            }
+            .section-title-text {
+                text-transform: uppercase;
+                @include typography(24, 36, 600, #FFFFFF);
+                @media screen and (max-width:1400px) {
+                  @include typography(18, 28, 600, #FFFFFF);
+                }
+                @media screen and (max-width:1140px) {
+                  @include typography(14, 22, 600, #FFFFFF);
+                }
+              }
+            .section-title {
+              text-transform: uppercase;
+              @media screen and (max-width:1400px) {
+                @include typography(18, 28, 600, $primary-color);
+              }
+              @media screen and (max-width:1140px) {
+                @include typography(14, 22, 600, $primary-color);
+              }
+            }
+            .section-heading-white{
+                @include typography(48, 60, 600, #FFFFFF);
+                @media screen and (max-width:1600px) {
+                @include typography(40, 48, 600, #FFFFFF);
+                }
+                @media screen and (max-width:1400px) {
+                @include typography(32, 40, 600, #FFFFFF);
+                }
+                @media screen and (max-width:1140px) {
+                @include typography(24, 36, 600, #FFFFFF);
+                }
+            }
+            .section-content-white{
+                width: 70%;
+                @include typography(16, 24, 400, #FFFFFF);
+                @media screen and (max-width:1354px) {
+                @include typography(14, 22, 400, #FFFFFF);
+                width: 80%;
+                }
+                @media screen and (max-width:1070px) {
+                @include typography(12, 18, 400, #FFFFFF);
+                width: 90%;
+                }
+            }
+            .section-heading{
+              @include typography(48, 60, 600, $primary-text-color);
+              @media screen and (max-width:1600px) {
+                @include typography(40, 48, 600, $primary-text-color);
+              }
+              @media screen and (max-width:1400px) {
+                @include typography(32, 40, 600, $primary-text-color);
+              }
+              @media screen and (max-width:1140px) {
+                @include typography(24, 36, 600, $primary-text-color);
+              }
+            }
+            .section-content{
+              width: 70%;
+              @include typography(16, 24, 400, #707070);
+              @media screen and (max-width:1354px) {
+                @include typography(14, 22, 400, #707070);
+                width: 80%;
+              }
+              @media screen and (max-width:1070px) {
+                @include typography(12, 18, 400, #707070);
+                width: 90%;
+              }
+            }
+            .white-button{
+                background-color: #FFFFFF;
+                color: #136DFB;
+                
+            }
+          }
+          .right-part {
+            width: 50%;
+            background-color: $secondry-color;
+            border-radius: 15px;
+            @media screen and (max-width:980px) {
+              width: 100%;
+            }
+          }
+        }
+        .z-img1{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .z-img2{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .circle1{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            filter: blur(295px);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+            
+        .circle2{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            filter: blur(295px);
+            position: absolute;
+            bottom: 0;
+            right: 600px;
+        }
+        .circle3{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            filter: blur(295px);
+            position: absolute;
+            top: 0;
+            left: -200px;
+        }
+    }
     .footers-wrapper {
-      margin-top: 220px;
+      margin-top: 60px;
       background-color: $primary-bg-color;
       @include flex-box(column, center, center, na, na);
       padding-top: 90px;

@@ -252,18 +252,18 @@
                 }
                 .large-heading{
                     margin: 0;
-                    @include typography(48,72,600,#202323);
+                    @include typography(48,72,600,$primary-text-color);
                     @media screen and (max-width:1810px) {
-                        @include typography(44,88,600,#202323);
+                        @include typography(44,88,600,$primary-text-color);
                     }
                     @media screen and (max-width:1600px) {
-                        @include typography(38,52,600,#202323);
+                        @include typography(38,52,600,$primary-text-color);
                     }
                     @media screen and (max-width:1094px) {
-                        @include typography(32,42,600,#202323);
+                        @include typography(32,42,600,$primary-text-color);
                     }
                     @media screen and (max-width:480px) {
-                        @include typography(22,32,600,#202323);
+                        @include typography(22,32,600,$primary-text-color);
                     }
                 }
                 .normal-text{
@@ -298,12 +298,12 @@
             padding: 20px;
         }
         .large-text{
-            @include typography(38,60,600,#202323);
+            @include typography(38,60,600,$primary-text-color);
             @media screen and (max-width:1094px) {
-                @include typography(28,60,600,#202323);
+                @include typography(28,60,600,$primary-text-color);
             }
             @media screen and (max-width:480px) {
-                @include typography(18,60,600,#202323);
+                @include typography(18,60,600,$primary-text-color);
             }
         }
         .normal-text{
@@ -414,15 +414,15 @@
                     align-items: start;
                 }
                 .large-heading{
-                    @include typography(48,72,600,#202323);
+                    @include typography(48,72,600,$primary-text-color);
                     @media screen and (max-width:1480px) {
-                        @include typography(42,52,600,#202323);
+                        @include typography(42,52,600,$primary-text-color);
                     }
                     @media screen and (max-width:1094px) {
-                        @include typography(32,42,600,#202323);
+                        @include typography(32,42,600,$primary-text-color);
                     }
                     @media screen and (max-width:480px) {
-                        @include typography(22,32,600,#202323);
+                        @include typography(22,32,600,$primary-text-color);
                     }
                 }
                 .normal-text{
@@ -481,15 +481,15 @@
                 border-radius: 15px;
             }
             .large-heading{
-                @include typography(48,72,600,#202323);
+                @include typography(48,72,600,$primary-text-color);
                 @media screen and (max-width:1480px) {
-                    @include typography(42,52,600,#202323);
+                    @include typography(42,52,600,$primary-text-color);
                 }
                 @media screen and (max-width:1094px) {
-                    @include typography(32,42,600,#202323);
+                    @include typography(32,42,600,$primary-text-color);
                 }
                 @media screen and (max-width:480px) {
-                    @include typography(22,32,600,#202323);
+                    @include typography(22,32,600,$primary-text-color);
                 }
             }
             .invisible{
@@ -537,9 +537,9 @@
                         display: none;
                     }
                     .card-heading{
-                        @include typography(24,36,600,#202323);
+                        @include typography(24,36,600,$primary-text-color);
                         @media screen and (max-width:480px) {
-                            @include typography(18,24,600,#202323);
+                            @include typography(18,24,600,$primary-text-color);
                         }
                     }
                     .card-text{
@@ -593,15 +593,15 @@
         @include flex-box(column, center,center,na,na);
         .large-heading{
             text-align: center;
-            @include typography(48,72,600,#202323);
+            @include typography(48,72,600,$primary-text-color);
             @media screen and (max-width:1480px) {
-                @include typography(42,52,600,#202323);
+                @include typography(42,52,600,$primary-text-color);
             }
             @media screen and (max-width:1094px) {
-                @include typography(32,42,600,#202323);
+                @include typography(32,42,600,$primary-text-color);
             }
             @media screen and (max-width:480px) {
-                @include typography(22,32,600,#202323);
+                @include typography(22,32,600,$primary-text-color);
             }
         }
         .normal-text{
@@ -664,9 +664,9 @@
                         background-color: #EB7500;
                     }
                     .mobile{
-                        @include typography(18,30,600,#202323);
+                        @include typography(18,30,600,$primary-text-color);
                         @media screen and (max-width:870px) {
-                           @include typography(16,26,600,#202323);
+                           @include typography(16,26,600,$primary-text-color);
                         }
                     }
                 }
