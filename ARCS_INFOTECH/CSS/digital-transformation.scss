@@ -1,0 +1,888 @@
+@import "./foundation.scss";
+@import "./mixins.scss";
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.back-transparent {
+  background-color: transparent;
+}
+.blue-background {
+  background-color: #136dfb;
+}
+.gray-backgorund {
+  background-color: #f9f9f9;
+}
+
+.white-text {
+  color: #ffffff;
+}
+.section-title {
+  @include typography(24, 36, 600, na);
+  background: $title-text-gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading {
+  @include typography(48, 60, 600, $primary-text-color);
+  @include max-width(1440) {
+    @include typography(40, 46, 600, $primary-text-color);
+  }
+  @include max-width(1094) {
+    @include typography(32, 40, 600, $primary-text-color);
+  }
+  @include max-width(480) {
+    @include typography(28, 32, 600, $primary-text-color);
+  }
+}
+
+.section-content {
+  @include typography(14, 25, 400, $secondry-text-color);
+  @include max-width(480) {
+    @include typography(12, 18, 400, $secondry-text-color);
+  }
+}
+
+.oe-upper-triangle {
+  @include dimensions(96, 1930);
+  @include absolute(-96, na, na, na);
+  border-top: 48px solid transparent;
+  border-right: 965px solid $primary-bg-color;
+  border-bottom: 48px solid $primary-bg-color;
+  border-left: 965px solid transparent;
+}
+
+.primary-button {
+  width: fit-content;
+  @include btn(48, 20, 24, $primary-color);
+  @include typography(16, 24, 500, $secondry-color);
+  transition: all 0.3s ease;
+  @include max-width(1200) {
+    height: 42px;
+    font-size: 14px;
+  }
+  @include max-width(480) {
+    font-size: 12px;
+  }
+  box-shadow: $primary-box-shadow;
+  &:hover {
+    box-shadow: $primary-box-shadow;
+    background-color: $primary-hover-color;
+  }
+}
+
+.outer-box {
+  .header-wrapper {
+    border-bottom: 1px solid $header-border-color;
+    background-color: $header-bg-color;
+    backdrop-filter: blur(10px);
+    z-index: 40;
+    .contact-us {
+      background-color: $learn-more-hover-color;
+      box-shadow: none;
+      &:hover {
+        background-color: $primary-hover-color;
+      }
+    }
+    .header {
+      @include dimensions(80, na);
+      @include flex-box(row, space-between, center, "na", "na");
+      .burger-btn {
+        @include max-width(992) {
+          display: block !important;
+        }
+      }
+      .navbar {
+        @include navbar(46);
+        @include max-width(1200) {
+          gap: 35px;
+        }
+        @include max-width(992) {
+          display: none;
+        }
+        .nav-items {
+          @include nav-items(16, 24, 400, $secondry-text-color);
+          @include max-width(1200) {
+            font-size: 14px;
+          }
+          &:hover,
+          &.active {
+            color: $primary-color;
+          }
+        }
+      }
+      .burger-btn {
+        display: none;
+      }
+    }
+  }
+
+  .ui-banner {
+    .ui-banner-blur-circle {
+      background-color: $primary-color;
+      filter: blur(195px);
+      @include dimensions(325, 325);
+      @include absolute(225, na, na, 50%);
+      transform: translateX(-50%);
+    }
+    .banner-girl-image {
+      @include absolute(160, na, na, 50%);
+      transform: translateX(-50%);
+      width: auto;
+    }
+    .user-box {
+      border-radius: 8px;
+      border: 1px solid #136dfb0d;
+      backdrop-filter: blur(150px);
+      box-shadow: 0px 30px 60px 0px #00000033;
+      background: linear-gradient(
+        178.83deg,
+        rgba(255, 255, 255, 0.6) 2.73%,
+        rgba(249, 249, 249, 0.6) 97.04%
+      );
+      @include flex-box(row, center, center, na, 10);
+      &.user-interface {
+        @include absolute(325, na, na, 340);
+        @include max-width(1720) {
+          @include absolute(310, na, na, 370);
+        }
+        @include max-width(1440) {
+          @include absolute(330, na, na, 240);
+        }
+      }
+      &.user-exp {
+        @include absolute(324, 347, na, na);
+        @include max-width(1720) {
+          @include absolute(155, 410, na, na);
+        }
+        @include max-width(1440) {
+          @include absolute(155, 290, na, na);
+        }
+      }
+      .icon {
+        @include dimensions(47, 47);
+        @include flex-box(na, center, center, na, na);
+        background-color: $primary-color;
+        border-radius: 8px;
+      }
+      span {
+        @include typography(16, 24, 600, $primary-text-color);
+      }
+    }
+    .line-design {
+      @include flex-box(column, center, center, na, 15);
+      &.guided {
+        @include absolute(140, -70, na, na);
+        @include max-width(1440) {
+          @include absolute(80, -150, na, na);
+        }
+        .guided-line {
+          top: 85px;
+          right: 43px;
+          @include max-width(1440) {
+            top: 85px;
+            right: -80px;
+          }
+        }
+      }
+      &.effective-nav {
+        @include absolute(165, na, na, -75);
+        @include max-width(1440) {
+          @include absolute(165, na, na, -150);
+        }
+        .nav-line {
+          top: 80px;
+          left: 80px;
+          @include max-width(1440) {
+            top: 100px;
+            left: -42px;
+          }
+        }
+      }
+      span {
+        @include typography(16, 24, 600, #d9d9d9);
+      }
+      .logo-box {
+        border: 1px solid #e5e6e8;
+        @include flex-box(na, center, center, na, na);
+        @include dimensions(61, 61);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          178.83deg,
+          rgba(255, 255, 255, 0.6) 2.73%,
+          rgba(249, 249, 249, 0.6) 97.04%
+        );
+      }
+    }
+    .ui-banner-details {
+      background: linear-gradient(
+        178.83deg,
+        rgba(255, 255, 255, 0.6) 2.73%,
+        rgba(249, 249, 249, 0.6) 97.04%
+      );
+      @include dimensions(calc(100vh - 510px), 100%);
+      @include flex-box(column, center, center, na, na);
+      @include absolute(na, 0, 0, 0);
+      backdrop-filter: blur(30px);
+      .banner-heading {
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        width: 50%;
+        @include typography(60, 86.7, 700, $primary-text-color);
+        @include max-width(1700) {
+          @include typography(55, 68.7, 700, $primary-text-color);
+        }
+        @include max-width(1200) {
+          @include typography(36, 48.7, 700, $primary-text-color);
+        }
+        @include max-width(780) {
+          @include typography(32, 41.7, 700, $primary-text-color);
+        }
+        @include max-width(480) {
+          @include typography(22, 31.7, 700, $primary-text-color);
+        }
+      }
+      .banner-content {
+        margin-bottom: 28px;
+        width: 55%;
+        @include typography(16, 24, 500, $secondry-text-color);
+
+        @include max-width(780) {
+          @include typography(14, 20, 500, $secondry-text-color);
+        }
+        @include max-width(480) {
+          @include typography(12, 16, 500, $secondry-text-color);
+        }
+      }
+    }
+  }
+
+  .technos-wrapper {
+    // background-color: #ffffff;
+    margin: 120px auto;
+    @media screen and (max-width: 580px) {
+      width: 90%;
+      margin: 60px auto;
+    }
+    .technos {
+      width: 100%;
+      .section-title {
+        text-transform: uppercase;
+        @media screen and (max-width: 1400px) {
+          @include typography(18, 28, 600, $primary-color);
+        }
+        @media screen and (max-width: 1140px) {
+          @include typography(14, 22, 600, $primary-color);
+        }
+      }
+      .section-heading {
+        @include typography(48, 60, 600, $primary-text-color);
+        @media screen and (max-width: 1600px) {
+          @include typography(40, 48, 600, $primary-text-color);
+        }
+        @media screen and (max-width: 1400px) {
+          @include typography(32, 40, 600, $primary-text-color);
+          margin: 0;
+        }
+        @media screen and (max-width: 1140px) {
+          @include typography(24, 36, 600, $primary-text-color);
+        }
+      }
+      .section-content {
+        width: 55%;
+        margin: 20px auto;
+        @include typography(16, 24, 400, #707070);
+        @media screen and (max-width: 1354px) {
+          @include typography(14, 22, 400, #707070);
+          width: 100%;
+        }
+        @media screen and (max-width: 1070px) {
+          @include typography(12, 18, 400, #707070);
+          margin-top: 10px;
+        }
+      }
+      .boxes-wrapper {
+        margin: auto;
+        @include flex-box(row, na, na, wrap, 20);
+        width: 92%;
+        @include max-width(1804) {
+          width: 80%;
+        }
+        @include max-width(1550) {
+          @include flex-box(row, na, center, wrap, 20);
+          width: 95%;
+        }
+        @include max-width(1300) {
+          @include flex-box(row, center, center, wrap, 20);
+        }
+        @media screen and (max-width: 580px) {
+          width: 100%;
+        }
+        .box {
+          @include dimensions(auto, 400);
+          border: 1px solid #e8e8e8;
+          box-shadow: 0px 20px 80px 0px #0000000d;
+          background-color: $secondry-color;
+          border-radius: 16px;
+          margin-top: 67px;
+          @include max-width(900) {
+            @include dimensions(auto, 600);
+          }
+          @media screen and (max-width: 580px) {
+            margin-top: 30px;
+          }
+          .logo {
+            @include flex-box(row, center, center, na, na);
+            border-radius: 16px;
+            @include dimensions(60, 60);
+            @include absolute(-30, na, na, 25);
+            background-color: #eb7500;
+            box-shadow: 0px 10px 60px 0px rgba(235, 117, 0, 0.4);
+            @media screen and (max-width:1094px) {
+              @include dimensions(50, 50);
+              border-radius: 12px;
+            }
+            @media screen and (max-width:580px) {
+              @include dimensions(40, 40);
+              border-radius: 8px;
+            }
+          }
+          .box-heading {
+            @include typography(24, 36, 600, $primary-text-color);
+
+            @media screen and (max-width: 1400px) {
+              @include typography(18, 26, 600, $primary-text-color);
+            }
+          }
+          .box-content {
+            @include typography(14, 22, 400, $secondry-text-color);
+            @media screen and (max-width: 480px) {
+              @include typography(12, 18, 400, $secondry-text-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .digital-transform-wrapper{
+    position: relative;
+    .overley {
+      content: "";
+      margin: auto;
+      position: absolute;
+      left: 25%;
+      top: 0px;
+      z-index: -1;
+      height: 100%;
+      width: 600px;
+      background: linear-gradient(
+        109.92deg,
+        rgba(0, 149, 255,.3) ,
+        rgba(187, 100, 255,.3) ,
+        rgba(242, 65, 107,.3) ,
+        rgba(235, 117, 0,.3) 
+      );
+      filter: blur(80px);
+    }
+    .digital-transformation {
+      width: 90%;
+      height: 520px;
+      margin-top: 120px;
+      overflow: hidden;
+      border-radius: 30px;
+      @include flex-box(row, space-between, na, na, na);
+      
+      
+      @media screen and (max-width: 1520px) {
+        width: 95%;
+      }
+      @media screen and (max-width: 980px) {
+        flex-direction: column;
+        height: auto;
+      }
+      .left-part {
+        padding: 124px 204px 124px 84px;
+        background-color: #ffffff;
+        box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.5);
+        @include flex-box(column, center, na, na, na);
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        @media screen and (max-width: 1440px) {
+          padding: 50px;
+        }
+        @media screen and (max-width: 980px) {
+          width: 90%;
+        }
+        @media screen and (max-width: 480px) {
+          width: 91%;
+          padding: 20px;
+          border-radius: 0;
+        }
+        .section-title {
+          text-transform: uppercase;
+          @media screen and (max-width: 1400px) {
+            @include typography(18, 28, 600, $primary-color);
+          }
+          @media screen and (max-width: 1140px) {
+            @include typography(14, 22, 600, $primary-color);
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 5px;
+          }
+        }
+      
+        .section-heading {
+          @include typography(48, 60, 600, $primary-text-color);
+          @media screen and (max-width: 1600px) {
+            @include typography(40, 48, 600, $primary-text-color);
+          }
+          @media screen and (max-width: 1400px) {
+            @include typography(32, 40, 600, $primary-text-color);
+          }
+          @media screen and (max-width: 1140px) {
+            @include typography(22, 28, 600, $primary-text-color);
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 10px;
+          }
+        }
+        .section-content {
+          width: 100%;
+          @include typography(16, 24, 400, #707070);
+          @media screen and (max-width: 1354px) {
+            @include typography(14, 22, 400, #707070);
+            width: 80%;
+          }
+          @media screen and (max-width: 1070px) {
+            @include typography(12, 18, 400, #707070);
+            width: 90%;
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 0px;
+          }
+        }
+       
+      }
+      .right-part {
+        background-color: $secondry-color;
+        border-radius: 15px;
+        @media screen and (max-width: 1440px) {
+          width: 50%;
+        }
+        @media screen and (max-width: 980px) {
+          width: 100%;
+          border-top-right-radius: 30px;
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+          img{
+            width: 100%;
+          }
+        }
+      }
+      .z-img1 {
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        @media screen and (max-width: 980px) {
+          display: none;
+        }
+      }
+      .circle4 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 400px;
+        background-color: #c0bedd;
+        filter: blur(125px);
+        @media screen and (max-width: 980px) {
+          display: none;
+        }
+      }
+    }
+  }
+  
+  .transform-future-wrapper {
+    padding: 120px 0;
+    @media screen and (max-width: 1700px) {
+      padding: 60px;
+    }
+    @media screen and (max-width: 1340px) {
+      padding: 40px;
+    }
+    @media screen and (max-width: 580px) {
+      padding: 20px;
+    }
+    .transform-future {
+      width: 85%;
+      @include flex-box(row, space-between, na, na, 86);
+
+      @media screen and (max-width: 1520px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 980px) {
+        flex-direction: column;
+      }
+      @media screen and (max-width: 580px) {
+        gap: 40px;
+      }
+      .left-part {
+        width: 48%;
+        @include flex-box(column, center, na, na, na);
+        @media screen and (max-width: 980px) {
+          width: 100%;
+        }
+        .section-title-text {
+          text-transform: uppercase;
+          @include typography(24, 36, 600, #ffffff);
+          @media screen and (max-width: 1400px) {
+            @include typography(18, 28, 600, #ffffff);
+          }
+          @media screen and (max-width: 1140px) {
+            @include typography(14, 22, 600, #ffffff);
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 5px;
+          }
+        }
+        .section-title {
+          text-transform: uppercase;
+          @media screen and (max-width: 1400px) {
+            @include typography(18, 28, 600, $primary-color);
+          }
+          @media screen and (max-width: 1140px) {
+            @include typography(14, 18, 600, $primary-color);
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 10px;
+          }
+        }
+        .section-heading-white {
+          @include typography(48, 60, 600, #ffffff);
+          @media screen and (max-width: 1600px) {
+            @include typography(40, 48, 600, #ffffff);
+          }
+          @media screen and (max-width: 1400px) {
+            @include typography(32, 40, 600, #ffffff);
+          }
+          @media screen and (max-width: 1140px) {
+            @include typography(24, 28, 600, #ffffff);
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 10px;
+          }
+        }
+        .section-content-white {
+          width: 92%;
+          @include typography(16, 24, 400, #ffffff);
+          @media screen and (max-width: 1354px) {
+            @include typography(14, 22, 400, #ffffff);
+            width: 80%;
+          }
+          @media screen and (max-width: 1070px) {
+            @include typography(12, 18, 400, #ffffff);
+            width: 90%;
+          }
+        }
+        .section-heading {
+          @include typography(48, 60, 600, $primary-text-color);
+          @media screen and (max-width: 1600px) {
+            @include typography(40, 48, 600, $primary-text-color);
+          }
+          @media screen and (max-width: 1400px) {
+            @include typography(32, 40, 600, $primary-text-color);
+          }
+          @media screen and (max-width: 1140px) {
+            @include typography(24, 28, 600, $primary-text-color);
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 20px;
+          }
+        }
+        .section-content {
+          width:92%;
+          @include typography(16, 24, 400, #707070);
+          @media screen and (max-width: 1354px) {
+            @include typography(14, 22, 400, #707070);
+            width: 80%;
+          }
+          @media screen and (max-width: 1070px) {
+            @include typography(12, 18, 400, #707070);
+            width: 90%;
+          }
+          @media screen and (max-width: 980px) {
+            margin-bottom: 30px;
+          }
+        }
+        .white-button {
+          background-color: #ffffff;
+          color: #136dfb;
+        }
+      }
+      .right-part {
+        width: 50%;
+        background-color: $secondry-color;
+        border-radius: 15px;
+        position: relative;
+        @media screen and (max-width: 1440px) {
+          padding: 15px;
+        }
+        @media screen and (max-width: 980px) {
+          width: 100%;
+          padding: 10px;
+        }
+        @media screen and (max-width: 580px) {
+          padding: 5px;
+        }
+      }
+      .colorful-background {
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height:100%;
+          background: linear-gradient(
+            -360deg,
+            rgb(0, 150, 255,.3) ,
+            rgb(187, 100, 255,.3) ,
+            rgb(242, 65, 107,.3) ,
+            rgb(235, 117, 0,.3) 
+          );
+          z-index: -1;
+          background-size: 400%;
+          border-radius: 15px;
+        }
+        &::after {
+          filter: blur(80px);
+        }
+      }
+    }
+    .z-img1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .z-img2 {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .circle1 {
+      width: 500px;
+      height: 500px;
+      background-color: white;
+      filter: blur(295px);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .circle2 {
+      width: 500px;
+      height: 500px;
+      background-color: white;
+      filter: blur(295px);
+      position: absolute;
+      bottom: 0;
+      right: 600px;
+    }
+    .circle3 {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      filter: blur(115px);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .footers-wrapper {
+    margin-top: 60px;
+    background-color: $primary-bg-color;
+    @include flex-box(column, center, center, na, na);
+    padding-top: 90px;
+    .footer {
+      @include flex-box(row, space-between, center, na, na);
+      border-bottom: 1px solid #999a9c;
+      padding-bottom: 35px;
+      @include max-width(992) {
+        gap: 24px;
+        @include flex-box(column, na, baseline, na, 24);
+      }
+      @include max-width(768) {
+        padding-bottom: 35px;
+      }
+      .address {
+        .img {
+          margin-right: 10px;
+        }
+      }
+      .address-content {
+        @include typography(14, 21, 600, $secondry-text-color);
+      }
+      .enquiry {
+        @include max-width(768) {
+          width: 100%;
+        }
+        .mail-id,
+        .phone-no {
+          @include typography(14, 21, 600, $secondry-text-color);
+        }
+        .email-input {
+          @include max-width(992) {
+            position: relative;
+            margin: 20px 0 12px 0;
+          }
+          @include max-width(768) {
+            width: 100%;
+          }
+          input {
+            @include dimensions(48, 345);
+            @include flex-box(row, na, center, na, na);
+            @include typography(14, 21, 600, $secondry-text-color);
+            padding: 0 120px 0 45px;
+            border-radius: 24px;
+            border: 1px solid #999a9c;
+          }
+          .input-wds {
+            @include max-width(1440) {
+              width: 180px;
+            }
+            @include max-width(1200) {
+              width: 110px;
+            }
+            @include max-width(992) {
+              width: 533px;
+            }
+            @include max-width(768) {
+              width: calc(100% - 167px);
+            }
+          }
+          img {
+            @include absolute(12, na, na, 16);
+          }
+          button {
+            @include absolute(3, 3, na, na);
+            height: 44px;
+          }
+        }
+      }
+    }
+    .enquiry-heading-lg {
+      @include max-width(992) {
+        display: none;
+      }
+    }
+    .enquiry-heading-sm {
+      @include max-width(992) {
+        display: block;
+        margin-top: 40px;
+      }
+    }
+    .second-footer {
+      padding: 45px 0;
+      @include flex-box(row, space-between, center, na, na);
+      @include max-width(768) {
+        padding: 45px 15px !important;
+        @include flex-box(column, na, baseline, na, 16);
+      }
+      .footer-buttons {
+        @include flex-box(row, na, center, na, 15);
+      }
+      .firm-logos {
+        @include flex-box(row, space-between, center, na, 5);
+        @include typography(14, 21, 500, $tertiary-text-color);
+        padding: 0 15px;
+        border: 0;
+        height: 38px;
+        border-radius: 19px;
+        .outer-border {
+          @include absolute(0, 0, 0, 0);
+          @include dimensions(38, 100%);
+          border-radius: 19px;
+          background-color: transparent;
+          border: 1px solid $footer-border-color;
+        }
+        &:hover {
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+          border-radius: 0;
+          overflow: hidden;
+          background-color: transparent;
+          .outer-border {
+            transform: translateX(+101%);
+          }
+          .f-with-hover {
+            display: block;
+          }
+          .f-no-hover {
+            display: none;
+          }
+        }
+      }
+      .facebook {
+        &:hover {
+          color: $learn-more-hover-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $learn-more-hover-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .linkdin {
+        &:hover {
+          color: $learn-more-hover-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $learn-more-hover-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .intagram {
+        &:hover {
+          color: $footer-btn-instagram-bg-color;
+          &::after {
+            width: 100%;
+          }
+        }
+        &::after {
+          content: "";
+          @include absolute(na, na, 0, 0);
+          @include dimensions(1, 0);
+          background-color: $footer-btn-instagram-bg-color;
+          transition: width 0.3s ease;
+        }
+      }
+      .rights-reserved {
+        @include typography(14, 21, 500, $primary-text-color);
+      }
+    }
+    .footer-headings {
+      @include flex-box(row, space-between, na, na, na);
+      .footer-heading {
+        @include typography(24, 36, 600, $primary-text-color);
+      }
+    }
+  }
+}

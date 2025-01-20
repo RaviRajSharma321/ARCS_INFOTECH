@@ -100,20 +100,62 @@
     @media screen and (max-width:1700px) {
       padding: 60px;
     }
+    @media screen and (max-width:1340px) {
+      padding: 40px;
+    }
     .transform-future {
       width: 90%;
       @include flex-box(row, space-between, na, na, 32);
+      @media screen and (max-width:1520px) {
+        width: 100%;
+      }
+      @media screen and (max-width:980px) {
+        flex-direction: column;
+      }
       .left-part {
         width: 50%;
         @include flex-box(column, center, na, na, na);
+        @media screen and (max-width:980px) {
+          width: 100%;
+        }
         .section-title {
           text-transform: uppercase;
+          @media screen and (max-width:1400px) {
+            @include typography(18, 28, 600, $primary-color);
+          }
+          @media screen and (max-width:1140px) {
+            @include typography(14, 22, 600, $primary-color);
+          }
+        }
+        .section-heading{
+          @include typography(40, 48, 600, $primary-text-color);
+          @media screen and (max-width:1400px) {
+            @include typography(32, 40, 600, $primary-text-color);
+          }
+          @media screen and (max-width:1140px) {
+            @include typography(24, 36, 600, $primary-text-color);
+          }
+        }
+        .section-content{
+          width: 70%;
+          @include typography(16, 24, 400, #707070);
+          @media screen and (max-width:1354px) {
+            @include typography(14, 22, 400, #707070);
+            width: 80%;
+          }
+          @media screen and (max-width:1070px) {
+            @include typography(12, 18, 400, #707070);
+            width: 90%;
+          }
         }
       }
       .right-part {
         width: 50%;
         background-color: $secondry-color;
         border-radius: 15px;
+        @media screen and (max-width:980px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -130,12 +172,12 @@
       }
     }
     .section-heading {
-      @include typography(40, 48, 600, #202323);
+      @include typography(40, 48, 600, $primary-text-color);
       @media screen and (max-width:1354px) {
-        @include typography(32, 40, 600, #202323);
+        @include typography(32, 40, 600, $primary-text-color);
       }
       @media screen and (max-width:1070px) {
-        @include typography(24, 36, 600, #202323);
+        @include typography(24, 36, 600, $primary-text-color);
       }
     }
     .main-content {
@@ -280,14 +322,14 @@
         }
       }
       h3 {
-        @include typography(24, 36, 600, #202323);
+        @include typography(24, 36, 600, $primary-text-color);
         margin-top: 15px;
         margin-bottom: 5px;
         @media screen and (max-width:780px) {
-          @include typography(18, 28, 600, #202323);
+          @include typography(18, 28, 600, $primary-text-color);
         }
         @media screen and (max-width:480px) {
-          @include typography(14, 18, 600, #202323);
+          @include typography(14, 18, 600, $primary-text-color);
         }
       }
       p {
@@ -349,6 +391,18 @@
     border: 1px solid #E8E8E8;
     @include max-width(1720){
       height: 380px;
+
+    }
+    .section-heading{
+      @media screen and (max-width: 1440px){
+        @include typography(40, 48, 600, $primary-text-color);
+        @media screen and (max-width:1354px) {
+          @include typography(32, 40, 600, $primary-text-color);
+        }
+        @media screen and (max-width:1070px) {
+          @include typography(24, 36, 600, $primary-text-color);
+        }
+      }
     }
     .content{
         width: 838px;
@@ -375,12 +429,12 @@
       }
     }
     .section-heading {
-      @include typography(40, 48, 600, #202323);
+      @include typography(40, 48, 600, $primary-text-color);
       @media screen and (max-width:1354px) {
-        @include typography(32, 40, 600, #202323);
+        @include typography(32, 40, 600, $primary-text-color);
       }
       @media screen and (max-width:1070px) {
-        @include typography(24, 36, 600, #202323);
+        @include typography(24, 36, 600, $primary-text-color);
       }
     }
     .main-content {
@@ -463,12 +517,12 @@
             }
           }
           .box-heading {
-            @include typography(24, 30, 600, #202323);
+            @include typography(24, 30, 600, $primary-text-color);
             @media screen and (max-width:1354px) {
-              @include typography(18, 28, 600, #202323);
+              @include typography(18, 28, 600, $primary-text-color);
             }
             @media screen and (max-width:1070px) {
-              @include typography(16, 22, 600, #202323);
+              @include typography(16, 22, 600, $primary-text-color);
             }
           }
         }
