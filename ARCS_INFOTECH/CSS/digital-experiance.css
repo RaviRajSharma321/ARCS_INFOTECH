@@ -426,7 +426,8 @@
 }
 
 .m-auto {
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /*********************** position-classes *********************/
@@ -1084,7 +1085,7 @@
 }
 .outer-box .ui-banner .ui-banner-details .banner-content {
   margin-bottom: 28px;
-  width: 55%;
+  width: 53%;
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -1597,6 +1598,7 @@
 @media screen and (max-width: 1070px) {
   .outer-box .solution-provide {
     padding: 40px 0;
+    margin-bottom: 60px;
   }
 }
 .outer-box .solution-provide .section-title-text {
@@ -1867,7 +1869,7 @@
   gap: 20px;
   width: 92%;
 }
-@media screen and (max-width: 1804px) {
+@media screen and (max-width: 1810px) {
   .outer-box .technos-wrapper .technos .boxes-wrapper {
     width: 80%;
   }
@@ -1890,6 +1892,11 @@
   background-color: #ffffff;
   box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.0509803922);
 }
+@media screen and (max-width: 1810px) {
+  .outer-box .technos-wrapper .technos .boxes-wrapper .box {
+    width: 47%;
+  }
+}
 @media screen and (max-width: 992px) {
   .outer-box .technos-wrapper .technos .boxes-wrapper .box {
     width: 500px;
@@ -1907,6 +1914,7 @@
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 .outer-box .technos-wrapper .technos .boxes-wrapper .box .upper-part .logo {
   width: 60px;
@@ -1919,11 +1927,15 @@
   justify-content: center;
   align-items: center;
 }
+.outer-box .technos-wrapper .technos .boxes-wrapper .box .upper-part .logo img {
+  width: 38px;
+}
 .outer-box .technos-wrapper .technos .boxes-wrapper .box .upper-part .box-heading {
   font-size: 24px;
   font-weight: 600;
   color: #202323;
   margin: 0;
+  width: calc(100% - 80px);
 }
 @media screen and (max-width: 1400px) {
   .outer-box .technos-wrapper .technos .boxes-wrapper .box .upper-part .box-heading {

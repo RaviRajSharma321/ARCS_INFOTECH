@@ -838,7 +838,6 @@
 }
 .outer-box .transform-future-wrapper {
   margin-bottom: 120px;
-  padding: 120px 0;
   background-color: #f9f9f9;
 }
 @media screen and (max-width: 1700px) {
@@ -849,6 +848,7 @@
 @media screen and (max-width: 1340px) {
   .outer-box .transform-future-wrapper {
     padding: 40px;
+    margin-bottom: 60px;
   }
 }
 .outer-box .transform-future-wrapper .transform-future {
@@ -1032,6 +1032,16 @@
   gap: 30px;
   margin-top: 90px;
 }
+@media screen and (max-width: 1070px) {
+  .outer-box .ai-solutions .boxes {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .outer-box .ai-solutions .boxes {
+    gap: 15px;
+  }
+}
 .outer-box .ai-solutions .boxes .box {
   width: 345px;
   height: 150px;
@@ -1142,11 +1152,13 @@
   .outer-box .key-features {
     padding: 50px;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    margin: 60px 0;
   }
 }
 @media screen and (max-width: 580px) {
   .outer-box .key-features {
-    padding: 10px;
+    padding: 15px;
+    gap: 15px;
   }
 }
 .outer-box .key-features p {
@@ -1314,6 +1326,7 @@
 @media screen and (max-width: 1720px) {
   .outer-box .vision-to-life {
     height: 380px;
+    margin-bottom: 60px;
   }
 }
 @media screen and (max-width: 1440px) {

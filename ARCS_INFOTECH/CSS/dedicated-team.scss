@@ -119,6 +119,12 @@
   }
 
   .ui-banner {
+    @media screen and (max-width:1806px) {
+      margin-bottom: 230px;
+    }
+    @media screen and (max-width:1200px) {
+      margin-bottom: 130px;
+    }
     .ui-banner-blur-circle {
       background-color: $primary-color;
       filter: blur(195px);
@@ -149,16 +155,16 @@
       &.user-interface {
         @include absolute(180, na, na, 580);
         @include max-width(1720) {
-          @include absolute(310, na, na, 370);
+          @include absolute(160, na, na, 550);
         }
         @include max-width(1440) {
           @include absolute(330, na, na, 240);
         }
       }
       &.user-interface2 {
-        @include absolute(400, na, na, 580);
+        @include absolute(400, na, na, 560);
         @include max-width(1720) {
-          @include absolute(310, na, na, 370);
+          @include absolute(400, na, na, 550);
         }
         @include max-width(1440) {
           @include absolute(330, na, na, 240);
@@ -167,16 +173,16 @@
       &.user-exp {
         @include absolute(180, 630, na, na);
         @include max-width(1720) {
-          @include absolute(155, 410, na, na);
+          @include absolute(400, 580, na, na);
         }
         @include max-width(1440) {
-          @include absolute(155, 290, na, na);
+          @include absolute(160, 290, na, na);
         }
       }
       &.user-exp2 {
         @include absolute(400, 630, na, na);
         @include max-width(1720) {
-          @include absolute(155, 410, na, na);
+          @include absolute(160, 580, na, na);
         }
         @include max-width(1440) {
           @include absolute(155, 290, na, na);
@@ -248,6 +254,13 @@
       @include flex-box(column, center, center, na, na);
       @include absolute(na, 0, 0, 0);
       backdrop-filter: blur(30px);
+      @include max-width(1806) {
+        @include dimensions(calc(100vh - 140px), 100%);
+        @include absolute(500, 0, 0, 0);
+      }
+      // @include max-width(1200) {
+      //   @include dimensions(calc(100vh - 450px), 100%);
+      // }
       .banner-heading {
         margin-bottom: 16px;
         text-transform: uppercase;
@@ -255,15 +268,20 @@
         @include typography(60, 86.7, 700, $primary-text-color);
         @include max-width(1700) {
           @include typography(55, 68.7, 700, $primary-text-color);
+          width: 60%;
         }
         @include max-width(1200) {
           @include typography(36, 48.7, 700, $primary-text-color);
+          width: 70%;
+          margin-top: 0;
         }
         @include max-width(780) {
           @include typography(32, 41.7, 700, $primary-text-color);
+          width: 80%;
         }
         @include max-width(480) {
           @include typography(22, 31.7, 700, $primary-text-color);
+          width: 100%;
         }
       }
       .banner-content {
@@ -271,11 +289,13 @@
         width: 55%;
         @include typography(16, 24, 500, $secondry-text-color);
 
-        @include max-width(780) {
+        @include max-width(980) {
           @include typography(14, 20, 500, $secondry-text-color);
+          width: 75%;
         }
         @include max-width(480) {
           @include typography(12, 16, 500, $secondry-text-color);
+          width: 100%;
         }
       }
     }
@@ -284,6 +304,9 @@
   .technos-wrapper {
     // background-color: #ffffff;
     margin: 120px auto;
+    @media screen and (max-width: 1806px) {
+      margin-top: 400px;
+    }
     @media screen and (max-width: 580px) {
       width: 90%;
       margin: 60px auto;
@@ -297,6 +320,7 @@
         }
         @media screen and (max-width: 1140px) {
           @include typography(14, 22, 600, $primary-color);
+     
         }
       }
       .section-heading {
@@ -329,15 +353,10 @@
         margin: auto;
         @include flex-box(row, na, na, wrap, 20);
         width: 92%;
-        @include max-width(1804) {
+        margin-top: 67px;
+        @include max-width(1810) {
           width: 80%;
-        }
-        @include max-width(1550) {
-          @include flex-box(row, na, center, wrap, 20);
-          width: 95%;
-        }
-        @include max-width(1300) {
-          @include flex-box(row, center, center, wrap, 20);
+          @include flex-box(row, center, center, wrap, 40);
         }
         @media screen and (max-width: 580px) {
           width: 100%;
@@ -348,13 +367,13 @@
           box-shadow: 0px 20px 80px 0px #0000000d;
           background-color: $secondry-color;
           border-radius: 16px;
-          margin-top: 67px;
-          @include max-width(900) {
-            @include dimensions(auto, 600);
+          @include max-width(1810) {
+            width: 45%;
           }
-          @media screen and (max-width: 580px) {
-            margin-top: 30px;
+          @include max-width(780) {
+            width: 95%;
           }
+        
           .logo {
             @include flex-box(row, center, center, na, na);
             border-radius: 16px;
@@ -377,10 +396,12 @@
             margin-bottom: 10px;
             @media screen and (max-width: 1400px) {
               @include typography(18, 26, 600, $primary-text-color);
+              margin-bottom: 5px;
             }
           }
           .box-content {
             @include typography(14, 22, 400, $secondry-text-color);
+            margin: 0;
             @media screen and (max-width: 480px) {
               @include typography(12, 18, 400, $secondry-text-color);
             }
@@ -404,15 +425,15 @@
     .transform-future {
       width: 85%;
       @include flex-box(row, space-between, na, na, 86);
-
+      @media screen and (max-width: 1700px) {
+        width: 90%;
+        gap: 30px;
+      }
       @media screen and (max-width: 1520px) {
         width: 100%;
       }
       @media screen and (max-width: 980px) {
         flex-direction: column;
-      }
-      @media screen and (max-width: 580px) {
-        gap: 40px;
       }
       .left-part {
         width: 48%;
@@ -426,24 +447,22 @@
           @media screen and (max-width: 1400px) {
             @include typography(18, 28, 600, #ffffff);
           }
-          @media screen and (max-width: 1140px) {
+          @media screen and (max-width: 1250px) {
             @include typography(14, 22, 600, #ffffff);
-          }
-          @media screen and (max-width: 980px) {
             margin-bottom: 5px;
           }
+          
         }
         .section-title {
           text-transform: uppercase;
           @media screen and (max-width: 1400px) {
             @include typography(18, 28, 600, $primary-color);
           }
-          @media screen and (max-width: 1140px) {
+          @media screen and (max-width: 1250px) {
             @include typography(14, 18, 600, $primary-color);
-          }
-          @media screen and (max-width: 980px) {
             margin-bottom: 10px;
           }
+        
         }
         .section-heading-white {
           @include typography(48, 60, 600, #ffffff);
@@ -453,12 +472,11 @@
           @media screen and (max-width: 1400px) {
             @include typography(32, 40, 600, #ffffff);
           }
-          @media screen and (max-width: 1140px) {
+          @media screen and (max-width: 1250px) {
             @include typography(24, 28, 600, #ffffff);
-          }
-          @media screen and (max-width: 980px) {
             margin-bottom: 10px;
           }
+         
         }
         .section-content-white {
           width: 92%;
@@ -480,7 +498,7 @@
           @media screen and (max-width: 1400px) {
             @include typography(32, 40, 600, $primary-text-color);
           }
-          @media screen and (max-width: 1140px) {
+          @media screen and (max-width: 1250px) {
             @include typography(24, 28, 600, $primary-text-color);
           }
           @media screen and (max-width: 980px) {
@@ -494,12 +512,13 @@
             @include typography(14, 22, 400, #707070);
             width: 80%;
           }
-          @media screen and (max-width: 1070px) {
+          @media screen and (max-width: 1250px) {
             @include typography(12, 18, 400, #707070);
             width: 90%;
+            margin-bottom: 30px;
           }
           @media screen and (max-width: 980px) {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
           }
         }
         .white-button {
@@ -523,6 +542,30 @@
           padding: 5px;
         }
       }
+      .colorful-background {
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height:100%;
+          background: linear-gradient(
+            -360deg,
+            rgb(0, 150, 255,.3) ,
+            rgb(187, 100, 255,.3) ,
+            rgb(242, 65, 107,.3) ,
+            rgb(235, 117, 0,.3) 
+          );
+          z-index: -1;
+          background-size: 400%;
+          border-radius: 15px;
+        }
+        &::after {
+          filter: blur(80px);
+        }
+      }
     }
     .z-img1 {
       position: absolute;
@@ -542,6 +585,9 @@
       position: absolute;
       top: 0;
       right: 0;
+      @media screen and (max-width: 1094px) {
+        display: none;
+      }
     }
 
     .circle2 {
@@ -552,6 +598,9 @@
       position: absolute;
       bottom: 0;
       right: 600px;
+      @media screen and (max-width: 1094px) {
+        display: none;
+      }
     }
     .circle3 {
       width: 200px;
@@ -561,6 +610,9 @@
       position: absolute;
       top: 0;
       left: 0;
+      @media screen and (max-width: 1094px) {
+        display: none;
+      }
     }
   }
 
@@ -568,7 +620,7 @@
     position: relative;
     padding: 120px;
     @media screen and (max-width:1500px) {
-      padding: 20px;
+      padding: 100px 20px;
     }
     .overley {
       content: "";
@@ -587,6 +639,9 @@
         rgba(235, 117, 0,.2) 
       );
       filter: blur(80px);
+      @media screen and (max-width:1094px) {
+        left: 0;
+      }
     }
     .digital-transformation {
       height: 520px;
@@ -611,11 +666,14 @@
         @media screen and (max-width: 980px) {
           width: 90%;
           order: 2;
+          border-top-right-radius: 15px;
+          border-top-left-radius: 15px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
         }
         @media screen and (max-width: 480px) {
           width: 91%;
           padding: 20px;
-          border-radius: 0;
         }
         .section-title {
           text-transform: uppercase;
@@ -669,10 +727,10 @@
         }
         @media screen and (max-width: 980px) {
           width: 100%;
-          border-top-right-radius: 30px;
-          border-top-left-radius: 30px;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: 0;
+          border-top-right-radius: 0px;
+          border-top-left-radius: 0px;
+          border-bottom-right-radius: 15px;
+          border-bottom-left-radius: 15px;
           order: 1;
           img{
             width: 100%;
@@ -694,9 +752,9 @@
         width: 400px;
         height: 400px;
         background-color: #c0bedd;
-        filter: blur(125px);
-        @media screen and (max-width: 980px) {
-          display: none;
+        filter: blur(175px);
+        @media screen and (max-width: 1094px) {
+          filter: blur(325px);
         }
       }
     }

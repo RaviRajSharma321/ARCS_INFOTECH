@@ -712,9 +712,10 @@
 
 .outer-box .ui-banner .ui-banner-details .banner-heading {
   width: 1188px;
+  text-transform: uppercase;
 }
 .outer-box .ui-banner .ui-banner-details .banner-content {
-  width: 649px;
+  width: 550px;
 }
 .outer-box .ios-app {
   background-color: #F9F9F9;
@@ -777,17 +778,15 @@
 @media screen and (max-width: 1094px) {
   .outer-box .ios-app .text-section {
     border-radius: 30px;
-    width: auto;
     width: 100%;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+    margin-bottom: 40px;
   }
 }
 @media screen and (max-width: 580px) {
   .outer-box .ios-app .text-section {
     border-radius: 20px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
   }
 }
 .outer-box .ios-app .text-section .ios-app-circle1 {
@@ -836,16 +835,16 @@
 }
 @media screen and (max-width: 1094px) {
   .outer-box .ios-app .text-section .section {
-    margin: 80px;
-    justify-content: center;
-    align-items: center;
+    margin: 40px;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
   }
 }
 @media screen and (max-width: 580px) {
   .outer-box .ios-app .text-section .section {
-    justify-content: start;
-    align-items: start;
     margin: 30px;
   }
 }
@@ -964,7 +963,7 @@
   font-weight: 400;
   color: #707070;
 }
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 1440px) {
   .outer-box .start-your-project .normal-text {
     width: 60%;
   }
@@ -1062,6 +1061,11 @@
     height: auto;
   }
 }
+@media screen and (max-width: 768px) {
+  .outer-box .android-app, .outer-box .hybrid-app {
+    padding: 60px 40px;
+  }
+}
 .outer-box .android-app .text-section, .outer-box .hybrid-app .text-section {
   width: 100%;
   display: flex;
@@ -1157,9 +1161,16 @@
 @media screen and (max-width: 1520px) {
   .outer-box .android-app .text-section .img-section, .outer-box .hybrid-app .text-section .img-section {
     width: 80%;
+    padding: 15px;
   }
   .outer-box .android-app .text-section .img-section img, .outer-box .hybrid-app .text-section .img-section img {
     width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .outer-box .android-app .text-section .img-section, .outer-box .hybrid-app .text-section .img-section {
+    width: 100%;
+    padding: 10px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1186,7 +1197,7 @@
 }
 @media screen and (max-width: 580px) {
   .outer-box .outer-featured-aspect {
-    padding: 20px;
+    padding: 60px 15px;
   }
 }
 .outer-box .outer-featured-aspect .features {
@@ -1195,9 +1206,14 @@
   padding: 40px;
   position: relative;
 }
+@media screen and (max-width: 980px) {
+  .outer-box .outer-featured-aspect .features {
+    padding: 30px;
+  }
+}
 @media screen and (max-width: 580px) {
   .outer-box .outer-featured-aspect .features {
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
   }
 }
@@ -1240,24 +1256,24 @@
   top: -27px;
   right: 21px;
 }
-@media screen and (max-width: 1480px) {
+@media screen and (max-width: 1680px) {
   .outer-box .outer-featured-aspect .features .invisible {
     font-size: 100px;
     line-height: 130px;
     font-weight: 600;
     color: #FAFAFA;
+    top: 10px;
   }
 }
-@media screen and (max-width: 1094px) {
+@media screen and (max-width: 1440px) {
   .outer-box .outer-featured-aspect .features .invisible {
     font-size: 80px;
     line-height: 100px;
     font-weight: 600;
     color: #FAFAFA;
-    top: 10px;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1266px) {
   .outer-box .outer-featured-aspect .features .invisible {
     font-size: 60px;
     line-height: 80px;
@@ -1265,10 +1281,26 @@
     color: #FAFAFA;
   }
 }
+@media screen and (max-width: 980px) {
+  .outer-box .outer-featured-aspect .features .invisible {
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 600;
+    color: #FAFAFA;
+  }
+}
 .outer-box .outer-featured-aspect .features .inner-featured-aspect {
-  display: flex;
   gap: 43px;
   flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 43px;
+}
+@media screen and (max-width: 580px) {
+  .outer-box .outer-featured-aspect .features .inner-featured-aspect {
+    gap: 15px;
+  }
 }
 .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect {
   background-color: #F9F9F9;
@@ -1278,7 +1310,7 @@
 }
 @media screen and (max-width: 1750px) {
   .outer-box .outer-featured-aspect .features .inner-featured-aspect .aspect {
-    width: 25%;
+    width: 29%;
   }
 }
 @media screen and (max-width: 1480px) {
@@ -1353,11 +1385,15 @@
 }
 .outer-box .full-spectrum-outer {
   padding-top: 120px;
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 580px) {
+  .outer-box .full-spectrum-outer {
+    padding-top: 60px;
+  }
 }
 .outer-box .full-spectrum-outer .large-heading {
   text-align: center;
@@ -1380,6 +1416,7 @@
     line-height: 42px;
     font-weight: 600;
     color: #202323;
+    margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1414,6 +1451,7 @@
     line-height: 20px;
     font-weight: 400;
     color: #707070;
+    width: 95%;
   }
 }
 .outer-box .full-spectrum-outer .full-spectrum-cards {
