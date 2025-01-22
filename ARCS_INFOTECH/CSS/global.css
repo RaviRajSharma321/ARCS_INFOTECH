@@ -889,6 +889,8 @@
   font-weight: 500;
   color: #ffffff;
   transition: all 0.3s ease;
+  width: -moz-fit-content;
+  width: fit-content;
   box-shadow: 0px 15px 60px 0px rgba(10, 81, 201, 0.6);
 }
 @media screen and (max-width: 1200px) {
