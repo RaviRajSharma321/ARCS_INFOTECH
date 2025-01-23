@@ -790,10 +790,10 @@
   }
 }
 .outer-box .ios-app .text-section .ios-app-circle1 {
-  background-color: #136dfb;
-  filter: blur(195px);
-  width: 250px;
-  height: 250px;
+  background-color: #ABCCFF;
+  filter: blur(135px);
+  width: 230px;
+  height: 230px;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -804,14 +804,14 @@
   }
 }
 .outer-box .ios-app .text-section .ios-app-circle2 {
-  background-color: #136dfb;
-  filter: blur(105px);
-  width: 150px;
-  height: 150px;
+  background-color: #ABCCFF;
+  filter: blur(125px);
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  left: -100px;
 }
 @media screen and (max-width: 480px) {
   .outer-box .ios-app .text-section .ios-app-circle2 {
@@ -819,13 +819,13 @@
   }
 }
 .outer-box .ios-app .text-section .section {
-  width: 60%;
+  width: 80%;
   margin: 109px 90px 81px 128px;
 }
 @media screen and (max-width: 1810px) {
   .outer-box .ios-app .text-section .section {
     margin: 90px;
-    width: 80%;
+    width: 83%;
   }
 }
 @media screen and (max-width: 1400px) {

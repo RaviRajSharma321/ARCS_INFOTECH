@@ -78,32 +78,32 @@
             }
 
             .ios-app-circle1{
-                background-color: #136dfb;
-                filter: blur(195px);
-                width: 250px;
-                height: 250px;
+                background-color: #ABCCFF;
+                filter: blur(135px);
+                width: 230px;
+                height: 230px;
                 @include absolute(0,0,na,na);
                 @media screen and (max-width:480px) {
                     display: none;
                 }
             }
             .ios-app-circle2{
-                background-color: #136dfb;
-                filter: blur(105px);
-                width: 150px;    
-                height: 150px;
+                background-color: #ABCCFF;
+                filter: blur(125px);
+                width: 200px;    
+                height: 200px;
                 border-radius: 50%;
-                @include absolute(na,na,0,0);
+                @include absolute(na,na,0,-100);
                 @media screen and (max-width:480px) {
                     display: none;
                 }
             }
             .section{
-                width: 60%;
+                width: 80%;
                 margin: 109px 90px 81px 128px;
                 @media screen and (max-width:1810px) {
                     margin: 90px;
-                    width: 80%;
+                    width: 83%;
                 }
                 @media screen and (max-width:1400px){
                     margin: 50px;

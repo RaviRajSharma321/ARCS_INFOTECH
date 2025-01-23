@@ -22,6 +22,14 @@
   background: $title-text-gradient;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media screen and (max-width:1094px) {
+    @include typography(18,30,600,na);
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  @media screen and (max-width:580px) {
+    @include typography(14,18,600,na);  
+  }
 }
 
 .section-heading {
@@ -300,9 +308,13 @@
     width: 85%;
     margin: 120px auto;
     @include flex-box(column, center,start,na,na);
-   
+    @media screen and (max-width:768px) {
+      padding: 60px 30px;
+      width: 89%;
+    }
     .section-title{
         margin-bottom: 10px;
+     
     }
     .large-heading{
         width: 65%;
@@ -316,15 +328,16 @@
             @include typography(32,39,600,$primary-text-color);
             width: 100%;
         }
-        @media screen and (max-width:480px) {
-            @include typography(22,32,600,$primary-text-color);
-            
+        @media screen and (max-width:580px) {
+            @include typography(22,28,600,$primary-text-color);  
         }
     }
     
     .full-spectrum-cards{
         @include flex-box(na, start,na,wrap,20);
-        
+        @media screen and (max-width:1410px) {
+          @include flex-box(na, center,na,wrap,20);
+      }
         .full-spectrum-inner{
             padding: 20px;
             border-radius: 15px;
@@ -340,6 +353,7 @@
 
             @media screen and (max-width:620px) {
                 width: 80%;
+                padding: 15px;
             }
             .spectrum{
                 @include flex-box(na, na,center,na,10);
@@ -347,12 +361,18 @@
                     border-radius: 16px;
                     background-color: #0096FF;
                     padding: 10px;
+                    @include flex-box(na, center,center,na,10);
                     img{
                         width: 38px;
                     }
-                    @media screen and (max-width:480px){
-                        width: 20px;
-                        height: 20px;
+                    @media screen and (max-width:1094px){
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 8px;
+                        padding: 5px;
+                        img{
+                          width: 25px;
+                        }
                     }
                 }
                 .img-div2{
@@ -365,10 +385,16 @@
                     background-color: #EB7500;
                 }
                 .mobile{
-                    @include typography(24,38,600,$primary-text-color);
-                    @media screen and (max-width:870px) {
-                       @include typography(18,22,600,$primary-text-color);
+                    @include typography(24,38,600,$primary-text-color);    
+                    @media screen and (max-width:1440px) {
+                      @include typography(22,27,600,$primary-text-color);      
+                  }
+                    @media screen and (max-width:1094px) {
+                        @include typography(17,20,600,$primary-text-color);      
                     }
+                  @media screen and (max-width:580px) {
+                    @include typography(14,18,600,$primary-text-color);      
+                }
                 }
             }
             .text{
@@ -432,13 +458,11 @@
         width: 92%;
         @include max-width(1804) {
           width: 80%;
+          margin-top: 40px;
         }
         @include max-width(1550) {
-          @include flex-box(row, na, center, wrap, 20);
-          width: 95%;
-        }
-        @include max-width(1300) {
           @include flex-box(row, center, center, wrap, 20);
+          width: 95%;
         }
         @media screen and (max-width: 580px) {
           width: 100%;
@@ -450,10 +474,8 @@
           background-color: $secondry-color;
           border-radius: 16px;
           margin-top: 67px;
-          @include max-width(900) {
+          @include max-width(1700) {
             @include dimensions(auto, 600);
-          }
-          @media screen and (max-width: 580px) {
             margin-top: 30px;
           }
           .logo {
@@ -640,11 +662,8 @@
     @media screen and (max-width: 1700px) {
       padding: 60px;
     }
-    @media screen and (max-width: 1340px) {
-      padding: 40px;
-    }
     @media screen and (max-width: 580px) {
-      padding: 20px;
+      padding: 60px 20px;
     }
     .transform-future {
       width: 85%;
@@ -879,7 +898,9 @@
         }
         .boxes-wrapper{
             @include flex-box(row,start,center,wrap,20);
-          
+            @include max-width(1440){
+              @include flex-box(row,center,center,wrap,20);
+            }
             .box{
                 width: 19%;
                 height: auto;
@@ -888,10 +909,7 @@
                 width: 30%;
                 }
                 @include max-width(1440){
-                  width: 38%;
-                }
-                @include max-width(1088){
-                  width: 46%;
+                  width: 47%;
                 }
                 @include max-width(768){
                     width: 100%;
