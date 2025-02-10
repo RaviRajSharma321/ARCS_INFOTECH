@@ -96,54 +96,54 @@
   .transform-future-wrapper {
     margin-bottom: 120px;
     background-color: $primary-bg-color;
-    @media screen and (max-width:1700px) {
-      padding: 60px;
+    @include max-width(1721){
+    padding: 60px;
     }
-    @media screen and (max-width:1340px) {
+    @include max-width(1200){
       padding: 40px;
       margin-bottom: 60px;
     }
     .transform-future {
-      width: 90%;
       @include flex-box(row, space-between, na, na, 32);
-      @media screen and (max-width:1520px) {
+      @include max-width(1440) {
         width: 100%;
       }
-      @media screen and (max-width:980px) {
+      @include max-width(992) {
         flex-direction: column;
       }
       .left-part {
         width: 50%;
         @include flex-box(column, center, na, na, na);
-        @media screen and (max-width:980px) {
+        @include max-width(992) {
           width: 100%;
         }
         .section-title {
           text-transform: uppercase;
-          @media screen and (max-width:1400px) {
+          @include max-width(1440) {
             @include typography(18, 28, 600, $primary-color);
           }
-          @media screen and (max-width:1140px) {
+          @include max-width(1200) {
             @include typography(14, 22, 600, $primary-color);
           }
         }
         .section-heading{
+          text-transform: capitalize;
           @include typography(40, 48, 600, $primary-text-color);
-          @media screen and (max-width:1400px) {
+          @include max-width(1440) {
             @include typography(32, 40, 600, $primary-text-color);
           }
-          @media screen and (max-width:1140px) {
+          @include max-width(1200) {
             @include typography(24, 36, 600, $primary-text-color);
           }
         }
         .section-content{
           width: 70%;
           @include typography(16, 24, 400, #707070);
-          @media screen and (max-width:1354px) {
+          @include max-width(1440) {
             @include typography(14, 22, 400, #707070);
             width: 80%;
           }
-          @media screen and (max-width:1070px) {
+          @include max-width(1200) {
             @include typography(12, 18, 400, #707070);
             width: 90%;
           }
@@ -153,7 +153,7 @@
         width: 50%;
         background-color: $secondry-color;
         border-radius: 15px;
-        @media screen and (max-width:980px) {
+        @include max-width(992) {
           width: 100%;
         }
       }
@@ -164,30 +164,30 @@
     .section-title {
       @include typography(24, 36, 600, $primary-color);
       text-transform: uppercase;
-      @media screen and (max-width:1354px) {
+      @include max-width(1440) {
         @include typography(18, 28, 600, $primary-color);
       }
-      @media screen and (max-width:1070px) {
+      @include max-width(1200) {
         @include typography(14, 22, 600, $primary-color);
       }
     }
     .section-heading {
       @include typography(40, 48, 600, $primary-text-color);
-      @media screen and (max-width:1354px) {
+      @include max-width(1440){
         @include typography(32, 40, 600, $primary-text-color);
       }
-      @media screen and (max-width:1070px) {
+      @include max-width(1200){
         @include typography(24, 36, 600, $primary-text-color);
       }
     }
     .main-content {
       width: 70%;
       @include typography(16, 24, 400, #707070);
-      @media screen and (max-width:1354px) {
+      @include max-width(1440){
         @include typography(14, 22, 400, #707070);
         width: 80%;
       }
-      @media screen and (max-width:1070px) {
+      @include max-width(1200) {
         @include typography(12, 18, 400, #707070);
         width: 90%;
       }
@@ -198,10 +198,10 @@
       flex-wrap: wrap;
       gap: 30px;
       margin-top: 90px;
-      @media screen and (max-width:1070px) {
+      @include max-width(1200) {
         margin-top: 40px;
       }
-      @media screen and (max-width:580px) {
+      @media screen and (max-width:576px) {
         gap: 15px;
       }
       .box {
@@ -210,10 +210,10 @@
         background-color: $secondry-color;
         border: 1px solid #e8e8e8;
         border-radius: 12px;
-        @media screen and (max-width:1354px) {
+        @include max-width(1440) {
           @include dimensions(150, 430);
         }
-        @media screen and (max-width:1070px) {
+        @include max-width(1200) {
           @include dimensions(150, 530);
         }
         .upper-part {
@@ -237,20 +237,20 @@
         .box-heading {
           @include typography(24, na, 600, $primary-color);
           
-          @media screen and (max-width:780px) {
+          @include max-width(992){
             @include typography(18, 28, 600, $primary-color);
           }
-          @media screen and (max-width:480px) {
+          @include max-width(576) {
             @include typography(14, 18, 600, $primary-color);
           }
         }
         .section-content {
           margin-top: 48px; 
           @include typography(16, 24, 400, #707070);
-          @media screen and (max-width:780px) {
+          @include max-width(992) {
             @include typography(14, 22, 400, #707070);
           }
-          @media screen and (max-width:480px) {
+          @include max-width(576){
             @include typography(12, 16, 400, #707070);
           }
         }
@@ -267,16 +267,16 @@
     grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(195px, 1fr));
     
-    @media screen and (max-width: 1210px) {
+    @include max-width(1200) {
       padding: 70px;
       grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     }
-    @media screen and (max-width: 980px) {
+    @include max-width(992){
       padding: 50px;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       margin: 60px 0;
     }
-    @media screen and (max-width: 580px) {
+    @include max-width(576) {
       padding: 15px;
       gap: 15px;
     }
@@ -285,23 +285,23 @@
       @include typography(48, 55, 300, $secondry-color);
       span {
         @include typography(48, 55, 600, $secondry-color);
-        @media screen and (max-width: 1094px) {
+        @include max-width(992){
           @include typography(42, 50, 600, $secondry-color);
         }
-        @media screen and (max-width: 768px) {
+        @include max-width(768){
           @include typography(34, 45, 600, $secondry-color);
         }
-        @media screen and (max-width: 580px) {
+        @include max-width(576){
           @include typography(22, 32, 600, $secondry-color);
         }
       }
-      @media screen and (max-width: 1094px) {
+      @include max-width(992){
         @include typography(42, 50, 300, $secondry-color);
       }
-      @media screen and (max-width: 768px) {
+      @include max-width(768) {
         @include typography(34, 45, 300, $secondry-color);
       }
-      @media screen and (max-width: 580px) {
+      @include max-width(576) {
         @include typography(22, 32, 300, $secondry-color);
       }
     }
@@ -312,9 +312,7 @@
       border-radius: 16px;
       padding: 28px;
       .upper-div {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
+        @include flex-box(na,space-between,na,na,na);
         .img-div {
           background-color: #f2416b;
           box-shadow: 0px 10px 60px 0px #F2416B66;
@@ -333,32 +331,23 @@
         @include typography(24, 36, 600, $primary-text-color);
         margin-top: 15px;
         margin-bottom: 5px;
-        @media screen and (max-width:780px) {
+        @include max-width(768) {
           @include typography(18, 28, 600, $primary-text-color);
         }
-        @media screen and (max-width:480px) {
+        @include max-width(576) {
           @include typography(14, 18, 600, $primary-text-color);
         }
       }
       p {
         @include typography(16, 24, 400, #707070);
-        @media screen and (max-width:780px) {
+        @include max-width(768) {
           @include typography(14, 22, 600, #707070);
         }
-        @media screen and (max-width:480px) {
+        @include max-width(576) {
           @include typography(12, 16, 600, #707070);
         }
       }
-      // &:hover{
-      //   .upper-div{
-      //     .img-div{
-      //       background-color: #ffffff;
-      //       .logo-img path {
-      //         fill: #000;
-      //       }
-      //     }
-      //   }
-      // }
+     
     }
     .div2,
     .div3 {

@@ -446,6 +446,7 @@ $overflow-property-shortcuts: a, h ,s, v;
 
 $breakpoints: 1720px, 1440px, 1200px, 992px, 768px , 576px;
 
+
 .wds{
   @include min-width(1721){
     width: 1650px;
