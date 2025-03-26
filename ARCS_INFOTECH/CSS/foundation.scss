@@ -80,8 +80,13 @@ $ai-ml-page-remarkable-benefits-logo-6-bg-color: #F2416B;
 $ai-ml-page-remarkable-benefits-logo-7-bg-color: #136DFB;
 $ai-ml-page-remarkable-benefits-logo-8-bg-color: #EB7500;
 
+$ec-erp-logo-1: #E7F0FF;
+$ec-erp-logo-2: #FFE7EC;
+$ec-erp-logo-3: #FFF1E2;
+
 $light-text: #EDEEED;
 
+$circle-background-color: #E8F1FF;
 
 $learn-more-hover-color: #0a51c9;
 $primary-hover-color: #0041ae;
@@ -93,6 +98,11 @@ $gradient-border-logo-img-box-shadow: 0px 8px 25px 0px #136dfb66;
 $our-expertise-tech-logo: 0px 8px 10px 0px #00000026;
 $services-box-shadow: 0px 20px 150px 0px #0000004d;
 
+$featured-aspects-one-hover-bg-gradient: linear-gradient(to right ,#136DFB,#9AC1FF,#1A71FB);
+$featured-aspects-two-hover-bg-gradient: linear-gradient(to right,  #BB64FF ,#DCAFFF, #BB64FF);
+$featured-aspects-three-hover-bg-gradient: linear-gradient(to right,  #F2416B ,#FF83A0,#F2416B);
+$featured-aspects-four-hover-bg-gradient: linear-gradient(to right,  #EB7500 , #FFC183,#EB7500);
+ 
 $ai-ml-page-remarkable-benefits-logo-1-box-shadow: 0px 10px 60px 0px #136DFB66;
 $ai-ml-page-remarkable-benefits-logo-2-box-shadow: 0px 10px 60px 0px #EB750066;
 $ai-ml-page-remarkable-benefits-logo-3-box-shadow: 0px 10px 60px 0px #BB64FF66;
@@ -175,7 +185,19 @@ $ui-section-expert-hover-logo-bg-color: linear-gradient(136.29deg,
   #EB7500 106.92%
 );
 
+$ec-number-speak-section-logo-bg-color: linear-gradient(137.66deg,
+ #0096FF -2.79%, 
+ #BB64FF 31.11%, 
+ #F2416B 79.95%,
+ #EB7500 112.12%
+);
+
+$dot-color: #D9D9D9;
 $border-section-4-ai-ml-page:#E8E8E8;
+$border-section-iv-top-ai-ml-page:#E8E8E8;
+$border-section-iv-right-ai-ml-page:linear-gradient(90deg, #EBEBEB 0%, #FFFFFF 100%);
+$border-section-iv-left-ai-ml-page:linear-gradient(90deg, #FFFFFF 0%, #EBEBEB 100%);
+
 
 $tech-box-hover-bg-color: #f0f0ff;
 $tech-inner-box-hover-bg-color: rgba(255, 255, 255, 0.3);
@@ -312,6 +334,14 @@ $property: margin, padding, mr, mb, ml, mt;
   }
 }
 
+.mt-120{
+  margin-top: 120px;
+}
+
+.mb-120{
+  margin-bottom: 120px;
+}
+
 .m-auto{
   margin-right: auto;
   margin-left: auto;
@@ -416,6 +446,10 @@ $overflow-property-shortcuts: a, h ,s, v;
 
 .full-vh{
   height: 100vh;
+}
+
+.h-auto{
+  height: auto;
 }
 
 .bx-border-box{

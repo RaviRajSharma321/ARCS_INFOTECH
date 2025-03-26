@@ -425,6 +425,14 @@
   margin-top: 40px;
 }
 
+.mt-120 {
+  margin-top: 120px;
+}
+
+.mb-120 {
+  margin-bottom: 120px;
+}
+
 .m-auto {
   margin-right: auto;
   margin-left: auto;
@@ -622,6 +630,10 @@
 
 .full-vh {
   height: 100vh;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .bx-border-box {
